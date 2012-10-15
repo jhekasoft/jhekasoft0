@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <title></title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen, projection" />
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script>
+        $(window).load(function() {
+            $('#sideLeft').css('height', $('#content').outerHeight() + 20)
+        });
+        
+        $(window).resize(function() {
+            $('#sideLeft').css('height', $('#content').outerHeight() + 20)
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <header id="header">
+            <div class="nav_block">
+                <nav class="nav_block_main">
+                    <div class="nav_block_logo">
+                        <a href="#" class="nav_block_logo_link">Jhekasoft</a>
+                    </div>
+                    <ul class="nav_block_main_menu">
+                        <li>
+                            <a href="#">Приложения</a>
+                        </li>
+                        <li>
+                            <a href="#">Игры</a>
+                        </li>
+                        <li>
+                            <a href="#">Видео</a>
+                        </li>
+                        <li>
+                            <a href="#">Звук</a>
+                        </li>
+                        <li>
+                            <a href="#">Блог</a>
+                        </li>
+                        <li>
+                            <a href="#">Об авторе</a>
+                        </li>
+                        <li class="nav_block_main_menu_end">
+                            <span>&nbsp;</span>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header><!-- #header-->
+
+        <section id="middle">
+
+            <div id="container">
+                <div id="content">
+                    <h1>Всем приветульки</h1>
+                    <p>
+                        <strong>Content:</strong> Sed placerat <a href="#">accumsan</a> ligula. Aliquam felis magna, congue quis, tempus eu, aliquam vitae, ante. Cras neque justo, ultrices at, rhoncus a, facilisis eget, nisl. Quisque vitae pede. Nam et augue. Sed a elit. Ut vel massa. Suspendisse nibh pede, ultrices vitae, ultrices nec, mollis non, nibh. In sit amet pede quis leo vulputate hendrerit. Cras laoreet leo et justo auctor condimentum. Integer id enim. Suspendisse egestas, dui ac egestas mollis, libero orci hendrerit lacus, et malesuada lorem neque ac libero. Morbi tempor pulvinar pede. Donec vel elit.
+                    </p>
+                    <p>
+                        <strong>Content:</strong> Sed placerat <a href="#">accumsan</a> ligula. Aliquam felis magna, congue quis, tempus eu, aliquam vitae, ante. Cras neque justo, ultrices at, rhoncus a, facilisis eget, nisl. Quisque vitae pede. Nam et augue. Sed a elit. Ut vel massa. Suspendisse nibh pede, ultrices vitae, ultrices nec, mollis non, nibh. In sit amet pede quis leo vulputate hendrerit. Cras laoreet leo et justo auctor condimentum. Integer id enim. Suspendisse egestas, dui ac egestas mollis, libero orci hendrerit lacus, et malesuada lorem neque ac libero. Morbi tempor pulvinar pede. Donec vel elit.
+                    </p>
+                </div><!-- #content-->
+            </div><!-- #container-->
+
+            <aside id="sideLeft">
+                <strong>Left Sidebar:</strong> Integer velit. Vestibulum nisi nunc, accumsan ut, vehicula sit amet, porta a, mi. Nam nisl tellus, placerat eget, posuere eget, egestas eget, dui. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In elementum urna a eros. Integer iaculis. Maecenas vel elit.
+            </aside><!-- #sideLeft -->
+
+        </section><!-- #middle-->
+
+        <footer id="footer">
+            <div class="footer_block">
+                &copy; 2007-2012 Jhekasoft
+            </div>
+        </footer><!-- #footer -->
+
+    </div><!-- #wrapper -->
+
+</body>
+</html>
