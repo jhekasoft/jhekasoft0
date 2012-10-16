@@ -135,7 +135,7 @@ ul.nav_block_main_menu li {
 ul.nav_block_main_menu li.nav_block_main_menu_end {
     border-left: 1px solid #fff;
     border-right: none;
-    min-width: auto;
+    min-width: 0;
 }
 
 ul.nav_block_main_menu li a,
