@@ -1,0 +1,21 @@
+<?php
+$title = $software->title . ' ' . $software->version;
+$this->headTitle($title . ' - ' . $this->translate('Software'));
+?>
+
+<div id="container">
+    <div id="content">
+        <h1><?php echo $this->escapeHtml($title); ?></h1>
+        <div>
+            <?php echo $this->translate('Author') ?>: <?php echo $software->author; ?>
+        </div>
+
+        <div>
+            <?php echo $software->text; ?>
+        </div>
+    </div><!-- #content-->
+</div><!-- #container-->
+
+<aside id="sideLeft">
+    <strong>Left Sidebar:</strong> Integer velit. Vestibulum nisi nunc, accumsan ut, vehicula sit amet, porta a, mi. Nam nisl tellus, placerat eget, posuere eget, egestas eget, dui. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In elementum urna a eros. Integer iaculis. Maecenas vel elit.
+</aside><!-- #sideLeft -->

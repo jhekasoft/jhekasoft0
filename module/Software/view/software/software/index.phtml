@@ -1,0 +1,28 @@
+<?php
+$title = $this->translate('Software');
+$this->headTitle($title);
+?>
+
+<div id="container">
+    <div id="content">
+        <h1><?php echo $this->escapeHtml($title); ?></h1>
+        <table class="table">
+        <tr>
+            <th>Title</th>
+            <th>Artist</th>
+            <th>Description</th>
+        </tr>
+        <?php foreach ($softwares as $software) : ?>
+        <tr>
+            <td><a href="<?php echo $this->url('software', array('action'=>'show', 'id' => $software->id));?>"><?php echo $this->escapeHtml($software->title);?> <?php echo $this->escapeHtml($software->version);?></a></td>
+            <td><?php echo $this->escapeHtml($software->artist);?></td>
+            <td><?php echo $software->short_text;?></td>
+        </tr>
+        <?php endforeach; ?>
+        </table>
+    </div><!-- #content-->
+</div><!-- #container-->
+
+<aside id="sideLeft">
+    <strong>Left Sidebar:</strong> Integer velit. Vestibulum nisi nunc, accumsan ut, vehicula sit amet, porta a, mi. Nam nisl tellus, placerat eget, posuere eget, egestas eget, dui. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In elementum urna a eros. Integer iaculis. Maecenas vel elit.
+</aside><!-- #sideLeft -->

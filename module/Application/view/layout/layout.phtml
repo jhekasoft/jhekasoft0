@@ -1,0 +1,78 @@
+<?php echo $this->doctype(); ?>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <?php echo $this->headTitle('Jhekasoft '. $this->translate('Personal site'))->setSeparator(' - ')->setAutoEscape(false) ?>
+
+    <?php echo $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0') ?>
+
+    <!-- Styles -->
+    <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/images/favicon.ico'))
+                    ->prependStylesheet($this->basePath() . '/css/style.css') ?>
+
+    <!-- Scripts -->
+    <?php echo $this->headScript()->prependFile('//html5shiv.googlecode.com/svn/trunk/html5.js', 'text/javascript', array('conditional' => 'IE',))
+                                  ->prependFile('//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js') ?>
+
+    <script>
+        $(window).load(function() {
+            $('#sideLeft').css('height', $('#content').outerHeight() + 20)
+        });
+        
+        $(window).resize(function() {
+            $('#sideLeft').css('height', $('#content').outerHeight() + 20)
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <header id="header">
+            <div class="nav_block">
+                <nav class="nav_block_main">
+                    <div class="nav_block_logo">
+                        <a href="<?php echo $this->url('home'); ?>" class="nav_block_logo_link">Jhekasoft</a>
+                    </div>
+                    <ul class="nav_block_main_menu">
+                        <li>
+                            <a href="<?php echo $this->url('software'); ?>">Приложения</a>
+                        </li>
+                        <li>
+                            <a href="#">Игры</a>
+                        </li>
+                        <li>
+                            <a href="#">Видео</a>
+                        </li>
+                        <li>
+                            <a href="#">Звук</a>
+                        </li>
+                        <li>
+                            <a href="#">Блог</a>
+                        </li>
+                        <li>
+                            <a href="#">Об авторе</a>
+                        </li>
+                        <li class="nav_block_main_menu_end">
+                            <span>&nbsp;</span>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header><!-- #header-->
+
+        <section id="middle">
+            <?php echo $this->content; ?>
+        </section><!-- #middle-->
+
+        <footer id="footer">
+            <div class="footer_block">
+                &copy; 2007-2012 Jhekasoft
+            </div>
+        </footer><!-- #footer -->
+
+    </div><!-- #wrapper -->
+    <?php echo $this->inlineScript() ?>
+</body>
+</html>
