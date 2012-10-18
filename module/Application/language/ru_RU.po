@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Jhekasoft\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-17 01:08+0300\n"
-"PO-Revision-Date: 2012-10-17 01:08+0300\n"
+"POT-Creation-Date: 2012-10-18 22:45+0300\n"
+"PO-Revision-Date: 2012-10-18 22:45+0300\n"
 "Last-Translator: Yevgeniy Yefremov <jheka@mail.ru>\n"
 "Language-Team:  <jheka@mail.ru>\n"
 "Language: ru_RU\n"
@@ -14,13 +14,44 @@ msgstr ""
 "X-Poedit-Basepath: ../..\n"
 "X-Poedit-SearchPath-0: .\n"
 
+#: Application/view/layout/clean.phtml:5
 #: Application/view/layout/layout.phtml:5
-msgid "Personal site"
-msgstr "Персональный сайт"
+msgid "Jhekasoft personal site"
+msgstr "Jhekasoft (персональный сайт)"
+
+#: Application/view/layout/layout.phtml:40
+#: Software/view/software/software/show.phtml:3
+#: Software/view/software/software/index.phtml:2
+msgid "Software"
+msgstr "Приложения"
+
+#: Application/view/layout/layout.phtml:43
+msgid "Games"
+msgstr "Игры"
+
+#: Application/view/layout/layout.phtml:46
+msgid "Video"
+msgstr "Видео"
+
+#: Application/view/layout/layout.phtml:49
+msgid "Sound"
+msgstr "Звук"
+
+#: Application/view/layout/layout.phtml:52
+msgid "Blog"
+msgstr "Блог"
+
+#: Application/view/layout/layout.phtml:55
+msgid "About"
+msgstr "Об авторе"
+
+#: Application/view/application/index/coming-soon.phtml:5
+msgid "Coming soon..."
+msgstr "Скоро..."
 
 #: Application/view/error/404.phtml:3
 msgid "A 404 error occurred"
-msgstr ""
+msgstr "Произошла ошибка 404"
 
 #: Application/view/error/404.phtml:12
 msgid "The requested controller was unable to dispatch the request."
@@ -81,12 +112,8 @@ msgstr ""
 
 #: Application/view/error/index.phtml:3
 msgid "An error occurred"
-msgstr ""
+msgstr "Произошла ошибка"
 
 #: Software/view/software/software/show.phtml:10
 msgid "Author"
 msgstr "Автор"
-
-#: Software/view/software/software/index.phtml:2
-msgid "Software"
-msgstr "Приложения"

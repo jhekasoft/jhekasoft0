@@ -18,4 +18,11 @@ class IndexController extends AbstractActionController
     {
         return new ViewModel();
     }
+    
+    public function comingSoonAction()
+    {
+        $this->layout('layout/clean');
+        
+        return new ViewModel();
+    }
 }

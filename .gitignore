@@ -1,6 +1,8 @@
 nbproject/private/
 ._*
 .~lock.*
+access_log
+error_log
 .buildpath
 .DS_Store
 .idea

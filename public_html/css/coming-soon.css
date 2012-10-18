@@ -1,0 +1,36 @@
+/* Coming Soon
+-----------------------------------------------------------------------------*/
+.coming_soon_block {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.coming_soon_title {
+    font-size: 100px;
+    font-weight: bold;
+    line-height: 110px;
+    color: #AAA;
+    cursor: default;
+}
+
+.coming_soon_title:hover {
+    color: #427F42;
+}
+
+.coming_soon_title {
+    -webkit-transition: color 0.5s ease;
+    -moz-transition: color 0.5s ease;
+    -ms-transition: color 0.5s ease;
+    -o-transition: color 0.5s ease;
+    transition: color 0.5s ease;
+}
+
+.coming_soon_middle {
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.coming_soon_copyright {
+    font-size: 14px;
+    line-height: 14px;
+}

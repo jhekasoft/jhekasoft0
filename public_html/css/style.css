@@ -109,8 +109,7 @@ a.nav_block_logo_link {
     color: #427F42;
 }
 
-a.nav_block_logo_link,
-.nav_block_logo_link:hover {
+a.nav_block_logo_link {
     -webkit-transition: color 0.5s ease;
     -moz-transition: color 0.5s ease;
     -ms-transition: color 0.5s ease;
