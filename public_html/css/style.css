@@ -62,6 +62,9 @@ input {
     width: 1000px;
     margin: 0 auto;
 }
+#wrapper.wrapper_adaptive {
+    width: auto;
+}
 
 h1 {
     margin: 0 0 18px;

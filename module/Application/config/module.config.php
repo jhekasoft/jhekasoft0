@@ -101,6 +101,7 @@ return array(
     'view_helpers' => array(
         'invokables'=> array(
             'side_left' => 'Application\View\Helper\SideLeft',
+            'final_countdown' => 'Application\View\Helper\FinalCountdown',
         )
     ),
 );
