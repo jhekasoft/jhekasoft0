@@ -11,6 +11,7 @@ namespace Application\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
+use DateTime;
 
 class IndexController extends AbstractActionController
 {
@@ -23,6 +24,11 @@ class IndexController extends AbstractActionController
     {
         $this->layout('layout/clean');
         
-        return new ViewModel();
+        // Оставшееся время
+        $endDatetime = new DateTime("2012-10-27 18:00:00");
+        
+        return new ViewModel(array(
+            'endDatetime' => $endDatetime,
+        ));
     }
 }
