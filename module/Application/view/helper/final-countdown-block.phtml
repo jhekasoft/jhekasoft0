@@ -1,0 +1,68 @@
+<script>
+    
+    var FinalCountdown = {
+        timer : null,
+        minutes : 0,
+        seconds : 0,
+        
+        /*
+         * Получает значение оставшегося времени
+         */
+        getLeftTime : function() {
+            clearTimeout(FinalCountdown.timer);
+            
+            jQuery.getJSON("<?php echo $this->url('application/default', array('controller' => 'index', 'action' => 'ajax-get-left-time')) ?>", {
+            },
+            function(response){
+                if(response.leftTime) {
+                    $('.finalcountdown_days').text(response.leftTime.days);
+                    $('.finalcountdown_hours').text(response.leftTime.hours);
+                    $('.finalcountdown_minutes').text(response.leftTime.minutes);
+                    $('.finalcountdown_seconds').text(response.leftTime.seconds);
+                    
+                    FinalCountdown.minutes = response.leftTime.minutes;
+                    FinalCountdown.seconds = response.leftTime.seconds;
+
+                    // Если время ещё не закончилось
+                    if(response.leftTime.days > 0 || response.leftTime.hours > 0
+                    || response.leftTime.minutes > 0 || response.leftTime.seconds > 0) {
+                        FinalCountdown.timer = setTimeout(FinalCountdown.updateLeftTime, 1000);
+                    }
+                }
+            });
+        },
+        
+        /*
+         * Обновляет значение оставшегося времени
+         */
+        updateLeftTime : function() {
+            FinalCountdown.seconds--; // уменьшаем секунды
+            
+            if(FinalCountdown.seconds < 0) {
+                FinalCountdown.seconds = 59;
+                FinalCountdown.minutes--; // уменьшаем минуты
+            }
+            
+            // Получаем значение оставшегося времени
+            // или выводим просчитанное с помощью JS
+            if(FinalCountdown.minutes < 0) {
+                FinalCountdown.getLeftTime();
+            } else {
+                $('.finalcountdown_minutes').text(FinalCountdown.minutes);
+                $('.finalcountdown_seconds').text(FinalCountdown.seconds);
+                setTimeout(FinalCountdown.updateLeftTime, 1000);
+            }
+        }
+    };
+
+    $(document).ready(function() {
+        FinalCountdown.timer = setTimeout(FinalCountdown.updateLeftTime, 1000);
+    });
+</script>
+
+<div class="coming_soon_finalcountdown">
+    <span class="finalcountdown_number finalcountdown_days"><?php echo $this->days; ?></span> дней&nbsp;
+    <span class="finalcountdown_number finalcountdown_hours"><?php echo $this->hours; ?></span> часов&nbsp;
+    <span class="finalcountdown_number finalcountdown_minutes"><?php echo $this->minutes; ?></span> минут&nbsp;
+    <span class="finalcountdown_number finalcountdown_seconds"><?php echo $this->seconds; ?></span> секунд
+</div>

@@ -11,10 +11,20 @@ namespace Application\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
+use Zend\View\Model\JsonModel;
+use Application\Model\FinalCountdown;
 use DateTime;
 
 class IndexController extends AbstractActionController
 {
+    // Оставшееся время
+    protected $endDatetime;
+    
+    public function __construct()
+    {
+        $this->endDatetime = new DateTime("2012-10-27 18:00:00");
+    }
+    
     public function indexAction()
     {
         return new ViewModel();
@@ -24,11 +34,18 @@ class IndexController extends AbstractActionController
     {
         $this->layout('layout/clean');
         
-        // Оставшееся время
-        $endDatetime = new DateTime("2012-10-27 18:00:00");
-        
         return new ViewModel(array(
-            'endDatetime' => $endDatetime,
+            'endDatetime' => $this->endDatetime,
         ));
+    }
+    
+    public function ajaxGetLeftTimeAction() {
+        $finalCoundown = new FinalCountdown($this->endDatetime);
+        
+        $data = array(
+            'leftTime' => $finalCoundown->getLeftTime(),
+        );
+        
+        return new JsonModel($data);
     }
 }

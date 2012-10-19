@@ -97,11 +97,14 @@ return array(
         'template_path_stack' => array(
             __DIR__ . '/../view',
         ),
+        'strategies' => array(
+            'ViewJsonStrategy',
+        ),
     ),
     'view_helpers' => array(
         'invokables'=> array(
             'side_left' => 'Application\View\Helper\SideLeft',
-            'final_countdown' => 'Application\View\Helper\FinalCountdown',
+            'final_countdown_block' => 'Application\View\Helper\FinalCountdownBlock',
         )
     ),
 );
