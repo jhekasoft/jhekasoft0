@@ -20,10 +20,10 @@
                     $('.finalcountdown_minutes').text(response.leftTime.minutes);
                     $('.finalcountdown_seconds').text(response.leftTime.seconds);
                     
-                    $('.finalcountdown_label_days').text(Functions.pluralWord(FinalCountdown.days, ['день', 'дня', 'дней']));
-                    $('.finalcountdown_label_hours').text(Functions.pluralWord(FinalCountdown.hours, ['час', 'часа', 'часов']));
-                    $('.finalcountdown_label_minutes').text(Functions.pluralWord(FinalCountdown.minutes, ['минута', 'минуты', 'минут']));
-                    $('.finalcountdown_label_seconds').text(Functions.pluralWord(FinalCountdown.seconds, ['секунда', 'секунды', 'секунд']));
+                    $('.finalcountdown_label_days').text(Functions.pluralWord(response.leftTime.days, ['день', 'дня', 'дней']));
+                    $('.finalcountdown_label_hours').text(Functions.pluralWord(response.leftTime.hours, ['час', 'часа', 'часов']));
+                    $('.finalcountdown_label_minutes').text(Functions.pluralWord(response.leftTime.minutes, ['минута', 'минуты', 'минут']));
+                    $('.finalcountdown_label_seconds').text(Functions.pluralWord(response.leftTime.seconds, ['секунда', 'секунды', 'секунд']));
                     
                     FinalCountdown.minutes = response.leftTime.minutes;
                     FinalCountdown.seconds = response.leftTime.seconds;

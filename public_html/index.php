@@ -1,4 +1,9 @@
 <?php
+// Set timezone
+if (function_exists('date_default_timezone_set')) {
+	date_default_timezone_set('Europe/Kiev');
+}
+
 /**
  * This makes our life easier when dealing with paths. Everything is relative
  * to the application root now.
