@@ -1,3 +1,7 @@
+<?php $this->headLink()
+            ->appendStylesheet($this->basePath() . '/css/coming-soon.css')
+?>
+
 <div class="coming_soon_block">
     <h1 class="coming_soon_title">Jhekasoft</h1>
     
@@ -16,7 +20,15 @@
         <p>Хочешь квестик написать?</p>
         <p><a href="http://instead.syscall.ru/2012/10/insteadoz1/">Здесь</a> тебе помогут, брат!</p>
         
-        <p>&nbsp;</p>
+        <div style="margin-top: 40px;">
+            <audio controls>
+              <source src="<?php echo $this->basePath(); ?>/upload/audio/bilet33/about_encodings.mp3">
+              <source src="<?php echo $this->basePath(); ?>/upload/audio/bilet33/about_encodings.ogg">
+              Тут должна была быть песенка. Но ваш браузер не смог её воспроизвести :(
+            </audio>
+        </div>
+        
+        <?php echo $this->likeBlock(); ?>
         
         <p class="coming_soon_copyright">&copy; <a href="https://www.google.com.ua/search?q=jhekasoft">Jhekasoft</a></p>
     </div>

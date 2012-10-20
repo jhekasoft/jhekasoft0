@@ -1,5 +1,5 @@
-<script>
-    
+<?php if(0) { ?><script><?php } ?>
+<?php $this->headScript()->captureStart() ?>    
     var FinalCountdown = {
         timer : null,
         minutes : 0,
@@ -66,7 +66,8 @@
     $(document).ready(function() {
         FinalCountdown.timer = setTimeout(FinalCountdown.updateLeftTime, 1000);
     });
-</script>
+<?php $this->headScript()->captureEnd() ?>
+<?php if(0) { ?></script><?php } ?>
 
 <div class="coming_soon_finalcountdown">
     <span class="finalcountdown_number finalcountdown_days"><?php echo $this->leftTime['days']; ?></span>

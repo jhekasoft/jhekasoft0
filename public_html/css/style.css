@@ -205,6 +205,18 @@ ul.nav_block_main_menu li a:hover {
     padding: 0 10px 0 10px;
 }
 
+.like_block {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 40px;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.like_block_item {
+    display: inline-block;
+}
+
 
 /* Sidebar Left
 -----------------------------------------------------------------------------*/
