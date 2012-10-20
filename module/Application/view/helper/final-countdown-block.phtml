@@ -20,6 +20,11 @@
                     $('.finalcountdown_minutes').text(response.leftTime.minutes);
                     $('.finalcountdown_seconds').text(response.leftTime.seconds);
                     
+                    $('.finalcountdown_label_days').text(Functions.pluralWord(FinalCountdown.days, ['день', 'дня', 'дней']));
+                    $('.finalcountdown_label_hours').text(Functions.pluralWord(FinalCountdown.hours, ['час', 'часа', 'часов']));
+                    $('.finalcountdown_label_minutes').text(Functions.pluralWord(FinalCountdown.minutes, ['минута', 'минуты', 'минут']));
+                    $('.finalcountdown_label_seconds').text(Functions.pluralWord(FinalCountdown.seconds, ['секунда', 'секунды', 'секунд']));
+                    
                     FinalCountdown.minutes = response.leftTime.minutes;
                     FinalCountdown.seconds = response.leftTime.seconds;
 
@@ -50,6 +55,9 @@
             } else {
                 $('.finalcountdown_minutes').text(FinalCountdown.minutes);
                 $('.finalcountdown_seconds').text(FinalCountdown.seconds);
+                
+                $('.finalcountdown_label_minutes').text(Functions.pluralWord(FinalCountdown.minutes, ['минута', 'минуты', 'минут']));
+                $('.finalcountdown_label_seconds').text(Functions.pluralWord(FinalCountdown.seconds, ['секунда', 'секунды', 'секунд']));
                 setTimeout(FinalCountdown.updateLeftTime, 1000);
             }
         }
@@ -61,8 +69,15 @@
 </script>
 
 <div class="coming_soon_finalcountdown">
-    <span class="finalcountdown_number finalcountdown_days"><?php echo $this->days; ?></span> дней&nbsp;
-    <span class="finalcountdown_number finalcountdown_hours"><?php echo $this->hours; ?></span> часов&nbsp;
-    <span class="finalcountdown_number finalcountdown_minutes"><?php echo $this->minutes; ?></span> минут&nbsp;
-    <span class="finalcountdown_number finalcountdown_seconds"><?php echo $this->seconds; ?></span> секунд
+    <span class="finalcountdown_number finalcountdown_days"><?php echo $this->leftTime['days']; ?></span>
+    <span class="finalcountdown_label finalcountdown_label_days"><?php echo $this->leftTime['daysLabel']; ?></span>&nbsp;
+    
+    <span class="finalcountdown_number finalcountdown_hours"><?php echo $this->leftTime['hours']; ?></span>
+    <span class="finalcountdown_label finalcountdown_label_hours"><?php echo $this->leftTime['hoursLabel']; ?></span>&nbsp;
+    
+    <span class="finalcountdown_number finalcountdown_minutes"><?php echo $this->leftTime['minutes']; ?></span>
+    <span class="finalcountdown_label finalcountdown_label_minutes"><?php echo $this->leftTime['minutesLabel']; ?></span>&nbsp;
+    
+    <span class="finalcountdown_number finalcountdown_seconds"><?php echo $this->leftTime['seconds']; ?></span>
+    <span class="finalcountdown_label finalcountdown_label_seconds"><?php echo $this->leftTime['secondsLabel']; ?></span>
 </div>

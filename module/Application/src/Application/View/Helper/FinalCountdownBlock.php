@@ -13,10 +13,7 @@ class FinalCountdownBlock extends AbstractHelper
         
         $finalCoundown = new FinalCountdown($endDatetime);
         
-        $view->days = $finalCoundown->days;
-        $view->hours = $finalCoundown->hours;
-        $view->minutes = $finalCoundown->minutes;
-        $view->seconds = $finalCoundown->seconds;
+        $view->leftTime = $finalCoundown->getLeftTime();
         
         return $view->render('helper/final-countdown-block');
     }
