@@ -36,10 +36,6 @@ class SoftwareTable extends AbstractTableGateway
 
         $row = $rowset->current();
 
-        if (!$row) {
-            throw new \Exception("Could not find row $id");
-        }
-
         return $row;
     }
 

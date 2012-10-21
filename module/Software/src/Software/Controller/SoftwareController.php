@@ -25,6 +25,10 @@ class SoftwareController extends AbstractActionController
             ));
         }
         $item = $this->getItemTable()->getItem($id);
+        
+        if (!$item) {
+            throw new \Exception("Could not find row $id");
+        }
 
         return array(
             'id' => $id,
