@@ -12,15 +12,17 @@ return array(
             'software' => array(
                 'type'    => 'segment',
                 'options' => array(
-                    'route'    => '/software[/:action][/:name]',
+                    'route'    => '/software[/:action][/:name][/page/:page]',
                     'constraints' => array(
                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                         'name'   => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'page'     => '[0-9]+',
                         //'id'     => '[0-9]+',
                     ),
                     'defaults' => array(
                         'controller' => 'Software\Controller\Software',
                         'action'     => 'index',
+                        'page'       => 1,
                     ),
                 ),
             ),

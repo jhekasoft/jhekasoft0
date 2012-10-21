@@ -12,7 +12,7 @@ $this->headTitle($title);
             <th>Artist</th>
             <th>Description</th>
         </tr>
-        <?php foreach ($items as $item) : ?>
+        <?php foreach ($this->paginator as $item) : ?>
         <tr>
             <td><a href="<?php echo $this->url('software', array('action'=>'show', 'name' => $item->name));?>"><?php echo $this->escapeHtml($item->title);?> <?php echo $this->escapeHtml($item->version);?></a></td>
             <td><?php echo $this->escapeHtml($item->artist);?></td>
@@ -20,6 +20,8 @@ $this->headTitle($title);
         </tr>
         <?php endforeach; ?>
         </table>
+        
+        <?php echo $this->paginationControl($this->paginator, 'Sliding', 'paginatorcontrol.phtml', array('route' => 'software')); ?>
     </div><!-- #content-->
 </div><!-- #container-->
 

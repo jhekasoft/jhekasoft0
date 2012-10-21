@@ -11,8 +11,14 @@ class SoftwareController extends AbstractActionController
     
     public function indexAction()
     {
+        $page = (string) $this->params()->fromRoute('page', 1);
+        
+        $paginator = $this->getTable()->getPaginator(array(
+            'page' => $page,
+        ));
+        
         return new ViewModel(array(
-            'items' => $this->getTable()->fetchAll(),
+            'paginator' => $paginator,
         ));
     }
 
