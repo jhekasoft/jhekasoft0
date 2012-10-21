@@ -89,13 +89,13 @@ h1 {
     border: 1px solid #ccc;
     border-radius: 10px;
     background: #EFEFEF; /* Old browsers */
-    background: -moz-linear-gradient(top,  #feffff 0%, #f7f7f7 35%, #ededed 100%);  FF3.6+ 
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#feffff), color-stop(35%,#f7f7f7), color-stop(100%,#ededed));  Chrome,Safari4+ 
-    background: -webkit-linear-gradient(top,  #feffff 0%,#f7f7f7 35%,#ededed 100%);  Chrome10+,Safari5.1+ 
-    background: -o-linear-gradient(top,  #feffff 0%,#f7f7f7 35%,#ededed 100%);  Opera 11.10+ 
-    background: -ms-linear-gradient(top,  #feffff 0%,#f7f7f7 35%,#ededed 100%);  IE10+ 
-    background: linear-gradient(to bottom,  #feffff 0%,#f7f7f7 35%,#ededed 100%);  W3C 
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#ededed',GradientType=0 );  IE6-9 
+    background: -moz-linear-gradient(top,  #feffff 0%, #f7f7f7 35%, #ededed 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#feffff), color-stop(35%,#f7f7f7), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #feffff 0%,#f7f7f7 35%,#ededed 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #feffff 0%,#f7f7f7 35%,#ededed 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #feffff 0%,#f7f7f7 35%,#ededed 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #feffff 0%,#f7f7f7 35%,#ededed 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
 }
 
 .nav_block_logo {
