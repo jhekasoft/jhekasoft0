@@ -40,6 +40,10 @@ class IndexController extends AbstractActionController
     }
     
     public function ajaxGetLeftTimeAction() {
+        if(!$this->getRequest()->isXmlHttpRequest()) {
+            throw new \Exception("Not ajax request");
+        }
+        
         $finalCoundown = new FinalCountdown($this->endDatetime);
         
         $data = array(
@@ -51,6 +55,10 @@ class IndexController extends AbstractActionController
     }
     
     public function ajaxGetStartLinkAction() {
+        if(!$this->getRequest()->isXmlHttpRequest()) {
+            throw new \Exception("Not ajax request");
+        }
+        
         $data = array(
             'link' => $this->url()->fromRoute('home'),
             'status' => 'ok',
