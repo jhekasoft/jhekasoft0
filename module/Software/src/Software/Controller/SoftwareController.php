@@ -18,20 +18,18 @@ class SoftwareController extends AbstractActionController
 
     public function showAction()
     {
-        $id = (int) $this->params()->fromRoute('id', 0);
-        if (!$id) {
-            return $this->redirect()->toRoute('software', array(
-                'action' => 'add'
-            ));
-        }
-        $item = $this->getItemTable()->getItem($id);
+        $name = (string) $this->params()->fromRoute('name', null);
+
+        $item = $this->getItemTable()->getItem($name, array(
+            'field' => 'name',
+        ));
         
         if (!$item) {
-            throw new \Exception("Could not find row $id");
+            throw new \Exception("Could not find row $name");
         }
 
         return array(
-            'id' => $id,
+            'id' => $item->id,
             'item' => $item,
         );
     }

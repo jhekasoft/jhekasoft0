@@ -26,12 +26,16 @@ class SoftwareTable extends AbstractTableGateway
         return $resultSet;
     }
 
-    public function getItem($id)
+    public function getItem($id, $options = array())
     {
-        $id  = (int) $id;
+        $fieldName = 'id';
+        
+        if(!empty($options['field'])) {
+            $fieldName = $options['field'];
+        }
 
         $rowset = $this->select(array(
-            'id' => $id,
+            $fieldName => $id,
         ));
 
         $row = $rowset->current();

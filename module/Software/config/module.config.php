@@ -12,10 +12,11 @@ return array(
             'software' => array(
                 'type'    => 'segment',
                 'options' => array(
-                    'route'    => '/software[/:action][/:id]',
+                    'route'    => '/software[/:action][/:name]',
                     'constraints' => array(
                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'id'     => '[0-9]+',
+                        'name'   => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        //'id'     => '[0-9]+',
                     ),
                     'defaults' => array(
                         'controller' => 'Software\Controller\Software',
