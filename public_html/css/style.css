@@ -72,6 +72,10 @@ h1 {
     line-height: 22px;
 }
 
+.clr {
+    clear: both;
+}
+
 
 /* Header
 -----------------------------------------------------------------------------*/
@@ -80,18 +84,18 @@ h1 {
 }
 
 .nav_block {
-    height: 48px;
+    min-height: 48px;
     margin-top: 10px;
     border: 1px solid #ccc;
     border-radius: 10px;
-    background: #F9FAFA; /* Old browsers */
-    background: -moz-linear-gradient(top,  #feffff 0%, #f7f7f7 35%, #ededed 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#feffff), color-stop(35%,#f7f7f7), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  #feffff 0%,#f7f7f7 35%,#ededed 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  #feffff 0%,#f7f7f7 35%,#ededed 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  #feffff 0%,#f7f7f7 35%,#ededed 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  #feffff 0%,#f7f7f7 35%,#ededed 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+    background: #EFEFEF; /* Old browsers */
+    background: -moz-linear-gradient(top,  #feffff 0%, #f7f7f7 35%, #ededed 100%);  FF3.6+ 
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#feffff), color-stop(35%,#f7f7f7), color-stop(100%,#ededed));  Chrome,Safari4+ 
+    background: -webkit-linear-gradient(top,  #feffff 0%,#f7f7f7 35%,#ededed 100%);  Chrome10+,Safari5.1+ 
+    background: -o-linear-gradient(top,  #feffff 0%,#f7f7f7 35%,#ededed 100%);  Opera 11.10+ 
+    background: -ms-linear-gradient(top,  #feffff 0%,#f7f7f7 35%,#ededed 100%);  IE10+ 
+    background: linear-gradient(to bottom,  #feffff 0%,#f7f7f7 35%,#ededed 100%);  W3C 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#ededed',GradientType=0 );  IE6-9 
 }
 
 .nav_block_logo {
@@ -121,8 +125,8 @@ a.nav_block_logo_link {
 }
 
 .nav_block_main_menu {
-    display: block;
-    float: left
+/*    display: block;
+    float: left*/
 }
 
 ul.nav_block_main_menu li {
@@ -238,12 +242,12 @@ ul.nav_block_main_menu li a:hover {
 }
 
 .footer_block {
-    height: 20px;
+    min-height: 20px;
     margin-bottom: 10px;
     padding: 14px 10px;
     border: 1px solid #ccc;
     border-radius: 10px;
-    background: #F9FAFA; /* Old browsers */
+    background: #EFEFEF; /* Old browsers */
     background: -moz-linear-gradient(top,  #feffff 0%, #f7f7f7 35%, #ededed 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#feffff), color-stop(35%,#f7f7f7), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
     background: -webkit-linear-gradient(top,  #feffff 0%,#f7f7f7 35%,#ededed 100%); /* Chrome10+,Safari5.1+ */

@@ -44,6 +44,16 @@ class IndexController extends AbstractActionController
         
         $data = array(
             'leftTime' => $finalCoundown->getLeftTime(),
+            'status' => 'ok',
+        );
+        
+        return new JsonModel($data);
+    }
+    
+    public function ajaxGetStartLinkAction() {
+        $data = array(
+            'link' => $this->url()->fromRoute('home'),
+            'status' => 'ok',
         );
         
         return new JsonModel($data);

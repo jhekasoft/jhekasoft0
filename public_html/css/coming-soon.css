@@ -26,7 +26,8 @@
     transition: color 0.5s ease;
 }
 
-.coming_soon_finalcountdown {
+.coming_soon_finalcountdown,
+.coming_soon_start {
     font-size: 24px;
     line-height: 30px;
     margin-bottom: 40px;
@@ -36,6 +37,11 @@
     font-size: 40px;
     line-height: 50px;
     font-weight: bold;
+}
+
+.coming_soon_start a.coming_soon_start_link {
+    font-size: 40px;
+    line-height: 50px;
 }
 
 .coming_soon_middle {

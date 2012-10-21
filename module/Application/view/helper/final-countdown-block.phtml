@@ -11,7 +11,7 @@
         getLeftTime : function() {
             clearTimeout(FinalCountdown.timer);
             
-            jQuery.getJSON("<?php echo $this->url('application/default', array('controller' => 'index', 'action' => 'ajax-get-left-time')) ?>", {
+            $.getJSON("<?php echo $this->url('application/default', array('controller' => 'index', 'action' => 'ajax-get-left-time')) ?>", {
             },
             function(response){
                 if(response.leftTime) {
@@ -28,10 +28,12 @@
                     FinalCountdown.minutes = response.leftTime.minutes;
                     FinalCountdown.seconds = response.leftTime.seconds;
 
-                    // Если время ещё не закончилось
-                    if(response.leftTime.days > 0 || response.leftTime.hours > 0
-                    || response.leftTime.minutes > 0 || response.leftTime.seconds > 0) {
+                    // Если время ещё не закончилось, то возобновляем отсчёт
+                    // Иначе показываем стартовый блок
+                    if(!response.leftTime.isEnd) {
                         FinalCountdown.timer = setTimeout(FinalCountdown.updateLeftTime, 1000);
+                    } else {
+                        FinalCountdown.showStartBlock();
                     }
                 }
             });
@@ -58,13 +60,25 @@
                 
                 $('.finalcountdown_label_minutes').text(Functions.pluralWord(FinalCountdown.minutes, ['минута', 'минуты', 'минут']));
                 $('.finalcountdown_label_seconds').text(Functions.pluralWord(FinalCountdown.seconds, ['секунда', 'секунды', 'секунд']));
-                setTimeout(FinalCountdown.updateLeftTime, 1000);
+                FinalCountdown.timer = setTimeout(FinalCountdown.updateLeftTime, 1000);
             }
+        },
+        
+        showStartBlock : function() {
+            $.getJSON("<?php echo $this->url('application/default', array('controller' => 'index', 'action' => 'ajax-get-start-link')) ?>", {
+            },
+            function(response) {
+                $('a.coming_soon_start_link').attr('href', response.link);
+                
+                $('.coming_soon_finalcountdown').fadeOut(1000, function() {
+                    $('.coming_soon_start').fadeIn(1000);
+                });
+            });
         }
     };
 
     $(document).ready(function() {
-        FinalCountdown.timer = setTimeout(FinalCountdown.updateLeftTime, 1000);
+        FinalCountdown.updateLeftTime();
     });
 <?php $this->headScript()->captureEnd() ?>
 <?php if(0) { ?></script><?php } ?>
@@ -81,4 +95,8 @@
     
     <span class="finalcountdown_number finalcountdown_seconds"><?php echo $this->leftTime['seconds']; ?></span>
     <span class="finalcountdown_label finalcountdown_label_seconds"><?php echo $this->leftTime['secondsLabel']; ?></span>
+</div>
+
+<div class="coming_soon_start" style="display: none;">
+    <a class="coming_soon_start_link" href="#">Старт &rarr;</a>
 </div>

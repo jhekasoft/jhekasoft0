@@ -16,6 +16,7 @@ class FinalCountdown
     public $secondsLabel;
     public $nowDatetime;
     public $endDatetime;
+    public $isEnd = false;
     protected $functions;
 
     public function __construct($endDatetime)
@@ -38,12 +39,16 @@ class FinalCountdown
             $this->hours = floor(($diffTime - $this->days * $daysRate) / $hoursRate);
             $this->minutes = floor(($diffTime - $this->hours * $hoursRate - $this->days * $daysRate) / $minutesRate);
             $this->seconds = floor(($diffTime - $this->minutes * $minutesRate - $this->hours * $hoursRate - $this->days * $daysRate));
-            
-            $this->daysLabel = $this->functions->pluralWord($this->days, array('день', 'дня', 'дней'));
-            $this->hoursLabel = $this->functions->pluralWord($this->hours, array('час', 'часа', 'часов'));
-            $this->minutesLabel = $this->functions->pluralWord($this->minutes, array('минута', 'минуты', 'минут'));
-            $this->secondsLabel = $this->functions->pluralWord($this->seconds, array('секунда', 'секунды', 'секунд'));
+        } else {
+            // Отсчёт завершён
+            $this->isEnd = true;
         }
+        
+        // Склонения числительных
+        $this->daysLabel = $this->functions->pluralWord($this->days, array('день', 'дня', 'дней'));
+        $this->hoursLabel = $this->functions->pluralWord($this->hours, array('час', 'часа', 'часов'));
+        $this->minutesLabel = $this->functions->pluralWord($this->minutes, array('минута', 'минуты', 'минут'));
+        $this->secondsLabel = $this->functions->pluralWord($this->seconds, array('секунда', 'секунды', 'секунд'));
     }
     
     public function getLeftTime()
@@ -57,6 +62,7 @@ class FinalCountdown
             'hoursLabel' => $this->hoursLabel,
             'minutesLabel' => $this->minutesLabel,
             'secondsLabel' => $this->secondsLabel,
+            'isEnd' => $this->isEnd,
         );
     }
 }
