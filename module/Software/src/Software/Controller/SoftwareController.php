@@ -12,7 +12,7 @@ class SoftwareController extends AbstractActionController
     public function indexAction()
     {
         return new ViewModel(array(
-            'items' => $this->getItemTable()->fetchAll(),
+            'items' => $this->getTable()->fetchAll(),
         ));
     }
 
@@ -20,7 +20,7 @@ class SoftwareController extends AbstractActionController
     {
         $name = (string) $this->params()->fromRoute('name', null);
 
-        $item = $this->getItemTable()->getItem($name, array(
+        $item = $this->getTable()->getItem($name, array(
             'field' => 'name',
         ));
         
@@ -34,7 +34,7 @@ class SoftwareController extends AbstractActionController
         );
     }
     
-    public function getItemTable()
+    public function getTable()
     {
         if (!$this->itemTable) {
             $sm = $this->getServiceLocator();

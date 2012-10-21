@@ -20,9 +20,22 @@ class SoftwareTable extends AbstractTableGateway
         $this->initialize();
     }
 
-    public function fetchAll()
+    public function fetchAll($options = array())
     {
-        $resultSet = $this->select();
+        $where = array();
+        
+        // Условие отображаемых строк
+        // Варианты: yes, no, all. По умолчанию yes
+        // Если all, то не добавляем условие
+        $show = 'yes';
+        if(isset($options['show'])) {
+            $show = $options['show'];
+        }
+        if($show != 'all') {
+            $where[] = "`show` = '{$show}'";
+        }
+        
+        $resultSet = $this->select($where);
         return $resultSet;
     }
 
@@ -43,33 +56,33 @@ class SoftwareTable extends AbstractTableGateway
         return $row;
     }
 
-    public function saveItem(Software $item)
-    {
-        $data = array(
-            'artist' => $item->artist,
-            'title'  => $item->title,
-        );
-
-        $id = (int) $item->id;
-
-        if ($id == 0) {
-            $this->insert($data);
-        } elseif ($this->getItem($id)) {
-            $this->update(
-                $data,
-                array(
-                    'id' => $id,
-                )
-            );
-        } else {
-            throw new \Exception('Form id does not exist');
-        }
-    }
-
-    public function deleteItem($id)
-    {
-        $this->delete(array(
-            'id' => $id,
-        ));
-    }
+//    public function saveItem(Software $item)
+//    {
+//        $data = array(
+//            'artist' => $item->artist,
+//            'title'  => $item->title,
+//        );
+//
+//        $id = (int) $item->id;
+//
+//        if ($id == 0) {
+//            $this->insert($data);
+//        } elseif ($this->getItem($id)) {
+//            $this->update(
+//                $data,
+//                array(
+//                    'id' => $id,
+//                )
+//            );
+//        } else {
+//            throw new \Exception('Form id does not exist');
+//        }
+//    }
+//
+//    public function deleteItem($id)
+//    {
+//        $this->delete(array(
+//            'id' => $id,
+//        ));
+//    }
 }
