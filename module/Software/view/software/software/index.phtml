@@ -12,11 +12,11 @@ $this->headTitle($title);
             <th>Artist</th>
             <th>Description</th>
         </tr>
-        <?php foreach ($softwares as $software) : ?>
+        <?php foreach ($items as $item) : ?>
         <tr>
-            <td><a href="<?php echo $this->url('software', array('action'=>'show', 'id' => $software->id));?>"><?php echo $this->escapeHtml($software->title);?> <?php echo $this->escapeHtml($software->version);?></a></td>
-            <td><?php echo $this->escapeHtml($software->artist);?></td>
-            <td><?php echo $software->short_text;?></td>
+            <td><a href="<?php echo $this->url('software', array('action'=>'show', 'id' => $item->id));?>"><?php echo $this->escapeHtml($item->title);?> <?php echo $this->escapeHtml($item->version);?></a></td>
+            <td><?php echo $this->escapeHtml($item->artist);?></td>
+            <td><?php echo $item->short_text;?></td>
         </tr>
         <?php endforeach; ?>
         </table>

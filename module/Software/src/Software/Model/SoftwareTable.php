@@ -26,7 +26,7 @@ class SoftwareTable extends AbstractTableGateway
         return $resultSet;
     }
 
-    public function getSoftware($id)
+    public function getItem($id)
     {
         $id  = (int) $id;
 
@@ -43,18 +43,18 @@ class SoftwareTable extends AbstractTableGateway
         return $row;
     }
 
-    public function saveSoftware(Software $software)
+    public function saveItem(Software $item)
     {
         $data = array(
-            'artist' => $software->artist,
-            'title'  => $software->title,
+            'artist' => $item->artist,
+            'title'  => $item->title,
         );
 
-        $id = (int) $software->id;
+        $id = (int) $item->id;
 
         if ($id == 0) {
             $this->insert($data);
-        } elseif ($this->getSoftware($id)) {
+        } elseif ($this->getItem($id)) {
             $this->update(
                 $data,
                 array(
@@ -66,7 +66,7 @@ class SoftwareTable extends AbstractTableGateway
         }
     }
 
-    public function deleteSoftware($id)
+    public function deleteItem($id)
     {
         $this->delete(array(
             'id' => $id,

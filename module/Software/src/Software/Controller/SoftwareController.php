@@ -7,12 +7,12 @@ use Zend\View\Model\ViewModel;
 
 class SoftwareController extends AbstractActionController
 {
-    protected $softwareTable;
+    protected $itemTable;
     
     public function indexAction()
     {
         return new ViewModel(array(
-            'softwares' => $this->getSoftwareTable()->fetchAll(),
+            'items' => $this->getItemTable()->fetchAll(),
         ));
     }
 
@@ -24,20 +24,20 @@ class SoftwareController extends AbstractActionController
                 'action' => 'add'
             ));
         }
-        $software = $this->getSoftwareTable()->getSoftware($id);
+        $item = $this->getItemTable()->getItem($id);
 
         return array(
             'id' => $id,
-            'software' => $software,
+            'item' => $item,
         );
     }
     
-    public function getSoftwareTable()
+    public function getItemTable()
     {
-        if (!$this->softwareTable) {
+        if (!$this->itemTable) {
             $sm = $this->getServiceLocator();
-            $this->softwareTable = $sm->get('Software\Model\SoftwareTable');
+            $this->itemTable = $sm->get('Software\Model\SoftwareTable');
         }
-        return $this->softwareTable;
+        return $this->itemTable;
     }
 }
