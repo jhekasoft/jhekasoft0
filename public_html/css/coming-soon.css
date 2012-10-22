@@ -54,3 +54,78 @@
 /*    font-size: 14px;
     line-height: 14px;*/
 }
+
+.coming_soon_finalcountdown .finalcountdown_about {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s ease;
+    -moz-transition: opacity 0.5s ease;
+    -ms-transition: opacity 0.5s ease;
+    -o-transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
+}
+
+.coming_soon_finalcountdown:hover .finalcountdown_about {
+    opacity: 1;
+}
+
+.coming_soon_finalcountdown .finalcountdown_about_text_block {
+    width: 560px;
+    padding: 10px;
+    margin: 0 auto;
+    margin-top: -45px;
+}
+
+.finalcountdown_email {
+    position: fixed;
+    width: 100%;
+    margin-top: -26px;
+    display: none;
+}
+
+.finalcountdown_email_popup {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.popup_block {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    -webkit-box-shadow:  2px 2px 2px 2px #ccc;
+    box-shadow:  2px 2px 2px 2px #ccc;
+    z-index: 1000;
+}
+
+.email_send_holder {
+    font-weight: bold;
+}
+
+.popup_head {
+    background: #EEEEEE;
+    margin-bottom: 20px;
+    cursor: move;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.popup_body {
+    padding: 0 6px;
+}
+
+.popup_head_close {
+    position: absolute;
+    top: 2px;
+    right: 4px;
+}
+
+.popup_head_close a {
+    text-decoration: none;
+    color: #ccc;
+}
+
+.popup_form_error {
+    color: #ff3333;
+    display: block;
+}

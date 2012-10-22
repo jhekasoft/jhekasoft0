@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Окт 22 2012 г., 00:23
+-- Время создания: Окт 23 2012 г., 00:51
 -- Версия сервера: 5.5.28-log
 -- Версия PHP: 5.4.7
 
@@ -19,6 +19,21 @@ SET time_zone = "+00:00";
 --
 -- База данных: `jhekasoft`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `jh_final_countdown_emails`
+--
+
+CREATE TABLE IF NOT EXISTS `jh_final_countdown_emails` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `datetime` datetime NOT NULL,
+  `ip` varchar(255) NOT NULL,
+  `server_info` longtext NOT NULL,
+  `email` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 

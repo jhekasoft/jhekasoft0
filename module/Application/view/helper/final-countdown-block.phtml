@@ -74,16 +74,46 @@
                     $('.coming_soon_start').fadeIn(1000);
                 });
             });
+        },
+        
+        showEmailPopup : function() {
+            $('.finalcountdown_email').slideDown();
+        },
+        
+        hideEmailPopup : function() {
+            $('.finalcountdown_email').fadeOut();
+        },
+        
+        addEmail : function() {
+            $('.popup_form_error_email').hide();
+            
+            if(Functions.isValidEmail($('input[name=email]').val())) {
+                $.getJSON("<?php echo $this->url('application/default', array('controller' => 'index', 'action' => 'ajax-save-final-countdown-email')) ?>", {
+                    email : $('input[name=email]').val()
+                },
+                function(response) {
+                    if('ok' == response.status) {
+                        $('.email_form').hide();
+
+                        $('.email_send_holder').text(response.email);
+                        $('.email_sent').show();
+                    }
+                });
+            } else {
+                $('.popup_form_error_email').show();
+            }
         }
     };
 
     $(document).ready(function() {
         FinalCountdown.updateLeftTime();
+        
+        $(".finalcountdown_email_popup").draggable({handle: '.finalcountdown_email_popup_head'});
     });
 <?php $this->headScript()->captureEnd() ?>
 <?php if(0) { ?></script><?php } ?>
 
-<div class="coming_soon_finalcountdown">
+<div class="coming_soon_finalcountdown" onclick="FinalCountdown.showEmailPopup();">
     <span class="finalcountdown_number finalcountdown_days"><?php echo $this->leftTime['days']; ?></span>
     <span class="finalcountdown_label finalcountdown_label_days"><?php echo $this->leftTime['daysLabel']; ?></span>&nbsp;
     
@@ -95,6 +125,48 @@
     
     <span class="finalcountdown_number finalcountdown_seconds"><?php echo $this->leftTime['seconds']; ?></span>
     <span class="finalcountdown_label finalcountdown_label_seconds"><?php echo $this->leftTime['secondsLabel']; ?></span>
+    
+    <div class="finalcountdown_about">
+        <div class="finalcountdown_about_text_block popup_block">
+            <a class="no_href" href="javascript: void(0);" onclick="FinalCountdown.showEmailPopup();">Как не пропустить грандиозное открытие?</a>
+        </div>
+    </div>
+</div>
+
+<div class="finalcountdown_email">
+    <div class="finalcountdown_email_popup popup_block">
+        <div class="finalcountdown_email_popup_head popup_head">
+            <h2>Оставьте свой Email</h2>
+            <span class="popup_head_close"><a href="javascript: void(0);" onclick="FinalCountdown.hideEmailPopup();"><img src="<?php echo $this->basePath(); ?>/images/close.png" alt="x"></a></span>
+        </div>
+        
+        <div class="popup_body">
+            <form class="email_form" action="" method="post">
+                <p>
+                    Вам придёт напоминание за час до открытия сайта.
+                    Спамить не буду, только одно сообщение :)
+                </p>
+                <p>
+                    <input type="text" name="email" placeholder="Ваш Email">
+                    <span class="popup_form_error popup_form_error_email" style="display: none;">Введите корректный Email</span>
+                </p>
+                <p>
+                    <input type="submit" value="Напомни мне" onclick="FinalCountdown.addEmail(); return false;">
+                    <input type="submit" value="Отстань" onclick="FinalCountdown.hideEmailPopup(); return false;">
+                </p>
+            </form>
+
+            <form class="email_sent" action="" method="post" style="display: none;">
+                <p>
+                    Спасибо за проявленный интерес!
+                    За час до открытия сайта на ваш ящик <span class="email_send_holder"></span> придёт напоминание.
+                </p>
+                <p>
+                    <input type="submit" value="И тебе спасибки" onclick="FinalCountdown.hideEmailPopup(); return false;">
+                </p>
+            </form>
+        </div>
+    </div>
 </div>
 
 <div class="coming_soon_start" style="display: none;">

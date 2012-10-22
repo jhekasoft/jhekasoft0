@@ -49,6 +49,13 @@ a {
 a:hover {
     text-decoration: none;
 }
+a.no_href {
+    text-decoration: none;
+    border-bottom: 1px dashed #427F42;
+}
+a.no_href:hover {
+    border-bottom: none;
+}
 p {
     margin: 0 0 18px
 }

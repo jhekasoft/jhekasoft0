@@ -1,6 +1,7 @@
 <?php
 
 namespace Software;
+
 use Software\Model\SoftwareTable;
 
 
