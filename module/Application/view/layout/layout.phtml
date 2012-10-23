@@ -17,15 +17,15 @@
                                   ->prependFile('//html5shiv.googlecode.com/svn/trunk/html5.js', 'text/javascript', array('conditional' => 'IE',))
                                   ->prependFile('//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js') ?>
 
-    <script>
+    <?php /* ?><script>
         $(window).load(function() {
-            $('#sideLeft').css('height', $('#content').outerHeight() + 20)
+            $('#sideLeft').css('height', $('#content').outerHeight())
         });
         
         $(window).resize(function() {
-            $('#sideLeft').css('height', $('#content').outerHeight() + 20)
+            $('#sideLeft').css('height', $('#content').outerHeight())
         });
-    </script>
+    </script><?php */ ?>
     
     <script>
         $(document).ready(function() {
@@ -96,7 +96,7 @@
         <footer id="footer">
             <div class="footer_block">
                 <?php $dateTime = new DateTime('now'); ?>
-                &copy; 2007-<?php echo $dateTime->format('Y'); ?> Jhekasoft
+                &copy; 2007-<?php echo $dateTime->format('Y'); ?> <a href="#">Jhekasoft</a>
             </div>
         </footer><!-- #footer -->
 

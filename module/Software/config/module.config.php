@@ -34,4 +34,9 @@ return array(
             'software' => __DIR__ . '/../view',
         ),
     ),
+    'view_helpers' => array(
+        'invokables'=> array(
+            'side_left_software' => 'Software\View\Helper\SideLeftSoftware',
+        )
+    ),
 );

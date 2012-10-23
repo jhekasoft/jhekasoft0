@@ -1,0 +1,14 @@
+<div style="margin-bottom: 10px;">
+    <?php if (!empty($this->image)) { ?>
+        <a href="<?php echo $this->url('software', array('action' => 'show', 'name' => $this->name)); ?>">
+            <img src="<?php echo $this->basePath(); ?>/upload/software/images/p_<?php echo $this->image; ?>" alt="" style="float: left; width: 140px; margin-right: 10px; margin-bottom: 10px;">
+        </a>
+    <?php } ?>
+    <div>
+        <a href="<?php echo $this->url('software', array('action' => 'show', 'name' => $this->name)); ?>"><?php echo $this->escapeHtml($this->title); ?> <?php echo $this->escapeHtml($this->version); ?></a>
+    </div>
+    <strong>Автор</strong>: <?php echo $this->escapeHtml($this->author); ?>
+    <?php echo $this->short_text; ?>
+    
+    <div class="clr"></div>
+</div>

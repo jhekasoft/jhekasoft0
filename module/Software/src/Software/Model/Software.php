@@ -11,6 +11,8 @@ class Software
     public $author;
     public $short_text;
     public $text;
+    public $image;
+    public $file;
 
     public function exchangeArray($data)
     {
@@ -21,5 +23,7 @@ class Software
         $this->author      = (isset($data['author'])) ? $data['author'] : null;
         $this->short_text  = (isset($data['short_text'])) ? $data['short_text'] : null;
         $this->text        = (isset($data['text'])) ? $data['text'] : null;
+        $this->image       = (isset($data['image'])) ? $data['image'] : null;
+        $this->file        = (isset($data['file'])) ? $data['file'] : null;
     }
 }
