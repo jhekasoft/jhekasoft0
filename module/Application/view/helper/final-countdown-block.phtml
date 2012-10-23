@@ -108,7 +108,10 @@
     $(document).ready(function() {
         FinalCountdown.updateLeftTime();
         
-        $(".finalcountdown_email_popup").draggable({handle: '.finalcountdown_email_popup_head'});
+        $(".finalcountdown_email_popup").draggable({
+            handle : '.finalcountdown_email_popup_head',
+            'containment' : 'document'
+        });
     });
 <?php $this->headScript()->captureEnd() ?>
 <?php if(0) { ?></script><?php } ?>
