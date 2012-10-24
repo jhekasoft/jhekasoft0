@@ -10,19 +10,42 @@ return array(
     'router' => array(
         'routes' => array(
             'software' => array(
-                'type'    => 'segment',
+                'type'    => 'Literal',
                 'options' => array(
-                    'route'    => '/software[/:action][/:name][/page/:page]',
-                    'constraints' => array(
-                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'name'   => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'page'     => '[0-9]+',
-                        //'id'     => '[0-9]+',
-                    ),
+                    'route'    => '/software',
                     'defaults' => array(
                         'controller' => 'Software\Controller\Software',
                         'action'     => 'index',
-                        'page'       => 1,
+                    ),
+                ),
+                'may_terminate' => true,
+                'child_routes' => array(
+                    'default' => array(
+                        'type'    => 'segment',
+                        'options' => array(
+                            'route'    => '[/type/:type][/platform/:platform][/author/:author][/page/:page]',
+                            'constraints' => array(
+                                'type'       => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'platform'   => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'author'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'page'       => '[0-9]+',
+                            ),
+                            'defaults' => array(
+                                'page'       => 1,
+                            ),
+                        ),
+                    ),
+                    'show' => array(
+                        'type'    => 'segment',
+                        'options' => array(
+                            'route'    => '/show[/:name]',
+                            'constraints' => array(
+                                'name'       => '[a-zA-Z][a-zA-Z0-9_-]*',
+                            ),
+                            'defaults' => array(
+                                'action'     => 'show',
+                            ),
+                        ),
                     ),
                 ),
             ),

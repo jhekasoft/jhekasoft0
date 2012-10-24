@@ -63,10 +63,10 @@
                     </div>
                     <ul class="nav_block_main_menu">
                         <li>
-                            <a href="<?php echo $this->url('software'); ?>"><?php echo $this->translate('Software'); ?></a>
+                            <a href="<?php echo $this->url('software/default'); ?>"><?php echo $this->translate('Software'); ?></a>
                         </li>
                         <li>
-                            <a href="#"><?php echo $this->translate('Games'); ?></a>
+                            <a href="<?php echo $this->url('software/default', array('type' => 'game')); ?>"><?php echo $this->translate('Games'); ?></a>
                         </li>
                         <li>
                             <a href="#"><?php echo $this->translate('Video'); ?></a>

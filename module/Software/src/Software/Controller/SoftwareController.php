@@ -11,9 +11,15 @@ class SoftwareController extends AbstractActionController
     
     public function indexAction()
     {
-        $page = (string) $this->params()->fromRoute('page', 1);
+        $type = $this->params()->fromRoute('type', null);
+        $platform = $this->params()->fromRoute('platform', null);
+        $author = $this->params()->fromRoute('author', null);
+        $page = $this->params()->fromRoute('page', 1);
         
         $paginator = $this->getTable()->getPaginator(array(
+            'type' => $type,
+            'platform' => $platform,
+            'author' => $author,
             'page' => $page,
         ));
         

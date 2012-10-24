@@ -30,11 +30,71 @@ class SoftwareTable extends AbstractTableGateway
         // Варианты: yes, no, all. По умолчанию yes
         // Если all, то не добавляем условие
         $show = 'yes';
-        if(isset($options['show'])) {
+        if(!empty($options['show'])) {
             $show = $options['show'];
         }
         if($show != 'all') {
             $where[] = "`show` = '{$show}'";
+        }
+        
+        // Тип приложения
+        $type = 'all';
+        if(!empty($options['type'])) {
+            switch($options['type']) {
+                case 'game':
+                    $type = 'game';
+                    break;
+                case 'software':
+                default:
+                    $type = 'software';
+                    break;
+            }
+        }
+        if($type != 'all') {
+            $where[] = "`type` = '{$type}'";
+        }
+        
+        // Платформа
+        $platform = 'all';
+        if(!empty($options['platform'])) {
+            switch($options['platform']) {
+                case 'linux':
+                    $platform = 'linux';
+                    break;
+                case 'windows':
+                    $platform = 'windows';
+                    break;
+                case 'android':
+                    $platform = 'android';
+                    break;
+                case 'www':
+                default:
+                    $platform = 'www';
+                    break;
+            }
+        }
+        if($platform != 'all') {
+            $where[] = "`platform_{$platform}` = '1'";
+        }
+        
+        // Автор
+        $authorId = 'all';
+        if(!empty($options['author'])) {
+            switch($options['author']) {
+                case 'sanekokokok':
+                    $authorId = 2;
+                    break;
+                case 'yorik':
+                    $authorId = 3;
+                    break;
+                case 'jhekasoft':
+                default:
+                    $authorId = 1;
+                    break;
+            }
+        }
+        if($authorId != 'all') {
+            $where[] = "`author_id` = '{$authorId}'";
         }
         
         $resultSet = $this->select($where);

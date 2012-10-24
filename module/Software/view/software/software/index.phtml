@@ -8,10 +8,14 @@ $this->headTitle($title);
         <h1><?php echo $this->escapeHtml($title); ?></h1>
         
         <div>
-            <?php echo $this->partialLoop('software/software/index-item.phtml', $this->paginator) ?>
+            <?php if (count($this->paginator) > 0) { ?>
+                <?php echo $this->partialLoop('software/software/index-item.phtml', $this->paginator) ?>
+            <?php } else { ?>
+                <p>Извините, автор ещё не написал таких программ.</p>
+            <?php } ?>
         </div>
         
-        <?php echo $this->paginationControl($this->paginator, 'Sliding', 'pagination-control.phtml', array('route' => 'software')); ?>
+        <?php echo $this->paginationControl($this->paginator, 'Sliding', 'pagination-control.phtml', array('route' => 'software/default')); ?>
     </div><!-- #content-->
 </div><!-- #container-->
 

@@ -2,7 +2,7 @@
     <div class="pagination_control">
         <!-- Previous page link -->
         <?php if (isset($this->previous)) { ?>
-            <a href="<?php echo $this->url($this->route, array('page' => $this->previous)); ?>">&larr;</a>
+            <a href="<?php echo $this->url($this->route, array('page' => $this->previous), array(), true); ?>">&larr;</a>
         <?php } else { ?>
             <span class="disabled">&larr;</span>
         <?php }; ?>
@@ -10,7 +10,7 @@
         <!-- Numbered page links -->
         <?php foreach ($this->pagesInRange as $page) { ?>
             <?php if ($page != $this->current) { ?>
-                <a href="<?php echo $this->url($this->route, array('page' => $page)); ?>"><?php echo $page; ?></a>
+                <a href="<?php echo $this->url($this->route, array('page' => $page), array(), true); ?>"><?php echo $page; ?></a>
             <?php } else { ?>
                 <?php echo $page; ?>
             <?php }; ?>
@@ -18,7 +18,7 @@
 
         <!-- Next page link -->
         <?php if (isset($this->next)) { ?>
-            <a href="<?php echo $this->url($this->route, array('page' => $this->next)); ?>">&rarr;</a>
+            <a href="<?php echo $this->url($this->route, array('page' => $this->next), array(), true); ?>">&rarr;</a>
         <?php } else { ?>
             <span class="disabled">&rarr;</span>
         <?php }; ?>
