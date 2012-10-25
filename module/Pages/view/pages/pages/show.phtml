@@ -1,0 +1,22 @@
+<?php
+$title = $item->title . ' ' . $item->version;
+$this->headTitle($title . ' - ' . $this->translate('Pages'));
+?>
+
+<div id="container">
+    <div id="content">
+        <h1><?php echo $this->escapeHtml($title); ?></h1>
+
+        <div>
+            <?php echo $item->text; ?>
+        </div>
+
+        <?php echo $this->shareBlock(); ?>
+        
+        <div style="margin-top: 40px;">
+            <?php echo $this->commentsBlock(); ?>
+        </div>
+    </div><!-- #content-->
+</div><!-- #container-->
+
+<?php echo $this->sideLeft(); ?>

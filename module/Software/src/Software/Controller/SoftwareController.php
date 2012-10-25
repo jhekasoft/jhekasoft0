@@ -53,6 +53,8 @@ class SoftwareController extends AbstractActionController
     {
         $params = $this->getRequest()->getPost();
         
+        $routeParams = array();
+        
         if(!empty($params->filter_type)) {
             $routeParams['type'] = $params->filter_type;
         }

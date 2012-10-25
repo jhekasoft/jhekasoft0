@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Окт 24 2012 г., 23:58
+-- Время создания: Окт 26 2012 г., 02:22
 -- Версия сервера: 5.5.28-log
 -- Версия PHP: 5.4.7
 
@@ -53,7 +53,15 @@ CREATE TABLE IF NOT EXISTS `jh_pages` (
   `show` enum('no','yes') NOT NULL DEFAULT 'no',
   PRIMARY KEY (`id`),
   KEY `name` (`name`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Дамп данных таблицы `jh_pages`
+--
+
+INSERT INTO `jh_pages` (`id`, `name`, `par_id`, `datetime`, `title`, `author`, `text`, `image`, `show`) VALUES
+(1, 'about', 0, '2012-10-26 00:00:00', 'О сайте', '', 'О сайте<br />\r\nО сайте', '', 'yes'),
+(2, 'about-history', 1, '2012-10-26 00:00:00', 'История', '', 'История', '', 'yes');
 
 -- --------------------------------------------------------
 
