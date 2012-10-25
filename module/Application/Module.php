@@ -19,7 +19,7 @@ class Module
     {
         $e->getApplication()->getServiceManager()->get('translator');
         $eventManager        = $e->getApplication()->getEventManager();
-        
+                
         // Для другого layout'а на ошибках
         $eventManager->attach('dispatch.error', function($ev) use ($e) {
             $layout = new \Zend\View\Model\ViewModel();

@@ -23,6 +23,7 @@ class IndexController extends AbstractActionController
     
     public function __construct()
     {
+        //parent::__construct();
         $this->endDatetime = new DateTime("2012-10-27 18:00:00");
     }
     

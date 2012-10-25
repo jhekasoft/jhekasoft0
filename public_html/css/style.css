@@ -261,6 +261,10 @@ ul.nav_block_main_menu li a:hover {
     margin-bottom: 6px;
 }
 
+.filter_form_element_select {
+    width: 230px;
+}
+
 .filter_form input[type=submit] {
     padding: 6px;
     border: 1px solid #CCCCCC;
@@ -288,6 +292,17 @@ ul.nav_block_main_menu li a:hover {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 }
 
+.filter_form input[type=submit]:active {
+    border: 1px solid #427F42;
+    -webkit-box-shadow: 0 0 3px #ffffff inset, 0 1px 1px rgba(0,0,0,0.1);
+    -moz-box-shadow   : 0 0 3px #ffffff inset, 0 1px 1px rgba(0,0,0,0.1);
+    box-shadow        : 0 0 3px #ffffff inset, 0 1px 1px rgba(0,0,0,0.1);
+}
+
+/*.filter_form_submit {
+    float: right;
+}*/
+
 /*.filter_form input.filter_form_submit[type=submit] {
     border: 1px solid #74A574;
     background-color: #94D094;
@@ -313,7 +328,7 @@ a.filter_form_cancel_link {
     color: #000;
     display: inline-block;
     padding: 6px;
-    float: left;
+    float: right;
 }
 
 

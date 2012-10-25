@@ -19,4 +19,8 @@ $this->headTitle($title);
     </div><!-- #content-->
 </div><!-- #container-->
 
-<?php echo $this->sideLeftSoftware(); ?>
+<?php echo $this->sideLeftSoftware(array(
+    'filter_type' => $this->type,
+    'filter_platform' => $this->platform,
+    'filter_author' => $this->author,
+)); ?>

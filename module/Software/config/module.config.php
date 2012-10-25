@@ -47,6 +47,15 @@ return array(
                             ),
                         ),
                     ),
+                    'filter' => array(
+                        'type'    => 'Literal',
+                        'options' => array(
+                            'route'    => '/filter',
+                            'defaults' => array(
+                                'action'   => 'filter',
+                            ),
+                        ),
+                    ),
                 ),
             ),
         ),

@@ -25,6 +25,9 @@ class SoftwareController extends AbstractActionController
         
         return new ViewModel(array(
             'paginator' => $paginator,
+            'type' => $type,
+            'platform' => $platform,
+            'author' => $author,
         ));
     }
 
@@ -44,6 +47,25 @@ class SoftwareController extends AbstractActionController
             'id' => $item->id,
             'item' => $item,
         );
+    }
+    
+    public function filterAction()
+    {
+        $params = $this->getRequest()->getPost();
+        
+        if(!empty($params->filter_type)) {
+            $routeParams['type'] = $params->filter_type;
+        }
+        
+        if(!empty($params->filter_platform)) {
+            $routeParams['platform'] = $params->filter_platform;
+        }
+        
+        if(!empty($params->filter_author)) {
+            $routeParams['author'] = $params->filter_author;
+        }
+        
+        return $this->redirect()->toRoute('software/default', $routeParams);
     }
     
     public function getTable()

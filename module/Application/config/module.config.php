@@ -107,6 +107,8 @@ return array(
             'side_left' => 'Application\View\Helper\SideLeft',
             'final_countdown_block' => 'Application\View\Helper\FinalCountdownBlock',
             'like_block' => 'Application\View\Helper\LikeBlock',
+            'share_block' => 'Application\View\Helper\ShareBlock',
+            'comments_block' => 'Application\View\Helper\CommentsBlock',
         )
     ),
 );
