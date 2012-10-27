@@ -71,7 +71,7 @@ class Software
                 $this->authorTitle = 'Александр Дадыка';
                 break;
             case 3:
-                $this->authorTitle = 'Исаев Юрий';
+                $this->authorTitle = 'Юрий Исаев';
                 break;
             case 1:
             default:

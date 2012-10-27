@@ -1,9 +1,11 @@
-<div style="margin-bottom: 10px;">
-    <?php if (!empty($this->image)) { ?>
-        <a href="<?php echo $this->url('software/show', array('action' => 'show', 'name' => $this->name)); ?>">
-            <img src="<?php echo $this->basePath(); ?>/upload/software/images/p_<?php echo $this->image; ?>" alt="" style="float: left; width: 140px; margin-right: 10px; margin-bottom: 10px;">
-        </a>
-    <?php } ?>
+<div style="margin-bottom: 20px;">
+    <div style="float: left; width: 140px; min-height: 100px; margin-right: 10px;">
+        <?php if (!empty($this->image)) { ?>
+            <a href="<?php echo $this->url('software/show', array('action' => 'show', 'name' => $this->name)); ?>">
+                <img src="<?php echo $this->basePath(); ?>/files/software/images/p_<?php echo $this->image; ?>" alt="" style="max-width: 140px;">
+            </a>
+        <?php } ?>
+    </div>
     <div>
         <a href="<?php echo $this->url('software/show', array('action' => 'show', 'name' => $this->name)); ?>"><?php echo $this->escapeHtml($this->title); ?> <?php echo $this->escapeHtml($this->version); ?></a>
     </div>

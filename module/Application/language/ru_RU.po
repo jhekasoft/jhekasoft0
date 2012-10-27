@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Jhekasoft\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-10-18 22:45+0300\n"
-"PO-Revision-Date: 2012-10-18 22:45+0300\n"
+"PO-Revision-Date: 2012-10-27 14:02+0300\n"
 "Last-Translator: Yevgeniy Yefremov <jheka@mail.ru>\n"
 "Language-Team:  <jheka@mail.ru>\n"
 "Language: ru_RU\n"
@@ -43,7 +43,7 @@ msgstr "Блог"
 
 #: Application/view/layout/layout.phtml:55
 msgid "About"
-msgstr "Об авторе"
+msgstr "О сайте"
 
 #: Application/view/application/index/coming-soon.phtml:5
 msgid "Coming soon..."

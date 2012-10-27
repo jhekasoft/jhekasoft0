@@ -69,13 +69,13 @@
                             <a href="<?php echo $this->url('software/default', array('type' => 'game')); ?>"><?php echo $this->translate('Games'); ?></a>
                         </li>
                         <li>
-                            <a href="#"><?php echo $this->translate('Video'); ?></a>
+                            <a href="<?php echo $this->url('pages/show', array('name' => 'video')); ?>"><?php echo $this->translate('Video'); ?></a>
                         </li>
                         <li>
-                            <a href="#"><?php echo $this->translate('Sound'); ?></a>
+                            <a href="<?php echo $this->url('pages/show', array('name' => 'sound')); ?>"><?php echo $this->translate('Sound'); ?></a>
                         </li>
                         <li>
-                            <a href="#"><?php echo $this->translate('Blog'); ?></a>
+                            <a href="<?php echo $this->url('pages/show', array('name' => 'blog')); ?>"><?php echo $this->translate('Blog'); ?></a>
                         </li>
                         <li>
                             <a href="<?php echo $this->url('pages/show', array('name' => 'about')); ?>"><?php echo $this->translate('About'); ?></a>
@@ -96,7 +96,7 @@
         <footer id="footer">
             <div class="footer_block">
                 <?php $dateTime = new DateTime('now'); ?>
-                &copy; 2007-<?php echo $dateTime->format('Y'); ?> <a href="#">Jhekasoft</a>
+                &copy; 2007-<?php echo $dateTime->format('Y'); ?> <a href="<?php echo $this->url('pages/show', array('name' => 'about')); ?>">Jhekasoft</a>
             </div>
         </footer><!-- #footer -->
 

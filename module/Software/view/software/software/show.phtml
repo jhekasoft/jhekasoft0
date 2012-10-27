@@ -16,9 +16,11 @@ $this->headTitle($title . ' - ' . $this->translate('Software'));
         
         <?php if (!empty($item->file)) { ?>
             <div>
-                <a class="download_link" href="<?php echo $this->basePath(); ?>/upload/software/files/<?php echo $item->file; ?>">Скачать</a>
+                <a class="download_link" href="<?php echo $this->basePath(); ?>/files/software/files/<?php echo $item->file; ?>">Скачать</a>
             </div>
         <?php } ?>
+        
+        <div class="clr"></div>
 
         <?php echo $this->shareBlock(); ?>
         

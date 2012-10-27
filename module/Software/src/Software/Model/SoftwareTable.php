@@ -116,7 +116,7 @@ class SoftwareTable extends AbstractTableGateway
         $paginator = new Paginator($iteratorAdapter);
         
         $paginator->setCurrentPageNumber($page);
-        $paginator->setItemCountPerPage(1);
+        $paginator->setItemCountPerPage(10);
         
         return $paginator;
     }

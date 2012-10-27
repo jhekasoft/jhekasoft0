@@ -29,7 +29,11 @@ class IndexController extends AbstractActionController
     
     public function indexAction()
     {
-        return new ViewModel();
+        $finalCoundown = new FinalCountdown($this->endDatetime);
+        
+        return new ViewModel(array(
+            'isCoundownEnd' => $finalCoundown->isEnd,
+        ));
     }
     
     public function comingSoonAction()

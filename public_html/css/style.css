@@ -237,6 +237,14 @@ ul.nav_block_main_menu li a:hover {
     text-align: center;
 }
 
+.content_information {
+    padding: 10px;
+    margin-bottom: 20px;
+    background: #F9FAFA;
+    border: 1px solid #CCC;
+    border-radius: 10px;
+}
+
 
 /* Sidebar Left
 -----------------------------------------------------------------------------*/
