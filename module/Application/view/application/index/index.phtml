@@ -2,9 +2,23 @@
     <div id="content">
         <?php if ($this->isCoundownEnd) { ?>
             <h1>Добро пожаловать на сайт!</h1>
+            
+            <img src="<?php echo $this->basePath(); ?>/images/cat.png" alt="Кошка" style="float: left;">
+            <p>
+                Эта кошечка охраняет сайт. Но иногда она может отвлечься на
+                игры для <a href="http://instead.syscall.ru">INSTEAD</a>. Тогда можно будет попробовать хакнуть сайт :)
+            </p>
             <p>
                 В разделе <a href="<?php echo $this->url('software/default'); ?>">Приложения</a> можно посмотреть программки.
             </p>
+            <p>
+                Приложение под <strong>Android</strong> <a href="/software/show/lotto">добавил</a>. А две игры из серии <strong>Лифтёр</strong> позже:).
+            </p>
+            <p>
+                А ещё совет, что лучше не переезжать на велосипеде:
+            </p>
+            
+            <iframe width="540" height="405" src="http://www.youtube.com/embed/IeMJIVeu4Tk" frameborder="0" allowfullscreen></iframe>
         <?php } else { ?>
             <h1>Приветульки, кулхацкер!</h1>
             <p>

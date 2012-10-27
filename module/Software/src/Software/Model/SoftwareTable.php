@@ -7,6 +7,7 @@ use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\TableGateway\AbstractTableGateway;
 use Zend\Paginator\Adapter\Iterator;
 use Zend\Paginator\Paginator;
+use Zend\Db\Sql\Select;
 
 class SoftwareTable extends AbstractTableGateway
 {
@@ -97,7 +98,10 @@ class SoftwareTable extends AbstractTableGateway
             $where[] = "`author_id` = '{$authorId}'";
         }
         
-        $resultSet = $this->select($where);
+        $select = $this->getSql()->select();
+        $select->where($where)->order('datetime DESC');
+        
+        $resultSet = $this->selectWith($select);
         $resultSet->buffer();
         $resultSet->next();
         

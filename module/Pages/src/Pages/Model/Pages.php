@@ -10,6 +10,7 @@ class Pages
     public $author;
     public $text;
     public $image;
+    public $showComments;
 
     public function exchangeArray($data)
     {
@@ -20,5 +21,6 @@ class Pages
         $this->text            = (isset($data['text'])) ? $data['text'] : null;
         $this->image           = (isset($data['image'])) ? $data['image'] : null;
         $this->type            = (isset($data['type'])) ? $data['type'] : null;
+        $this->showComments    = (isset($data['show_comments'])) ? $data['show_comments'] : null;
     }
 }

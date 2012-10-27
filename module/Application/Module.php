@@ -20,16 +20,16 @@ class Module
         $e->getApplication()->getServiceManager()->get('translator');
         $eventManager        = $e->getApplication()->getEventManager();
                 
-        // Для другого layout'а на ошибках
-        $eventManager->attach('dispatch.error', function($ev) use ($e) {
-            $layout = new \Zend\View\Model\ViewModel();
-            $layout->setTerminal(true);
-            $layout->setTemplate('layout/error');
-            $result = $e->getResult();
-            
-            $layout->addChild($result, 'content');
-            $e->setResult($layout);
-        });
+//        // Для другого layout'а на ошибках
+//        $eventManager->attach('dispatch.error', function($ev) use ($e) {
+//            $layout = new \Zend\View\Model\ViewModel();
+//            $layout->setTerminal(true);
+//            $layout->setTemplate('layout/error');
+//            $result = $e->getResult();
+//            
+//            $layout->addChild($result, 'content');
+//            $e->setResult($layout);
+//        });
         
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);

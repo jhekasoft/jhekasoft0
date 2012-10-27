@@ -11,11 +11,13 @@ $this->headTitle($title . ' - ' . $this->translate('Pages'));
             <?php echo $item->text; ?>
         </div>
 
-        <?php echo $this->shareBlock(); ?>
-        
-        <div style="margin-top: 40px;">
-            <?php echo $this->commentsBlock(); ?>
-        </div>
+        <?php if ($this->showComments) { ?>
+            <?php echo $this->shareBlock(); ?>
+
+            <div style="margin-top: 40px;">
+                <?php echo $this->commentsBlock(); ?>
+            </div>
+        <?php } ?>
     </div><!-- #content-->
 </div><!-- #container-->
 
