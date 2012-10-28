@@ -3,6 +3,8 @@ RewriteEngine On
 RewriteCond %{HTTP_HOST} ^www.jhekasoft.net
 RewriteRule (.*) http://jhekasoft.net/$1 [R=301,L]
 
+RewriteRule ^favicon\.ico$ /images/favicon.ico [L]
+
 RewriteCond %{REQUEST_FILENAME} -s [OR]
 RewriteCond %{REQUEST_FILENAME} -l [OR]
 RewriteCond %{REQUEST_FILENAME} -d

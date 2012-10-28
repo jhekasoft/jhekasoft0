@@ -3,6 +3,7 @@ nbproject/private/
 .~lock.*
 access_log
 error_log
+inf/jhekasoft.sql
 .buildpath
 .DS_Store
 .idea
