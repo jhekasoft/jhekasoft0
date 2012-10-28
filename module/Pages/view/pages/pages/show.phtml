@@ -11,7 +11,7 @@ $this->headTitle($title . ' - ' . $this->translate('Pages'));
             <?php echo $item->text; ?>
         </div>
 
-        <?php if ($this->showComments) { ?>
+        <?php if ('yes' == $item->showComments) { ?>
             <?php echo $this->shareBlock(); ?>
 
             <div style="margin-top: 40px;">
