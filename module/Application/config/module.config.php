@@ -13,7 +13,7 @@ return array(
             'coming-soon' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
-                    'route'    => '/',
+                    'route'    => '/coming-soon',
                     'defaults' => array(
                         'controller' => 'Application\Controller\Index',
                         'action'     => 'coming-soon',
@@ -23,7 +23,7 @@ return array(
             'home' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
-                    'route'    => '/home',
+                    'route'    => '/',
                     'defaults' => array(
                         'controller' => 'Application\Controller\Index',
                         'action'     => 'index',
