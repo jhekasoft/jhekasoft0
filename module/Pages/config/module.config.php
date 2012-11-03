@@ -45,6 +45,18 @@ return array(
                             ),
                         ),
                     ),
+                    'edit' => array(
+                        'type'    => 'segment',
+                        'options' => array(
+                            'route'    => '/edit[/:name]',
+                            'constraints' => array(
+                                'name'       => '[a-zA-Z][a-zA-Z0-9_-]*',
+                            ),
+                            'defaults' => array(
+                                'action'     => 'edit',
+                            ),
+                        ),
+                    ),
 //                    'filter' => array(
 //                        'type'    => 'Literal',
 //                        'options' => array(

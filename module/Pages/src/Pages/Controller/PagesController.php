@@ -4,6 +4,8 @@ namespace Pages\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
+//use Pages\Module\Pages;
+use Pages\Form\PagesForm;
 
 class PagesController extends AbstractActionController
 {
@@ -39,6 +41,51 @@ class PagesController extends AbstractActionController
         return array(
             'id' => $item->id,
             'item' => $item,
+        );
+    }
+
+    public function editAction()
+    {
+        if (1) {
+            throw new \Exception("Not found.");
+        }
+        
+        $name = (string) $this->params()->fromRoute('name', null);
+//        if (!$name) {
+//            return $this->redirect()->toRoute('pages', array(
+//                'action' => 'add'
+//            ));
+//        }
+        $item = $this->getTable()->getItem($name, array(
+            'field' => 'name',
+        ));
+        
+        if (!$item) {
+            throw new \Exception("Could not find row $name");
+        }
+        
+        $form  = new PagesForm();
+        $form->bind($item);
+//        $form->get('submit')->setAttribute('value', 'Edit');
+
+        $request = $this->getRequest();
+        if ($request->isPost()) {
+            $form->setInputFilter($item->getInputFilter());
+            $form->setData($request->getPost());
+
+            if ($form->isValid()) {
+                $data = $form->getData();
+                $this->getTable()->saveItem($data);
+
+                // Redirect to list of albums
+                return $this->redirect()->toRoute('pages/show', array('name' => $data->name));
+            }
+        }
+
+        return array(
+            'id' => $item->id,
+            'item' => $item,
+            'form' => $form,
         );
     }
     

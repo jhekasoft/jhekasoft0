@@ -93,29 +93,30 @@ class PagesTable extends AbstractTableGateway
         return $row;
     }
 
-//    public function saveItem(Pages $item)
-//    {
-//        $data = array(
-//            'artist' => $item->artist,
-//            'title'  => $item->title,
-//        );
-//
-//        $id = (int) $item->id;
-//
-//        if ($id == 0) {
-//            $this->insert($data);
-//        } elseif ($this->getItem($id)) {
-//            $this->update(
-//                $data,
-//                array(
-//                    'id' => $id,
-//                )
-//            );
-//        } else {
-//            throw new \Exception('Form id does not exist');
-//        }
-//    }
-//
+    public function saveItem(Pages $item)
+    {
+        $data = array(
+            'name' => $item->name,
+            'title'  => $item->title,
+            'text'  => $item->text,
+        );
+
+        $id = (int) $item->id;
+
+        if ($id == 0) {
+            $this->insert($data);
+        } elseif ($this->getItem($id)) {
+            $this->update(
+                $data,
+                array(
+                    'id' => $id,
+                )
+            );
+        } else {
+            throw new \Exception('Form id does not exist');
+        }
+    }
+
 //    public function deleteItem($id)
 //    {
 //        $this->delete(array(
