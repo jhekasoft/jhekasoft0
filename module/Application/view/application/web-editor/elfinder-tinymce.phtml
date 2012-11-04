@@ -1,0 +1,56 @@
+<!-- Styles -->
+<?php echo $this->headLink()->prependStylesheet($this->basePath() . '/js/elfinder/css/elfinder.min.css')
+                            ->prependStylesheet($this->basePath() . '/js/elfinder/css/theme.css') ?>
+
+<!-- Scripts -->
+<?php $this->headScript()->appendFile($this->basePath() . '/js/elfinder/js/elfinder.min.js')
+                         ->appendFile($this->basePath() . '/js/elfinder/js/i18n/elfinder.ru.js')
+                         ->appendFile($this->basePath() . '/js/tiny_mce/tiny_mce_popup.js'); ?>
+
+<?php if(0) { ?><script><?php } ?>
+<?php $this->headScript()->captureStart() ?>
+    var FileBrowserDialogue = {
+        init: function() {
+            // Here goes your code for setting your custom things onLoad.
+        },
+        mySubmit: function (URL) {
+            var win = tinyMCEPopup.getWindowArg('window');
+
+            // pass selected file path to TinyMCE
+            win.document.getElementById(tinyMCEPopup.getWindowArg('input')).value = URL;
+
+            // are we an image browser?
+            if (typeof(win.ImageDialog) != 'undefined') {
+                // update image dimensions
+                if (win.ImageDialog.getImageData) {
+                    win.ImageDialog.getImageData();
+                }
+                // update preview if necessary
+                if (win.ImageDialog.showPreviewImage) {
+                    win.ImageDialog.showPreviewImage(URL);
+                }
+            }
+
+            // close popup window
+            tinyMCEPopup.close();
+        }
+    }
+
+    tinyMCEPopup.onInit.add(FileBrowserDialogue.init, FileBrowserDialogue);
+
+    $().ready(function() {
+        var elf = $('#elfinder').elfinder({
+            // set your elFinder options here
+            url: '<?php echo $this->basePath() . '/js/elfinder/php/connector.php' ?>',  // connector URL
+            lang: 'ru',             // language (OPTIONAL)
+            getFileCallback: function(url) { // editor callback
+                FileBrowserDialogue.mySubmit(url); // pass selected file path to TinyMCE 
+            }
+        }).elfinder('instance');      
+    });
+<?php $this->headScript()->captureEnd() ?>
+<?php if(0) { ?></script><?php } ?>
+
+<?php $this->headTitle('elFinder 2.0'); ?>
+
+<div id="elfinder"></div>

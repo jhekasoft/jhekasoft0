@@ -29,6 +29,7 @@ class PagesForm extends Form
         $text = new Element\Textarea('text');
         $text->setLabel('Текст');
         $text->setAttributes(array(
+            'id' => 'text',
             'cols' => '80',
             'rows' => '20',
         ));

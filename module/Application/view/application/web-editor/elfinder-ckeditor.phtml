@@ -1,0 +1,36 @@
+<!-- Styles -->
+<?php echo $this->headLink()->prependStylesheet($this->basePath() . '/js/elfinder/css/elfinder.min.css')
+                            ->prependStylesheet($this->basePath() . '/js/elfinder/css/theme.css') ?>
+
+<!-- Scripts -->
+<?php $this->headScript()->appendFile($this->basePath() . '/js/elfinder/js/elfinder.min.js')
+                         ->appendFile($this->basePath() . '/js/elfinder/js/i18n/elfinder.ru.js'); ?>
+
+<?php if(0) { ?><script><?php } ?>
+<?php $this->headScript()->captureStart() ?>
+    // Helper function to get parameters from the query string.
+    function getUrlParam(paramName) {
+        var reParam = new RegExp('(?:[\?&]|&amp;)' + paramName + '=([^&]+)', 'i') ;
+        var match = window.location.search.match(reParam) ;
+
+        return (match && match.length > 1) ? match[1] : '' ;
+    }
+
+    $().ready(function() {
+        var funcNum = getUrlParam('CKEditorFuncNum');
+
+        var elf = $('#elfinder').elfinder({
+            url : '<?php echo $this->basePath() . '/js/elfinder/php/connector.php' ?>',
+            getFileCallback : function(file) {
+                window.opener.CKEDITOR.tools.callFunction(funcNum, file);
+                window.close();
+            },
+            resizable: false
+        }).elfinder('instance');
+    });
+<?php $this->headScript()->captureEnd() ?>
+<?php if(0) { ?></script><?php } ?>
+
+<?php $this->headTitle('elFinder 2.0'); ?>
+
+<div id="elfinder"></div>

@@ -46,7 +46,7 @@ class PagesController extends AbstractActionController
 
     public function editAction()
     {
-        if (1) {
+        if (0) {
             throw new \Exception("Not found.");
         }
         

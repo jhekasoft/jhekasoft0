@@ -46,14 +46,16 @@ a {
     outline: none;
     text-decoration: underline;
 }
-a:hover {
+a:hover,
+a:focus {
     text-decoration: none;
 }
 a.no_href {
     text-decoration: none;
     border-bottom: 1px dashed #427F42;
 }
-a.no_href:hover {
+a.no_href:hover,
+a.no_href:focus {
     border-bottom: none;
 }
 p {
@@ -245,8 +247,16 @@ ul.nav_block_main_menu li a:hover {
     border-radius: 10px;
 }
 
+input, textarea {
+    font: 14px/20px Arial, Tahoma, Verdana, sans-serif;
+}
+
 .middle_form .form_row {
     margin-bottom: 10px;
+}
+
+.middle_form .form_row label {
+    display: block;
 }
 
 .middle_form .form_row label > span {
