@@ -121,6 +121,15 @@ $this->headTitle($title . ' - ' . $this->translate('Pages'));
             </div>
         </div>
         <div class="form_row">
+            <?php echo $this->formRow($form->get('meta_keywords')); ?>
+        </div>
+        <div class="form_row">
+            <?php echo $this->formRow($form->get('show_share')); ?>
+        </div>
+        <div class="form_row">
+            <?php echo $this->formRow($form->get('show_comments')); ?>
+        </div>
+        <div class="form_row">
             <?php echo $this->formSubmit($form->get('submit')); ?>
         </div>
         <?php echo $this->form()->closeTag(); ?>

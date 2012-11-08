@@ -16,7 +16,10 @@ class Pages implements InputFilterAwareInterface
     public $author;
     public $text;
     public $image;
-    public $showComments;
+    public $show_share;
+    public $show_comments;
+    public $meta_keywords;
+    public $meta_description_default;
     
     protected $inputFilter;
 
@@ -30,7 +33,12 @@ class Pages implements InputFilterAwareInterface
         $this->text            = (isset($data['text'])) ? $data['text'] : null;
         $this->image           = (isset($data['image'])) ? $data['image'] : null;
         $this->type            = (isset($data['type'])) ? $data['type'] : null;
-        $this->showComments    = (isset($data['show_comments'])) ? $data['show_comments'] : null;
+        $this->show_share       = (isset($data['show_share'])) ? $data['show_share'] : null;
+        $this->show_comments    = (isset($data['show_comments'])) ? $data['show_comments'] : null;
+        $this->meta_keywords    = (isset($data['meta_keywords'])) ? $data['meta_keywords'] : null;
+        
+        $meta_description = mb_substr(strip_tags($this->text), 0, 200, 'utf-8');
+        $this->meta_description_default = str_replace(array("\n", "\r"), "", $meta_description) . '...';
     }
     
     public function getArrayCopy()
@@ -78,6 +86,25 @@ class Pages implements InputFilterAwareInterface
 
             $inputFilter->add($factory->createInput(array(
                 'name'     => 'title',
+                'required' => true,
+                'filters'  => array(
+                    array('name' => 'StripTags'),
+                    array('name' => 'StringTrim'),
+                ),
+                'validators' => array(
+                    array(
+                        'name'    => 'StringLength',
+                        'options' => array(
+                            'encoding' => 'UTF-8',
+                            'min'      => 1,
+                            'max'      => 255,
+                        ),
+                    ),
+                ),
+            )));
+            
+            $inputFilter->add($factory->createInput(array(
+                'name'     => 'meta_keywords',
                 'required' => true,
                 'filters'  => array(
                     array('name' => 'StripTags'),

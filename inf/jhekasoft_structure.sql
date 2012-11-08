@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.3.2
+-- version 3.5.3
 -- http://www.phpmyadmin.net
 --
--- Хост: 10.0.0.104:3309
--- Время создания: Окт 29 2012 г., 00:53
--- Версия сервера: 5.1.66
--- Версия PHP: 5.3.14
+-- Хост: localhost
+-- Время создания: Ноя 09 2012 г., 00:25
+-- Версия сервера: 5.5.28-log
+-- Версия PHP: 5.4.7
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -51,7 +51,11 @@ CREATE TABLE IF NOT EXISTS `jh_pages` (
   `text` text NOT NULL,
   `image` varchar(255) NOT NULL,
   `show` enum('no','yes') NOT NULL DEFAULT 'no',
+  `show_share` enum('no','yes') NOT NULL DEFAULT 'yes',
   `show_comments` enum('no','yes') NOT NULL DEFAULT 'no',
+  `meta_title` varchar(255) NOT NULL,
+  `meta_description` varchar(255) NOT NULL,
+  `meta_keywords` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `name` (`name`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
@@ -80,6 +84,9 @@ CREATE TABLE IF NOT EXISTS `jh_software` (
   `platform_android` enum('0','1') NOT NULL DEFAULT '0',
   `platform_www` enum('0','1') NOT NULL DEFAULT '0',
   `platform_windows` enum('0','1') NOT NULL DEFAULT '0',
+  `meta_title` varchar(255) NOT NULL,
+  `meta_description` varchar(255) NOT NULL,
+  `meta_keywords` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `name` (`name`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;

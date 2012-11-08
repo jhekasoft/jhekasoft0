@@ -1,6 +1,8 @@
 <?php
 $title = $item->title . ' ' . $item->version;
 $this->headTitle($title . ' - ' . $this->translate('Software'));
+$this->headMeta()->appendName('description', $this->escapeHtml($item->meta_description_default))
+                 ->appendName('keywords', $this->escapeHtml($item->meta_keywords));
 ?>
 
 <div id="container">

@@ -263,9 +263,11 @@ input, textarea {
     display: block;
 }
 
-.middle_form input,
+.middle_form input[type=text],
+.middle_form input[type=submit],
 .middle_form textarea,
-.filter_form input,
+.filter_form input[type=text],
+.filter_form input[type=submit],
 .filter_form textarea {
     padding: 6px;
     border: 1px solid #CCCCCC;
@@ -273,9 +275,11 @@ input, textarea {
     color: #000;
 }
 
-.middle_form input:focus,
+.middle_form input[type=text]:focus,
+.middle_form input[type=submit]:focus,
 .middle_form textarea:focus,
-.filter_form input:focus,
+.filter_form input[type=text]:focus,
+.filter_form input[type=submit]:focus,
 .filter_form textarea:focus {
     border: 1px solid #427F42;
     -webkit-box-shadow: 0 0 3px #ffffff inset, 0 1px 1px rgba(0,0,0,0.1);
@@ -283,8 +287,14 @@ input, textarea {
     box-shadow        : 0 0 3px #ffffff inset, 0 1px 1px rgba(0,0,0,0.1);
 }
 
+.middle_form input[type=text],
+.middle_form textarea {
+    width: 100%;
+}
+
 .middle_form input[type=submit],
 .filter_form input[type=submit] {
+    width: auto;
     border-radius: 6px;
     cursor: pointer;
     background: #EFEFEF; /* Old browsers */

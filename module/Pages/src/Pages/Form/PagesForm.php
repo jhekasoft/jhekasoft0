@@ -34,6 +34,22 @@ class PagesForm extends Form
             'rows' => '20',
         ));
         
+        // Meta keywords
+        $meta_keywords = new Element\Text('meta_keywords');
+        $meta_keywords->setLabel('Ключевые слова');
+        
+        // Показывать share
+        $show_share = new Element\Checkbox('show_share');
+        $show_share->setCheckedValue('yes');
+        $show_share->setUncheckedValue('no');
+        $show_share->setLabel('Показывать share');
+        
+        // Показывать комментарии
+        $show_comments = new Element\Checkbox('show_comments');
+        $show_comments->setCheckedValue('yes');
+        $show_comments->setUncheckedValue('no');
+        $show_comments->setLabel('Показывать комментарии');
+        
         // Submit
         $submit = new Element\Submit('submit');
         $submit->setValue('Сохранить');
@@ -42,6 +58,9 @@ class PagesForm extends Form
         $this->add($name);
         $this->add($title);
         $this->add($text);
+        $this->add($meta_keywords);
+        $this->add($show_share);
+        $this->add($show_comments);
         $this->add($submit);
     }
     

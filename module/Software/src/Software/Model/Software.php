@@ -18,6 +18,8 @@ class Software
     public $platformLinux;
     public $platformAndroid;
     public $platformWww;
+    public $meta_keywords;
+    public $meta_description_default;
     
     public $typeTitle;
     public $platformTitles = array();
@@ -40,6 +42,10 @@ class Software
         $this->platformAndroid = (isset($data['platform_android'])) ? $data['platform_android'] : null;
         $this->platformWww     = (isset($data['platform_www'])) ? $data['platform_www'] : null;
         $this->platformWindows = (isset($data['platform_windows'])) ? $data['platform_windows'] : null;
+        $this->meta_keywords    = (isset($data['meta_keywords'])) ? $data['meta_keywords'] : null;
+        
+        $meta_description = mb_substr(strip_tags($this->text), 0, 200, 'utf-8');
+        $this->meta_description_default = str_replace(array("\n", "\r"), "", $meta_description) . '...';
         
         // Подпись типа приложения
         switch($data['type']) {

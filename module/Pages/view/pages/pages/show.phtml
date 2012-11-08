@@ -1,6 +1,8 @@
 <?php
 $title = $item->title . ' ' . $item->version;
 $this->headTitle($title . ' - ' . $this->translate('Pages'));
+$this->headMeta()->appendName('description', $this->escapeHtml($item->meta_description_default))
+                 ->appendName('keywords', $this->escapeHtml($item->meta_keywords));
 ?>
 
 <div id="container">
@@ -11,9 +13,11 @@ $this->headTitle($title . ' - ' . $this->translate('Pages'));
             <?php echo $item->text; ?>
         </div>
 
-        <?php if ('yes' == $item->showComments) { ?>
+        <?php if ('yes' == $item->show_share) { ?>
             <?php echo $this->shareBlock(); ?>
+        <?php } ?>
 
+        <?php if ('yes' == $item->show_comments) { ?>
             <div style="margin-top: 40px;">
                 <?php echo $this->commentsBlock(); ?>
             </div>

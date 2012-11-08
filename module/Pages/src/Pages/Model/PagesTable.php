@@ -99,6 +99,9 @@ class PagesTable extends AbstractTableGateway
             'name' => $item->name,
             'title'  => $item->title,
             'text'  => $item->text,
+            'meta_keywords'  => $item->meta_keywords,
+            'show_share'  => $item->show_share,
+            'show_comments'  => $item->show_comments,
         );
 
         $id = (int) $item->id;
