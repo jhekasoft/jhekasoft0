@@ -68,7 +68,7 @@ return array(
     ),
     'view_helpers' => array(
         'invokables'=> array(
-            'side_left_software' => 'Software\View\Helper\SideLeftSoftware',
+            'side_right_software' => 'Software\View\Helper\SideRightSoftware',
         )
     ),
 );

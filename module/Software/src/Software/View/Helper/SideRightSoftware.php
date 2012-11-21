@@ -5,7 +5,7 @@ namespace Software\View\Helper;
 use Zend\View\Helper\AbstractHelper;
 use Software\Form\FilterForm;
 
-class SideLeftSoftware extends AbstractHelper
+class SideRIghtSoftware extends AbstractHelper
 {
     public function __invoke($data = array())
     {
@@ -19,6 +19,6 @@ class SideLeftSoftware extends AbstractHelper
         
         //$view->test = 'dd1';
         
-        return $view->render('helper/side-left-software');
+        return $view->render('helper/side-right-software');
     }
 }

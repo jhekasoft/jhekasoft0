@@ -208,6 +208,9 @@ ul.nav_block_main_menu li a:hover {
     overflow: hidden;
     padding: 10px 0;
 }
+#container.container_full {
+    width: 100%;
+}
 #content {
     padding: 0 0 0 10px;
     min-height: 400px;
@@ -328,9 +331,9 @@ input, textarea {
 }*/
 
 
-/* Sidebar Left
+/* Sidebar Right
 -----------------------------------------------------------------------------*/
-#sideLeft {
+#sideRight {
     float: right;
     width: 230px;
 /*    margin-left: -100%;*/

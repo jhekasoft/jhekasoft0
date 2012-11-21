@@ -4,7 +4,7 @@
     $form->setAttribute('action', $this->url('software/filter'));
 ?>
 
-<aside id="sideLeft">
+<aside id="sideRight">
     <?php echo $this->form()->openTag($form); ?>
         <div class="filter_form_element_item">
             <?php echo $this->formRow($form->get('filter_type')); ?>
@@ -20,4 +20,4 @@
             <a href="<?php echo $this->url('software/default'); ?>" class="filter_form_cancel_link">Сбросить</a>
         </div>
     <?php echo $this->form()->closeTag(); ?>
-</aside><!-- #sideLeft -->
+</aside><!-- #sideRight -->
