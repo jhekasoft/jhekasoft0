@@ -119,7 +119,6 @@
   -moz-background-clip   : padding;
   -webkit-background-clip: padding-box;
   background-clip        : padding-box;
-  z-index: 100;
 }
 /* @end */
 
