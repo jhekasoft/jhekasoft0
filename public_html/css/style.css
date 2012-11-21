@@ -203,13 +203,13 @@ ul.nav_block_main_menu li a:hover {
     height: 0;
 }
 #container {
-    width: 100%;
+    width: 720px;
     float: left;
     overflow: hidden;
     padding: 10px 0;
 }
 #content {
-    padding: 0 270px 0 10px;
+    padding: 0 0 0 10px;
     min-height: 400px;
     overflow: auto;
 }
@@ -333,7 +333,7 @@ input, textarea {
 #sideLeft {
     float: right;
     width: 230px;
-    margin-left: -100%;
+/*    margin-left: -100%;*/
     position: relative;
     background: #F9FAFA;
     border: 1px solid #ccc;
