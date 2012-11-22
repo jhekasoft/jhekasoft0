@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.3
+-- version 3.5.4
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Ноя 09 2012 г., 00:25
+-- Время создания: Ноя 22 2012 г., 23:43
 -- Версия сервера: 5.5.28-log
--- Версия PHP: 5.4.7
+-- Версия PHP: 5.4.8
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -90,6 +90,19 @@ CREATE TABLE IF NOT EXISTS `jh_software` (
   PRIMARY KEY (`id`),
   KEY `name` (`name`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `jh_users`
+--
+
+CREATE TABLE IF NOT EXISTS `jh_users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `login` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

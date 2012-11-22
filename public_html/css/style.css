@@ -267,6 +267,7 @@ input, textarea {
 }
 
 .middle_form input[type=text],
+.middle_form input[type=password],
 .middle_form input[type=submit],
 .middle_form textarea,
 .filter_form input[type=text],
@@ -279,6 +280,7 @@ input, textarea {
 }
 
 .middle_form input[type=text]:focus,
+.middle_form input[type=password]:focus,
 .middle_form input[type=submit]:focus,
 .middle_form textarea:focus,
 .filter_form input[type=text]:focus,
@@ -291,8 +293,9 @@ input, textarea {
 }
 
 .middle_form input[type=text],
+.middle_form input[type=password],
 .middle_form textarea {
-    width: 100%;
+    width: 680px;
 }
 
 .middle_form input[type=submit],

@@ -10,6 +10,17 @@ use Pages\Form\PagesForm;
 class PagesController extends AbstractActionController
 {
     protected $itemTable;
+    protected $authservice;
+
+    public function getAuthService()
+    {
+        if (!$this->authservice) {
+            $this->authservice = $this->getServiceLocator()
+                ->get('AuthService');
+        }
+
+        return $this->authservice;
+    }
     
     public function indexAction()
     {
@@ -41,12 +52,13 @@ class PagesController extends AbstractActionController
         return array(
             'id' => $item->id,
             'item' => $item,
+            'can_edit' => $this->getAuthService()->hasIdentity(),
         );
     }
 
     public function editAction()
     {
-        if (1) {
+        if (!$this->getAuthService()->hasIdentity()) {
             throw new \Exception("Not found.");
         }
         
