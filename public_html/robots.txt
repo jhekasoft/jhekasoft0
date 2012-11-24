@@ -1,0 +1,2 @@
+User-agent: *
+Disallow: /application/index/ajax-save-final-countdown-email

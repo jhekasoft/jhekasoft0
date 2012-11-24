@@ -10,7 +10,7 @@ use Zend\Paginator\Paginator;
 
 class PagesTable extends AbstractTableGateway
 {
-    protected $table ='jh_pages';
+    protected $table ='jh_page';
 
     public function __construct(Adapter $adapter)
     {

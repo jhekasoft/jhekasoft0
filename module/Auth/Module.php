@@ -6,6 +6,7 @@ use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 use Zend\Authentication\Storage;
 use Zend\Authentication\AuthenticationService;
 use Zend\Authentication\Adapter\DbTable as DbTableAuthAdapter;
+use Auth\Model\UserTable;
 
 class Module implements AutoloaderProviderInterface
 {
@@ -37,9 +38,10 @@ class Module implements AutoloaderProviderInterface
                     return new \Auth\Model\AuthStorage('jhekasoft');
                 },
                 'AuthService' => function($sm) {
+                    $userTable = new UserTable();
                     $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
                     $dbTableAuthAdapter = new DbTableAuthAdapter($dbAdapter,
-                            'jh_users', 'login', 'password', 'MD5(?)');
+                            $userTable->getTableName(), 'login', 'password', 'MD5(?)');
 
                     $authService = new AuthenticationService();
                     $authService->setAdapter($dbTableAuthAdapter);

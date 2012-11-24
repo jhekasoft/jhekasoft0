@@ -3,11 +3,7 @@
 $this->headTitle($this->translate('Login'));
 
 $form = $this->form;
-$form->setAttribute('action', $this->url(
-        'login/process', array(
-        'action' => 'authenticate',
-        )
-    ));
+$form->setAttribute('action', $this->url('auth/login'));
 $form->prepare();
 
 ?>
@@ -15,16 +11,6 @@ $form->prepare();
 <div id="container">
     <div id="content">
         <div>
-            <?php
-                if ($this->messages) {
-                    echo '<ul>';
-                    foreach ($this->messages as $message) {
-                        echo '<li>' . $message . '</li>';
-                    }
-                    echo '</ul>';
-                }
-            ?>
-            
             <?php echo $this->form()->openTag($form); ?>
             
             <div class="form_row">

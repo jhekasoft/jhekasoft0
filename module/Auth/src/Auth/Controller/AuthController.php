@@ -37,7 +37,7 @@ class AuthController extends AbstractActionController
     public function getForm()
     {
         if (!$this->form) {
-            $user = new User();
+            //$user = new User();
             $this->form = new LoginForm();
         }
 
@@ -48,52 +48,59 @@ class AuthController extends AbstractActionController
     {
         //if already login, redirect to success page 
         if ($this->getAuthService()->hasIdentity()) {
-            return $this->redirect()->toRoute('success');
+            return $this->redirect()->toRoute('auth/success');
         }
 
         $form = $this->getForm();
 
-        return array(
-            'form' => $form,
-            'messages' => $this->flashmessenger()->getMessages()
-        );
-    }
-
-    public function authenticateAction()
-    {
-        $form = $this->getForm();
-        $redirect = 'login';
-
         $request = $this->getRequest();
         if ($request->isPost()) {
+            $user = new User();
+            $form->setInputFilter($user->getInputFilter());
             $form->setData($request->getPost());
             if ($form->isValid()) {
-                //check authentication...
+                // check authentication...
                 $this->getAuthService()->getAdapter()
                     ->setIdentity($request->getPost('login'))
                     ->setCredential($request->getPost('password'));
 
                 $result = $this->getAuthService()->authenticate();
-                foreach ($result->getMessages() as $message) {
-                    //save message temporary into flashmessenger
-                    $this->flashmessenger()->addMessage($message);
-                }
+//                foreach ($result->getMessages() as $message) {
+//                    // save message temporary into flashmessenger
+//                    $this->flashmessenger()->addMessage($message);
+//                }
 
                 if ($result->isValid()) {
-                    $redirect = 'success';
-                    //check if it has rememberMe :
+                    // check if it has rememberMe :
                     if ($request->getPost('remember_me') == 1) {
                         $this->getSessionStorage()
                             ->setRememberMe(1);
-                        //set storage again 
+                        // set storage again 
                         $this->getAuthService()->setStorage($this->getSessionStorage());
                     }
                     $this->getAuthService()->getStorage()->write($request->getPost('login'));
+                    
+                    return $this->redirect()->toRoute('auth/success');
+                } else {
+                    $form->get('password')->setMessages(array('Login or password incorrect'));
                 }
             }
         }
 
-        return $this->redirect()->toRoute($redirect);
+        return array(
+            'form' => $form,
+            //'messages' => $this->flashmessenger()->getCurrentMessages()
+        );
+    }
+    
+    public function successAction()
+    {
+        if (!$this->getServiceLocator()
+                ->get('AuthService')->hasIdentity()) {
+            return $this->redirect()->toRoute('auth/login');
+        }
+
+        return new ViewModel();
     }
 
     public function logoutAction()
@@ -102,7 +109,7 @@ class AuthController extends AbstractActionController
         $this->getAuthService()->clearIdentity();
 
         $this->flashmessenger()->addMessage("You've been logged out");
-        return $this->redirect()->toRoute('login');
+        return $this->redirect()->toRoute('auth/login');
     }
 
 }

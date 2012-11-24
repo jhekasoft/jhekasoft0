@@ -68,6 +68,62 @@ return array(
 //                    ),
                 ),
             ),
+            'video' => array(
+                'type'    => 'Literal',
+                'options' => array(
+                    'route'    => '/video',
+                    'defaults' => array(
+                        'controller' => 'Pages\Controller\Pages',
+                        'action'     => 'show',
+                        'name' => 'video'
+                    ),
+                ),
+                'may_terminate' => true,
+                'child_routes' => array(
+                    'instead' => array(
+                        'type'    => 'Literal',
+                        'options' => array(
+                            'route'    => '/instead',
+                            'defaults' => array(
+                                'name' => 'video-instead',
+                            ),
+                        ),
+                    ),
+                ),
+            ),
+            'sound' => array(
+                'type'    => 'Literal',
+                'options' => array(
+                    'route'    => '/sound',
+                    'defaults' => array(
+                        'controller' => 'Pages\Controller\Pages',
+                        'action'     => 'show',
+                        'name' => 'sound'
+                    ),
+                ),
+            ),
+            'blog' => array(
+                'type'    => 'Literal',
+                'options' => array(
+                    'route'    => '/blog',
+                    'defaults' => array(
+                        'controller' => 'Pages\Controller\Pages',
+                        'action'     => 'show',
+                        'name' => 'blog'
+                    ),
+                ),
+            ),
+            'about' => array(
+                'type'    => 'Literal',
+                'options' => array(
+                    'route'    => '/about',
+                    'defaults' => array(
+                        'controller' => 'Pages\Controller\Pages',
+                        'action'     => 'show',
+                        'name' => 'about'
+                    ),
+                ),
+            ),
         ),
     ),
     

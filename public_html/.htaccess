@@ -5,6 +5,11 @@ RewriteRule (.*) http://jhekasoft.net/$1 [R=301,L]
 RewriteRule ^favicon\.ico$ /images/favicon.ico [L]
 
 RewriteRule ^/?home  http://jhekasoft.net [L,R=301,NE]
+RewriteRule ^/?pages/show/sound  http://jhekasoft.net/sound [L,R=301,NE]
+RewriteRule ^/?pages/show/video  http://jhekasoft.net/video [L,R=301,NE]
+RewriteRule ^/?pages/show/video-instead  http://jhekasoft.net/video/instead [L,R=301,NE]
+RewriteRule ^/?pages/show/blog  http://jhekasoft.net/blog [L,R=301,NE]
+RewriteRule ^/?pages/show/about  http://jhekasoft.net/about [L,R=301,NE]
 
 RewriteCond %{REQUEST_FILENAME} -s [OR]
 RewriteCond %{REQUEST_FILENAME} -l [OR]
