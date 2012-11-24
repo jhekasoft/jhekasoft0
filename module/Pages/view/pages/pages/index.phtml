@@ -7,6 +7,10 @@ $this->headTitle($title);
     <div id="content">
         <h1><?php echo $this->escapeHtml($title); ?></h1>
         
+        <div style="margin-bottom: 40px;">
+            <a href="<?php echo $this->url('pages/add'); ?>">Добавить</a>
+        </div>
+        
         <div>
             <?php if (count($this->paginator) > 0) { ?>
                 <?php echo $this->partialLoop('pages/pages/index-item.phtml', $this->paginator) ?>

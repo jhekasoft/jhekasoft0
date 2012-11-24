@@ -38,10 +38,10 @@ return array(
                         'options' => array(
                             'route'    => '/show[/:name]',
                             'constraints' => array(
-                                'name'       => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'name'    => '[a-zA-Z][a-zA-Z0-9_-]*',
                             ),
                             'defaults' => array(
-                                'action'     => 'show',
+                                'action'  => 'show',
                             ),
                         ),
                     ),
@@ -50,10 +50,19 @@ return array(
                         'options' => array(
                             'route'    => '/edit[/:name]',
                             'constraints' => array(
-                                'name'       => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'name'    => '[a-zA-Z][a-zA-Z0-9_-]*',
                             ),
                             'defaults' => array(
-                                'action'     => 'edit',
+                                'action'  => 'edit',
+                            ),
+                        ),
+                    ),
+                    'add' => array(
+                        'type'    => 'literal',
+                        'options' => array(
+                            'route'    => '/add',
+                            'defaults' => array(
+                                'action'  => 'add',
                             ),
                         ),
                     ),

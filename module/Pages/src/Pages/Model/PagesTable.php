@@ -38,18 +38,18 @@ class PagesTable extends AbstractTableGateway
         }
         
         // Родительская страница
-        $parId = 'all';
+        $par_id = 'all';
         if(!empty($options['parent'])) {
             $parentItem = $this->getItem($options['parent'], array(
                 'field' => 'name',
             ));
             
             if($parentItem) {
-                $parId = $parentItem->id;
+                $par_id = $parentItem->id;
             }
         }
-        if($parId != 'all') {
-            $where[] = "`par_id` = '{$parId}'";
+        if($par_id != 'all') {
+            $where[] = "`par_id` = '{$par_id}'";
         }
         
         $resultSet = $this->select($where);
@@ -71,7 +71,7 @@ class PagesTable extends AbstractTableGateway
         $paginator = new Paginator($iteratorAdapter);
         
         $paginator->setCurrentPageNumber($page);
-        $paginator->setItemCountPerPage(1);
+        $paginator->setItemCountPerPage(10);
         
         return $paginator;
     }
@@ -97,8 +97,10 @@ class PagesTable extends AbstractTableGateway
     {
         $data = array(
             'name' => $item->name,
+            'datetime'  => $item->datetime,
             'title'  => $item->title,
             'text'  => $item->text,
+            'show'  => $item->show,
             'meta_keywords'  => $item->meta_keywords,
             'show_share'  => $item->show_share,
             'show_comments'  => $item->show_comments,

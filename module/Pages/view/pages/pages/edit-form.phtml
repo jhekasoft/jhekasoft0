@@ -1,0 +1,35 @@
+<div>
+    <?php
+    $form = $this->form;
+    $form->prepare();
+    ?>
+
+    <?php echo $this->form()->openTag($form); ?>
+    <?php echo $this->formHidden($form->get('id')); ?>
+    <div class="form_row">
+        <?php echo $this->formRow($form->get('name')); ?>
+    </div>
+    <div class="form_row">
+        <?php echo $this->formRow($form->get('title')); ?>
+    </div>
+    <div class="form_row">
+        <?php echo $this->formRow($form->get('text')); ?>
+        <div class="textarea_select_editor">
+            <a class="no_href" href="javascript:void(0);" onclick="WebEditor.ckEditorInit('#text');">CKEditor</a>
+            <a class="no_href" href="javascript:void(0);" onclick="WebEditor.tinyMceInit('#text');">TinyMCE</a>
+        </div>
+    </div>
+    <div class="form_row">
+        <?php echo $this->formRow($form->get('meta_keywords')); ?>
+    </div>
+    <div class="form_row">
+        <?php echo $this->formRow($form->get('show_share')); ?>
+    </div>
+    <div class="form_row">
+        <?php echo $this->formRow($form->get('show_comments')); ?>
+    </div>
+    <div class="form_row">
+        <?php echo $this->formSubmit($form->get('submit')); ?>
+    </div>
+    <?php echo $this->form()->closeTag(); ?>
+</div>

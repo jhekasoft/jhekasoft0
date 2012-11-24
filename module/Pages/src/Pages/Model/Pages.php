@@ -11,11 +11,13 @@ class Pages implements InputFilterAwareInterface
 {
     public $id;
     public $name;
-    public $parId;
+    public $par_id;
+    public $datetime;
     public $title;
     public $author;
     public $text;
     public $image;
+    public $show;
     public $show_share;
     public $show_comments;
     public $meta_keywords;
@@ -27,15 +29,17 @@ class Pages implements InputFilterAwareInterface
     {
         $this->id              = (isset($data['id'])) ? $data['id'] : null;
         $this->name            = (isset($data['name'])) ? $data['name'] : null;
-        $this->parId           = (isset($data['par_id'])) ? $data['par_id'] : null;
+        $this->par_id           = (isset($data['par_id'])) ? $data['par_id'] : null;
         $this->title           = (isset($data['title'])) ? $data['title'] : null;
+        $this->datetime        = (isset($data['datetime'])) ? $data['datetime'] : null;
         $this->author          = (isset($data['author'])) ? $data['author'] : null;
         $this->text            = (isset($data['text'])) ? $data['text'] : null;
         $this->image           = (isset($data['image'])) ? $data['image'] : null;
         $this->type            = (isset($data['type'])) ? $data['type'] : null;
-        $this->show_share       = (isset($data['show_share'])) ? $data['show_share'] : null;
-        $this->show_comments    = (isset($data['show_comments'])) ? $data['show_comments'] : null;
-        $this->meta_keywords    = (isset($data['meta_keywords'])) ? $data['meta_keywords'] : null;
+        $this->show            = (isset($data['show'])) ? $data['show'] : null;
+        $this->show_share      = (isset($data['show_share'])) ? $data['show_share'] : null;
+        $this->show_comments   = (isset($data['show_comments'])) ? $data['show_comments'] : null;
+        $this->meta_keywords   = (isset($data['meta_keywords'])) ? $data['meta_keywords'] : null;
         
         $meta_description = mb_substr(strip_tags($this->text), 0, 200, 'utf-8');
         $this->meta_description_default = str_replace(array("\n", "\r"), "", $meta_description) . '...';
@@ -105,7 +109,7 @@ class Pages implements InputFilterAwareInterface
             
             $inputFilter->add($factory->createInput(array(
                 'name'     => 'meta_keywords',
-                'required' => true,
+                'required' => false,
                 'filters'  => array(
                     array('name' => 'StripTags'),
                     array('name' => 'StringTrim'),

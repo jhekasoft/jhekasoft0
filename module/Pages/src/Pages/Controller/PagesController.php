@@ -4,7 +4,7 @@ namespace Pages\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
-//use Pages\Module\Pages;
+use Pages\Model\Pages;
 use Pages\Form\PagesForm;
 
 class PagesController extends AbstractActionController
@@ -24,12 +24,17 @@ class PagesController extends AbstractActionController
     
     public function indexAction()
     {
+        if (!$this->getAuthService()->hasIdentity()) {
+            throw new \Exception("Not found.");
+        }
+        
         $page = $this->params()->fromRoute('page', 1);
         $parent = $this->params()->fromRoute('parent', null);
         
         $paginator = $this->getTable()->getPaginator(array(
             'page' => $page,
-            'parent' => $parent
+            'parent' => $parent,
+            //'show' => 'all',
         ));
         
         return new ViewModel(array(
@@ -63,11 +68,9 @@ class PagesController extends AbstractActionController
         }
         
         $name = (string) $this->params()->fromRoute('name', null);
-//        if (!$name) {
-//            return $this->redirect()->toRoute('pages', array(
-//                'action' => 'add'
-//            ));
-//        }
+        if (!$name) {
+            return $this->redirect()->toRoute('pages/add');
+        }
         $item = $this->getTable()->getItem($name, array(
             'field' => 'name',
         ));
@@ -97,6 +100,39 @@ class PagesController extends AbstractActionController
         return array(
             'id' => $item->id,
             'item' => $item,
+            'form' => $form,
+        );
+    }
+    
+    public function addAction()
+    {
+        if (!$this->getAuthService()->hasIdentity()) {
+            throw new \Exception("Not found.");
+        }
+        
+        $form  = new PagesForm();
+        //$form->bind($item);
+        $form->get('submit')->setAttribute('value', 'Добавить');
+
+        $item = new Pages();
+        
+        $request = $this->getRequest();
+        if ($request->isPost()) {
+            $form->setInputFilter($item->getInputFilter());
+            $form->setData($request->getPost());
+
+            if ($form->isValid()) {
+                $item->exchangeArray($form->getData());
+                $item->datetime = date('Y-m-d H:i:s', time());
+                $item->show = 'yes';
+                $this->getTable()->saveItem($item);
+
+                // Redirect to list of albums
+                return $this->redirect()->toRoute('pages/show', array('name' => $item->name));
+            }
+        }
+
+        return array(
             'form' => $form,
         );
     }
