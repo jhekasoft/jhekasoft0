@@ -1,6 +1,6 @@
 <?php
 $title = $item->title . ' ' . $item->version;
-$this->headTitle($title . ' - ' . $this->translate('Pages'));
+$this->headTitle($title);
 $this->headMeta()->appendName('description', $this->escapeHtml($item->meta_description_default))
                  ->appendName('keywords', $this->escapeHtml($item->meta_keywords));
 ?>
