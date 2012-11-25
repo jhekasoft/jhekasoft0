@@ -16,9 +16,15 @@ var Functions = {
      *
      * В качестве результата функция возвращает либо true, либо false
      */
-    isValidEmail : function (email, strict)
+    isValidEmail : function(email, strict)
     {
         if ( !strict ) email = email.replace(/^\s+|\s+$/g, '');
         return (/^([a-z0-9_\-]+\.)*[a-z0-9_\-]+@([a-z0-9][a-z0-9\-]*[a-z0-9]\.)+[a-z]{2,4}$/i).test(email);
+    },
+    
+    goToTop : function() {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 400);
     }
 };

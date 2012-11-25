@@ -417,6 +417,47 @@ a.filter_form_cancel_link {
     float: right;
 }
 
+/* Goto top */
+.goto_top_block {
+    display: block;
+    width: 230px;
+    cursor: pointer;
+    position: fixed;
+    bottom: 10px;
+/*    bottom: 70px;*/
+    text-align: right;
+}
+
+.goto_top_block a {
+    color: #aaa;
+}
+
+.goto_top_block:hover a {
+    color: #427F42;
+    text-decoration: none;
+}
+
+.goto_top_block .goto_top_imglink {
+    text-decoration: none;
+}
+
+.goto_top_block .goto_top_img {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-image: url('../images/arrow_up.png');
+    background-repeat: no-repeat;
+}
+
+.goto_top_block:hover .goto_top_img {
+    background-image: url('../images/arrow_up_active.png');
+}
+
+.goto_top_block .goto_top_link_container {
+    display: inline-block;
+    text-align: center;
+}
+
 
 /* Footer
 -----------------------------------------------------------------------------*/
