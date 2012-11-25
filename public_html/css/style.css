@@ -242,6 +242,20 @@ ul.nav_block_main_menu li a:hover {
     text-align: center;
 }
 
+.pagination_control .paginator_arrow {
+    text-decoration: none;
+}
+
+.pagination_control .paginator_page {
+}
+
+.pagination_control .paginator_page_active {
+    display: inline-block;
+    background-color: #EDEDED;
+    padding: 0 4px;
+    border-radius: 4px;
+}
+
 .content_information {
     padding: 10px;
     margin-bottom: 20px;
@@ -332,6 +346,16 @@ input, textarea {
     -moz-box-shadow   : 0 0 3px #ffffff inset, 0 1px 1px rgba(0,0,0,0.1);
     box-shadow        : 0 0 3px #ffffff inset, 0 1px 1px rgba(0,0,0,0.1);
 }*/
+
+table.contacts_info_table {
+    margin: 10px 0 0 0;
+    width: 100%;
+}
+
+table.middle_align_table tr td,
+table.middle_align_table tr td img {
+    vertical-align: middle;
+}
 
 
 /* Sidebar Right
