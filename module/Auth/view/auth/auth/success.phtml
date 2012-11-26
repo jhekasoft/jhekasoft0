@@ -1,0 +1,15 @@
+<?php
+
+$this->headTitle($this->translate('Login'));
+?>
+
+<div id="container">
+    <div id="content">
+        <div>
+            Login Success.
+        </div>
+        <a href="<?php echo $this->url('auth/logout'); ?>">Logout</a>
+    </div><!-- #content-->
+</div><!-- #container-->
+
+<?php echo $this->sideRight(); ?>

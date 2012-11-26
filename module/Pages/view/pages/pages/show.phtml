@@ -1,12 +1,16 @@
 <?php
 $title = $item->title . ' ' . $item->version;
-$this->headTitle($title . ' - ' . $this->translate('Pages'));
+$this->headTitle($title);
 $this->headMeta()->appendName('description', $this->escapeHtml($item->meta_description_default))
                  ->appendName('keywords', $this->escapeHtml($item->meta_keywords));
 ?>
 
 <div id="container">
     <div id="content">
+        <?php if ($this->can_edit) { ?>
+            <a href="<?php echo $this->url('pages/edit', array('name' => $item->name)); ?>">редактировать</a>
+        <?php } ?>
+
         <h1><?php echo $this->escapeHtml($title); ?></h1>
 
         <div>
@@ -25,4 +29,4 @@ $this->headMeta()->appendName('description', $this->escapeHtml($item->meta_descr
     </div><!-- #content-->
 </div><!-- #container-->
 
-<?php echo $this->sideLeft(); ?>
+<?php echo $this->sideRight(); ?>

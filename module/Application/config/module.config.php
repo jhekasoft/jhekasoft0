@@ -105,7 +105,7 @@ return array(
     ),
     'view_helpers' => array(
         'invokables'=> array(
-            'side_left' => 'Application\View\Helper\SideLeft',
+            'side_right' => 'Application\View\Helper\SideRight',
             'final_countdown_block' => 'Application\View\Helper\FinalCountdownBlock',
             'like_block' => 'Application\View\Helper\LikeBlock',
             'share_block' => 'Application\View\Helper\ShareBlock',

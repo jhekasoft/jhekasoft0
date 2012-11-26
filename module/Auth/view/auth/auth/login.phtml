@@ -1,0 +1,35 @@
+<?php
+
+$this->headTitle($this->translate('Login'));
+
+$form = $this->form;
+$form->setAttribute('action', $this->url('auth/login'));
+$form->prepare();
+
+?>
+
+<div id="container">
+    <div id="content">
+        <div>
+            <?php echo $this->form()->openTag($form); ?>
+            
+            <div class="form_row">
+                <?php echo $this->formRow($form->get('login')); ?>
+            </div>
+            <div class="form_row">
+                <?php echo $this->formRow($form->get('password')); ?>
+            </div>
+            <div class="form_row">
+                <?php echo $this->formRow($form->get('remember_me')); ?>
+            </div>
+            <div class="form_row">
+                <?php echo $this->formSubmit($form->get('submit')); ?>
+            </div>
+            
+            <?php echo $this->form()->closeTag(); ?>
+        </div>
+
+    </div><!-- #content-->
+</div><!-- #container-->
+
+<?php echo $this->sideRight(); ?>

@@ -4,6 +4,7 @@ nbproject/private/
 access_log
 error_log
 inf/jhekasoft.sql
+inf/db_bak/
 .buildpath
 .DS_Store
 .idea

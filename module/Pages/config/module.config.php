@@ -38,10 +38,10 @@ return array(
                         'options' => array(
                             'route'    => '/show[/:name]',
                             'constraints' => array(
-                                'name'       => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'name'    => '[a-zA-Z][a-zA-Z0-9_-]*',
                             ),
                             'defaults' => array(
-                                'action'     => 'show',
+                                'action'  => 'show',
                             ),
                         ),
                     ),
@@ -50,10 +50,19 @@ return array(
                         'options' => array(
                             'route'    => '/edit[/:name]',
                             'constraints' => array(
-                                'name'       => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'name'    => '[a-zA-Z][a-zA-Z0-9_-]*',
                             ),
                             'defaults' => array(
-                                'action'     => 'edit',
+                                'action'  => 'edit',
+                            ),
+                        ),
+                    ),
+                    'add' => array(
+                        'type'    => 'literal',
+                        'options' => array(
+                            'route'    => '/add',
+                            'defaults' => array(
+                                'action'  => 'add',
                             ),
                         ),
                     ),
@@ -66,6 +75,62 @@ return array(
 //                            ),
 //                        ),
 //                    ),
+                ),
+            ),
+            'video' => array(
+                'type'    => 'Literal',
+                'options' => array(
+                    'route'    => '/video',
+                    'defaults' => array(
+                        'controller' => 'Pages\Controller\Pages',
+                        'action'     => 'show',
+                        'name' => 'video'
+                    ),
+                ),
+                'may_terminate' => true,
+                'child_routes' => array(
+                    'instead' => array(
+                        'type'    => 'Literal',
+                        'options' => array(
+                            'route'    => '/instead',
+                            'defaults' => array(
+                                'name' => 'video-instead',
+                            ),
+                        ),
+                    ),
+                ),
+            ),
+            'sound' => array(
+                'type'    => 'Literal',
+                'options' => array(
+                    'route'    => '/sound',
+                    'defaults' => array(
+                        'controller' => 'Pages\Controller\Pages',
+                        'action'     => 'show',
+                        'name' => 'sound'
+                    ),
+                ),
+            ),
+            'blog' => array(
+                'type'    => 'Literal',
+                'options' => array(
+                    'route'    => '/blog',
+                    'defaults' => array(
+                        'controller' => 'Pages\Controller\Pages',
+                        'action'     => 'show',
+                        'name' => 'blog'
+                    ),
+                ),
+            ),
+            'about' => array(
+                'type'    => 'Literal',
+                'options' => array(
+                    'route'    => '/about',
+                    'defaults' => array(
+                        'controller' => 'Pages\Controller\Pages',
+                        'action'     => 'show',
+                        'name' => 'about'
+                    ),
                 ),
             ),
         ),

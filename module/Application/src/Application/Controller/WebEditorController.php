@@ -7,6 +7,17 @@ use Zend\View\Model\ViewModel;
 
 class WebEditorController extends AbstractActionController
 {
+    protected $authservice;
+
+    public function getAuthService()
+    {
+        if (!$this->authservice) {
+            $this->authservice = $this->getServiceLocator()
+                ->get('AuthService');
+        }
+
+        return $this->authservice;
+    }
     
     public function __construct()
     {
@@ -17,7 +28,7 @@ class WebEditorController extends AbstractActionController
     {
         $this->layout('layout/clean');
         
-        if (0) {
+        if (!$this->getAuthService()->hasIdentity()) {
             throw new \Exception("Not found.");
         }
         
@@ -29,7 +40,7 @@ class WebEditorController extends AbstractActionController
     {
         $this->layout('layout/clean');
         
-        if (0) {
+        if (!$this->getAuthService()->hasIdentity()) {
             throw new \Exception("Not found.");
         }
         

@@ -208,6 +208,9 @@ ul.nav_block_main_menu li a:hover {
     overflow: hidden;
     padding: 10px 0;
 }
+#container.container_full {
+    width: 100%;
+}
 #content {
     padding: 0 0 0 10px;
     min-height: 400px;
@@ -239,6 +242,20 @@ ul.nav_block_main_menu li a:hover {
     text-align: center;
 }
 
+.pagination_control .paginator_arrow {
+    text-decoration: none;
+}
+
+.pagination_control .paginator_page {
+}
+
+.pagination_control .paginator_page_active {
+    display: inline-block;
+    background-color: #EDEDED;
+    padding: 0 4px;
+    border-radius: 4px;
+}
+
 .content_information {
     padding: 10px;
     margin-bottom: 20px;
@@ -264,6 +281,7 @@ input, textarea {
 }
 
 .middle_form input[type=text],
+.middle_form input[type=password],
 .middle_form input[type=submit],
 .middle_form textarea,
 .filter_form input[type=text],
@@ -276,6 +294,7 @@ input, textarea {
 }
 
 .middle_form input[type=text]:focus,
+.middle_form input[type=password]:focus,
 .middle_form input[type=submit]:focus,
 .middle_form textarea:focus,
 .filter_form input[type=text]:focus,
@@ -288,8 +307,9 @@ input, textarea {
 }
 
 .middle_form input[type=text],
+.middle_form input[type=password],
 .middle_form textarea {
-    width: 100%;
+    width: 680px;
 }
 
 .middle_form input[type=submit],
@@ -327,10 +347,20 @@ input, textarea {
     box-shadow        : 0 0 3px #ffffff inset, 0 1px 1px rgba(0,0,0,0.1);
 }*/
 
+table.contacts_info_table {
+    margin: 10px 0 0 0;
+    width: 100%;
+}
 
-/* Sidebar Left
+table.middle_align_table tr td,
+table.middle_align_table tr td img {
+    vertical-align: middle;
+}
+
+
+/* Sidebar Right
 -----------------------------------------------------------------------------*/
-#sideLeft {
+#sideRight {
     float: right;
     width: 230px;
 /*    margin-left: -100%;*/
@@ -385,6 +415,47 @@ a.filter_form_cancel_link {
     display: inline-block;
     padding: 6px;
     float: right;
+}
+
+/* Goto top */
+.goto_top_block {
+    display: block;
+    width: 230px;
+    cursor: pointer;
+    position: fixed;
+    bottom: 10px;
+/*    bottom: 70px;*/
+    text-align: right;
+}
+
+.goto_top_block a {
+    color: #aaa;
+}
+
+.goto_top_block:hover a {
+    color: #427F42;
+    text-decoration: none;
+}
+
+.goto_top_block .goto_top_imglink {
+    text-decoration: none;
+}
+
+.goto_top_block .goto_top_img {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-image: url('../images/arrow_up.png');
+    background-repeat: no-repeat;
+}
+
+.goto_top_block:hover .goto_top_img {
+    background-image: url('../images/arrow_up_active.png');
+}
+
+.goto_top_block .goto_top_link_container {
+    display: inline-block;
+    text-align: center;
 }
 
 

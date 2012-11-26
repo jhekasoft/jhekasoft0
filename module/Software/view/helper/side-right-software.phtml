@@ -4,7 +4,7 @@
     $form->setAttribute('action', $this->url('software/filter'));
 ?>
 
-<aside id="sideLeft">
+<aside id="sideRight">
     <?php echo $this->form()->openTag($form); ?>
         <div class="filter_form_element_item">
             <?php echo $this->formRow($form->get('filter_type')); ?>
@@ -20,4 +20,13 @@
             <a href="<?php echo $this->url('software/default'); ?>" class="filter_form_cancel_link">Сбросить</a>
         </div>
     <?php echo $this->form()->closeTag(); ?>
-</aside><!-- #sideLeft -->
+
+    <div class="goto_top_block" onclick="Functions.goToTop();">
+        <div class="goto_top_link_container">
+            <a class="goto_top_imglink" href="#body_top" onclick="return false;">
+                <span class="goto_top_img" src="<?php echo $this->basePath(); ?>/images/arrow_up.png" alt="&uarr;">&nbsp;</span></a>
+            <br>
+            <a class="goto_top_link" href="#body_top" onclick="return false;">Вверх</a>
+        </div>
+    </div>
+</aside><!-- #sideRight -->

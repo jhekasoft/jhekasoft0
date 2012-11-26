@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.3
+-- version 3.5.4
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Ноя 09 2012 г., 00:25
+-- Время создания: Ноя 24 2012 г., 00:51
 -- Версия сервера: 5.5.28-log
--- Версия PHP: 5.4.7
+-- Версия PHP: 5.4.8
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -23,25 +23,26 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `jh_final_countdown_emails`
+-- Структура таблицы `jh_final_countdown_email`
 --
 
-CREATE TABLE IF NOT EXISTS `jh_final_countdown_emails` (
+CREATE TABLE IF NOT EXISTS `jh_final_countdown_email` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `datetime` datetime NOT NULL,
   `ip` varchar(255) NOT NULL,
   `server_info` longtext NOT NULL,
   `email` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `jh_pages`
+-- Структура таблицы `jh_page`
 --
 
-CREATE TABLE IF NOT EXISTS `jh_pages` (
+CREATE TABLE IF NOT EXISTS `jh_page` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `par_id` int(11) NOT NULL,
@@ -57,6 +58,7 @@ CREATE TABLE IF NOT EXISTS `jh_pages` (
   `meta_description` varchar(255) NOT NULL,
   `meta_keywords` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`),
   KEY `name` (`name`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
@@ -88,8 +90,24 @@ CREATE TABLE IF NOT EXISTS `jh_software` (
   `meta_description` varchar(255) NOT NULL,
   `meta_keywords` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`),
   KEY `name` (`name`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `jh_user`
+--
+
+CREATE TABLE IF NOT EXISTS `jh_user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `login` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `login` (`login`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

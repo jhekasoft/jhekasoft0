@@ -10,7 +10,7 @@ use Zend\Paginator\Paginator;
 
 class FinalCountdownEmailsTable extends AbstractTableGateway
 {
-    protected $table ='jh_final_countdown_emails';
+    protected $table ='jh_final_countdown_email';
 
     public function __construct(Adapter $adapter)
     {
