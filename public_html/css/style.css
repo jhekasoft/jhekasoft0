@@ -446,11 +446,12 @@ a.filter_form_cancel_link {
     width: 24px;
     height: 24px;
     background-image: url('../images/arrow_up.png');
+    background-position: -24px;
     background-repeat: no-repeat;
 }
 
 .goto_top_block:hover .goto_top_img {
-    background-image: url('../images/arrow_up_active.png');
+    background-position: 0;
 }
 
 .goto_top_block .goto_top_link_container {
