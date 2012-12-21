@@ -2,27 +2,17 @@
 
 namespace Auth\Controller;
 
-use Zend\Mvc\Controller\AbstractActionController;
+//use Zend\Mvc\Controller\AbstractActionController;
+use Application\Controller\JhekasoftController;
 use Zend\View\Model\ViewModel;
 use Auth\Model\User;
 use Auth\Form\LoginForm;
 
-class AuthController extends AbstractActionController
+class AuthController extends JhekasoftController
 {
 
     protected $form;
     protected $storage;
-    protected $authservice;
-
-    public function getAuthService()
-    {
-        if (!$this->authservice) {
-            $this->authservice = $this->getServiceLocator()
-                ->get('AuthService');
-        }
-
-        return $this->authservice;
-    }
 
     public function getSessionStorage()
     {

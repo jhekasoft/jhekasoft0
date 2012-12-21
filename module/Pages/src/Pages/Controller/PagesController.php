@@ -2,25 +2,15 @@
 
 namespace Pages\Controller;
 
-use Zend\Mvc\Controller\AbstractActionController;
+//use Zend\Mvc\Controller\AbstractActionController;
+use Application\Controller\JhekasoftController;
 use Zend\View\Model\ViewModel;
 use Pages\Model\Pages;
 use Pages\Form\PagesForm;
 
-class PagesController extends AbstractActionController
+class PagesController extends JhekasoftController
 {
     protected $itemTable;
-    protected $authservice;
-
-    public function getAuthService()
-    {
-        if (!$this->authservice) {
-            $this->authservice = $this->getServiceLocator()
-                ->get('AuthService');
-        }
-
-        return $this->authservice;
-    }
     
     public function indexAction()
     {
