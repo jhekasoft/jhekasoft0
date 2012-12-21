@@ -1,0 +1,12 @@
+<div style="margin-bottom: 10px;">
+    <?php if (!empty($this->image)) { ?>
+        <a href="<?php echo $this->url('blog/show', array('name' => $this->name)); ?>">
+            <img src="<?php echo $this->basePath(); ?>/files/blog/images/p_<?php echo $this->image; ?>" alt="" style="float: left; width: 140px; margin-right: 10px; margin-bottom: 10px;">
+        </a>
+    <?php } ?>
+    <div>
+        <a href="<?php echo $this->url('blog/show', array('name' => $this->name)); ?>"><?php echo $this->escapeHtml($this->title); ?></a>
+    </div>
+    
+    <div class="clr"></div>
+</div>
