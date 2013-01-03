@@ -15,7 +15,7 @@ $this->headTitle($title);
             <?php if (count($this->paginator) > 0) { ?>
                 <?php echo $this->partialLoop('blog/blog/index-item.phtml', $this->paginator) ?>
             <?php } else { ?>
-                <p>Извините, автор ещё не добавил странички.</p>
+                <p>Извините, автор ещё не добавил записи.</p>
             <?php } ?>
         </div>
         

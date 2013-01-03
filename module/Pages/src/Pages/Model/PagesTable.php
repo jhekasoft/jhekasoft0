@@ -100,11 +100,14 @@ class PagesTable extends AbstractTableGateway
             'datetime'  => $item->datetime,
             'title'  => $item->title,
             'text'  => $item->text,
-            'show'  => $item->show,
             'meta_keywords'  => $item->meta_keywords,
             'show_share'  => $item->show_share,
             'show_comments'  => $item->show_comments,
         );
+        
+        if(!empty($item->show)) {
+            $data['show'] = $item->show;
+        }
 
         $id = (int) $item->id;
 

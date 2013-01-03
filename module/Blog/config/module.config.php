@@ -23,9 +23,8 @@ return array(
                     'default' => array(
                         'type'    => 'segment',
                         'options' => array(
-                            'route'    => '[/parent/:parent][/page/:page]',
+                            'route'    => '[/page/:page]',
                             'constraints' => array(
-                                'parent'       => '[a-zA-Z][a-zA-Z0-9_-]*',
                                 'page'       => '[0-9]+',
                             ),
                             'defaults' => array(

@@ -1,4 +1,7 @@
-<div style="margin-bottom: 10px;">
+<?php
+    $datetime = new DateTime($this->datetime);
+?>
+<div style="margin-bottom: 20px;">
     <?php if (!empty($this->image)) { ?>
         <a href="<?php echo $this->url('blog/show', array('name' => $this->name)); ?>">
             <img src="<?php echo $this->basePath(); ?>/files/blog/images/p_<?php echo $this->image; ?>" alt="" style="float: left; width: 140px; margin-right: 10px; margin-bottom: 10px;">
@@ -6,6 +9,10 @@
     <?php } ?>
     <div>
         <a href="<?php echo $this->url('blog/show', array('name' => $this->name)); ?>"><?php echo $this->escapeHtml($this->title); ?></a>
+        <span class="blog_item_datetime" ><?php echo $datetime->format('d.m.Y, H:i'); ?></span>
+        <div>
+            <?php echo $this->cut_text; ?>
+        </div>
     </div>
     
     <div class="clr"></div>

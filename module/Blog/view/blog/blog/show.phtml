@@ -3,6 +3,8 @@ $title = $this->item->title . ' ' . $this->item->version;
 $this->headTitle($title);
 $this->headMeta()->appendName('description', $this->escapeHtml($this->item->meta_description_default))
                  ->appendName('keywords', $this->escapeHtml($this->item->meta_keywords));
+
+$datetime = new DateTime($this->item->datetime);
 ?>
 
 <div id="container">
@@ -12,6 +14,10 @@ $this->headMeta()->appendName('description', $this->escapeHtml($this->item->meta
         <?php } ?>
 
         <h1><?php echo $this->escapeHtml($title); ?></h1>
+        
+        <div class="blog_item_datetime_block">
+            <span class="blog_item_datetime"><?php echo $datetime->format('d.m.Y, H:i'); ?></span>
+        </div>
 
         <div>
             <?php echo $this->item->text; ?>

@@ -10,7 +10,7 @@ use Zend\Paginator\Paginator;
 
 class BlogTable extends AbstractTableGateway
 {
-    protected $table ='jh_page';
+    protected $table ='jh_blog';
 
     public function __construct(Adapter $adapter)
     {
@@ -52,7 +52,10 @@ class BlogTable extends AbstractTableGateway
             $where[] = "`par_id` = '{$par_id}'";
         }
         
-        $resultSet = $this->select($where);
+        $select = $this->getSql()->select();
+        $select->where($where)->order('datetime DESC');
+        
+        $resultSet = $this->selectWith($select);
         $resultSet->buffer();
         $resultSet->next();
         
@@ -99,12 +102,15 @@ class BlogTable extends AbstractTableGateway
             'name' => $item->name,
             'datetime'  => $item->datetime,
             'title'  => $item->title,
+            'cut_text'  => $item->cut_text,
             'text'  => $item->text,
-            'show'  => $item->show,
             'meta_keywords'  => $item->meta_keywords,
-            'show_share'  => $item->show_share,
             'show_comments'  => $item->show_comments,
         );
+        
+        if(!empty($item->show)) {
+            $data['show'] = $item->show;
+        }
 
         $id = (int) $item->id;
 

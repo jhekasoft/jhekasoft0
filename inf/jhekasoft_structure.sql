@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.4
+-- version 3.5.5
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Ноя 24 2012 г., 00:51
--- Версия сервера: 5.5.28-log
--- Версия PHP: 5.4.8
+-- Время создания: Янв 04 2013 г., 01:20
+-- Версия сервера: 5.5.29-log
+-- Версия PHP: 5.4.10
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +19,30 @@ SET time_zone = "+00:00";
 --
 -- База данных: `jhekasoft`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `jh_blog`
+--
+
+CREATE TABLE IF NOT EXISTS `jh_blog` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `datetime` datetime NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `cut_text` text NOT NULL,
+  `text` text NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `show` enum('no','yes') NOT NULL DEFAULT 'no',
+  `show_comments` enum('no','yes') NOT NULL DEFAULT 'no',
+  `meta_title` varchar(255) NOT NULL,
+  `meta_description` varchar(255) NOT NULL,
+  `meta_keywords` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`),
+  KEY `name` (`name`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 -- --------------------------------------------------------
 
@@ -60,7 +84,7 @@ CREATE TABLE IF NOT EXISTS `jh_page` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`),
   KEY `name` (`name`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 -- --------------------------------------------------------
 

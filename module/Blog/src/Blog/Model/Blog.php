@@ -11,14 +11,12 @@ class Blog implements InputFilterAwareInterface
 {
     public $id;
     public $name;
-    public $par_id;
     public $datetime;
     public $title;
-    public $author;
+    public $cut_text;
     public $text;
     public $image;
     public $show;
-    public $show_share;
     public $show_comments;
     public $meta_keywords;
     public $meta_description_default;
@@ -29,15 +27,12 @@ class Blog implements InputFilterAwareInterface
     {
         $this->id              = (isset($data['id'])) ? $data['id'] : null;
         $this->name            = (isset($data['name'])) ? $data['name'] : null;
-        $this->par_id          = (isset($data['par_id'])) ? $data['par_id'] : null;
         $this->title           = (isset($data['title'])) ? $data['title'] : null;
         $this->datetime        = (isset($data['datetime'])) ? $data['datetime'] : null;
-        $this->author          = (isset($data['author'])) ? $data['author'] : null;
+        $this->cut_text        = (isset($data['cut_text'])) ? $data['cut_text'] : null;
         $this->text            = (isset($data['text'])) ? $data['text'] : null;
         $this->image           = (isset($data['image'])) ? $data['image'] : null;
-        $this->type            = (isset($data['type'])) ? $data['type'] : null;
         $this->show            = (isset($data['show'])) ? $data['show'] : null;
-        $this->show_share      = (isset($data['show_share'])) ? $data['show_share'] : null;
         $this->show_comments   = (isset($data['show_comments'])) ? $data['show_comments'] : null;
         $this->meta_keywords   = (isset($data['meta_keywords'])) ? $data['meta_keywords'] : null;
         

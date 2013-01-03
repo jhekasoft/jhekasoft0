@@ -14,10 +14,6 @@ class BlogController extends JhekasoftController
     
     public function indexAction()
     {
-        if (!$this->getAuthService()->hasIdentity()) {
-            throw new \Exception("Not found.");
-        }
-        
         $page = $this->params()->fromRoute('page', 1);
         $parent = $this->params()->fromRoute('parent', null);
         
@@ -113,7 +109,12 @@ class BlogController extends JhekasoftController
 
             if ($form->isValid()) {
                 $item->exchangeArray($form->getData());
-                $item->datetime = date('Y-m-d H:i:s', time());
+                
+                // автоматическая дата (если поле пустое)
+                if(empty($item->datetime)) {
+                    $item->datetime = date('Y-m-d H:i:s', time());
+                }
+                
                 $item->show = 'yes';
                 $this->getTable()->saveItem($item);
 
