@@ -265,11 +265,55 @@ ul.nav_block_main_menu li a:hover {
 }
 
 .blog_item_datetime_block {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .blog_item_datetime {
-    color: #cccccc;
+    color: #aaa;
+    float: right;
+}
+
+.blog_item_text p {
+    margin: 0;
+}
+
+.blog_item_show_link {
+    float: right;
+    padding: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #000;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: #EFEFEF; /* Old browsers */
+    background: -moz-linear-gradient(top,  #feffff 0%, #f7f7f7 35%, #ededed 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#feffff), color-stop(35%,#f7f7f7), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #feffff 0%,#f7f7f7 35%,#ededed 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #feffff 0%,#f7f7f7 35%,#ededed 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #feffff 0%,#f7f7f7 35%,#ededed 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #feffff 0%,#f7f7f7 35%,#ededed 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+}
+
+.blog_item_show_link:hover,
+.blog_item_show_link:focus {
+    background: #ededed; /* Old browsers */
+    background: -moz-linear-gradient(top,  #ededed 0%, #f7f7f7 35%, #ffffff 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ededed), color-stop(35%,#f7f7f7), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #ededed 0%,#f7f7f7 35%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #ededed 0%,#f7f7f7 35%,#ffffff 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #ededed 0%,#f7f7f7 35%,#ffffff 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #ededed 0%,#f7f7f7 35%,#ffffff 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */    
+}
+
+.blog_item_datetime_show_block {
+    margin-bottom: 20px;
+}
+
+.blog_item_datetime_show {
+    color: #aaa;
 }
 
 input, textarea {

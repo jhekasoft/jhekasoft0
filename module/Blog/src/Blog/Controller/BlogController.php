@@ -25,6 +25,7 @@ class BlogController extends JhekasoftController
         
         return new ViewModel(array(
             'paginator' => $paginator,
+            'can_edit' => $this->getAuthService()->hasIdentity(),
         ));
     }
 

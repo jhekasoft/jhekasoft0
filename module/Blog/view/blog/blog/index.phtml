@@ -7,8 +7,14 @@ $this->headTitle($title);
     <div id="content">
         <h1><?php echo $this->escapeHtml($title); ?></h1>
         
-        <div style="margin-bottom: 40px;">
-            <a href="<?php echo $this->url('blog/add'); ?>">Добавить</a>
+        <?php if ($this->can_edit) { ?>
+            <div style="margin-bottom: 20px;">
+                <a href="<?php echo $this->url('blog/add'); ?>">Добавить</a>
+            </div>
+        <?php } ?>
+        
+        <div class="content_information">
+            Старые посты на <a href="http://jhekasoft.livejournal.com/">уютненькой жежешечке</a>.
         </div>
         
         <div>

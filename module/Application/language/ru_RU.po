@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Jhekasoft\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-18 22:45+0300\n"
-"PO-Revision-Date: 2012-10-27 14:02+0300\n"
+"POT-Creation-Date: 2013-01-04 20:44+0300\n"
+"PO-Revision-Date: 2013-01-04 20:44+0300\n"
 "Last-Translator: Yevgeniy Yefremov <jheka@mail.ru>\n"
 "Language-Team:  <jheka@mail.ru>\n"
 "Language: ru_RU\n"
@@ -16,38 +16,35 @@ msgstr ""
 
 #: Application/view/layout/clean.phtml:5
 #: Application/view/layout/layout.phtml:5
-msgid "Jhekasoft personal site"
-msgstr "Jhekasoft (персональный сайт)"
+msgid "Jhekasoft"
+msgstr ""
 
-#: Application/view/layout/layout.phtml:40
+#: Application/view/layout/layout.phtml:83
 #: Software/view/software/software/show.phtml:3
 #: Software/view/software/software/index.phtml:2
 msgid "Software"
 msgstr "Приложения"
 
-#: Application/view/layout/layout.phtml:43
+#: Application/view/layout/layout.phtml:86
 msgid "Games"
 msgstr "Игры"
 
-#: Application/view/layout/layout.phtml:46
+#: Application/view/layout/layout.phtml:89
 msgid "Video"
 msgstr "Видео"
 
-#: Application/view/layout/layout.phtml:49
+#: Application/view/layout/layout.phtml:92
 msgid "Sound"
 msgstr "Звук"
 
-#: Application/view/layout/layout.phtml:52
+#: Application/view/layout/layout.phtml:95 Blog/view/blog/blog/edit.phtml:16
+#: Blog/view/blog/blog/index.phtml:2 Blog/view/blog/blog/add.phtml:16
 msgid "Blog"
 msgstr "Блог"
 
-#: Application/view/layout/layout.phtml:55
+#: Application/view/layout/layout.phtml:98
 msgid "About"
 msgstr "О сайте"
-
-#: Application/view/application/index/coming-soon.phtml:5
-msgid "Coming soon..."
-msgstr "Скоро..."
 
 #: Application/view/error/404.phtml:3
 msgid "A 404 error occurred"
@@ -114,6 +111,21 @@ msgstr ""
 msgid "An error occurred"
 msgstr "Произошла ошибка"
 
-#: Software/view/software/software/show.phtml:10
+#: Auth/view/auth/auth/login.phtml:3 Auth/view/auth/auth/success.phtml:3
+msgid "Login"
+msgstr ""
+
+#: Pages/view/pages/pages/edit.phtml:16 Pages/view/pages/pages/index.phtml:2
+#: Pages/view/pages/pages/add.phtml:16
+msgid "Pages"
+msgstr ""
+
+#: Software/view/software/software/show.phtml:12
 msgid "Author"
 msgstr "Автор"
+
+#~ msgid "Jhekasoft personal site"
+#~ msgstr "Jhekasoft (персональный сайт)"
+
+#~ msgid "Coming soon..."
+#~ msgstr "Скоро..."
