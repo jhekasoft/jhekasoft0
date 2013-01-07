@@ -6,7 +6,7 @@ small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
+caption {
     margin: 0;
     padding: 0;
     border: 0;
@@ -14,6 +14,9 @@ table, caption, tbody, tfoot, thead, tr, th, td {
     font-size: 100%;
     vertical-align: baseline;
     background: transparent;
+}
+table, tbody, tfoot, thead, tr, th, td {
+    vertical-align: top;
 }
 ol, ul {
     list-style: none;
@@ -285,7 +288,7 @@ ul.nav_block_main_menu li a:hover {
     color: #000;
     text-decoration: none;
     border: 1px solid #ccc;
-    border-radius: 10px;
+    border-radius: 6px;
     background: #EFEFEF; /* Old browsers */
     background: -moz-linear-gradient(top,  #feffff 0%, #f7f7f7 35%, #ededed 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#feffff), color-stop(35%,#f7f7f7), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
@@ -296,8 +299,7 @@ ul.nav_block_main_menu li a:hover {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
 }
 
-.blog_item_show_link:hover,
-.blog_item_show_link:focus {
+.blog_item_show_link:hover {
     background: #ededed; /* Old browsers */
     background: -moz-linear-gradient(top,  #ededed 0%, #f7f7f7 35%, #ffffff 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ededed), color-stop(35%,#f7f7f7), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
@@ -306,6 +308,13 @@ ul.nav_block_main_menu li a:hover {
     background: -ms-linear-gradient(top,  #ededed 0%,#f7f7f7 35%,#ffffff 100%); /* IE10+ */
     background: linear-gradient(to bottom,  #ededed 0%,#f7f7f7 35%,#ffffff 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */    
+}
+
+.blog_item_show_link:focus {
+    border: 1px solid #427F42;
+    -webkit-box-shadow: 0 0 3px #ffffff inset, 0 1px 1px rgba(0,0,0,0.1);
+    -moz-box-shadow   : 0 0 3px #ffffff inset, 0 1px 1px rgba(0,0,0,0.1);
+    box-shadow        : 0 0 3px #ffffff inset, 0 1px 1px rgba(0,0,0,0.1);
 }
 
 .blog_item_datetime_show_block {
