@@ -2,10 +2,11 @@
 
 namespace Software\Controller;
 
-use Zend\Mvc\Controller\AbstractActionController;
+//use Zend\Mvc\Controller\AbstractActionController;
+use Application\Controller\JhekasoftController;
 use Zend\View\Model\ViewModel;
 
-class SoftwareController extends AbstractActionController
+class SoftwareController extends JhekasoftController
 {
     protected $itemTable;
     

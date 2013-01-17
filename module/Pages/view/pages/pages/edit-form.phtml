@@ -14,9 +14,9 @@
     </div>
     <div class="form_row">
         <?php echo $this->formRow($form->get('text')); ?>
-        <div class="textarea_select_editor">
-            <a class="no_href" href="javascript:void(0);" onclick="WebEditor.ckEditorInit('#text');">CKEditor</a>
-            <a class="no_href" href="javascript:void(0);" onclick="WebEditor.tinyMceInit('#text');">TinyMCE</a>
+        <div class="textarea_select_editor textarea_select_editor_text">
+            <a class="no_href" href="javascript:void(0);" onclick="WebEditor.ckEditorInit('#text', '.textarea_select_editor_text');">CKEditor</a>
+            <a class="no_href" href="javascript:void(0);" onclick="WebEditor.tinyMceInit('#text', '.textarea_select_editor_text');">TinyMCE</a>
         </div>
     </div>
     <div class="form_row">

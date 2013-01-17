@@ -1,40 +1,18 @@
 <?php
 $this->headMeta()->appendName('description', 'Личный сайт Jhekasoft. Приложения, игры, музыка, видео')
-                 ->appendName('keywords', 'jhekasoft, приложения, игры, звук, видео');
+                 ->appendName('keywords', $this->escapeHtml($this->item->meta_keywords));
 ?>
 
-<div id="container">
+<div id="container" class="container_full">
     <div id="content">
-        <?php if ($this->isCoundownEnd) { ?>
-            <h1>Добро пожаловать на сайт!</h1>
-            
-            <p>
-                Кошечка справа охраняет сайт. Но иногда она может отвлечься на
-                игры для <a href="http://instead.syscall.ru">INSTEAD</a>. Тогда можно будет попробовать хакнуть сайт :)
-            </p>
-            <div style="margin-top: 40px; margin-bottom: 40px;">
-                <p>
-                    <strong>Новая песня!</strong> Билет 33 — О роботах
-                </p>
-                <audio controls>
-                  <source src="<?php echo $this->basePath(); ?>/files/audio/bilet33/about_robots.mp3">
-                  <source src="<?php echo $this->basePath(); ?>/files/audio/bilet33/about_robots.ogg">
-                  Тут должна была быть песенка(<a href="<?php echo $this->basePath(); ?>/files/audio/bilet33/about_robots.mp3">mp3</a> |
-                  <a href="<?php echo $this->basePath(); ?>/files/audio/bilet33/about_robots.ogg">ogg</a>). Но ваш браузер не смог её воспроизвести :(
-                </audio>
-            </div>
-            <p>
-                А ещё совет, что лучше не переезжать на велосипеде:
-            </p>
-            
-            <iframe width="540" height="405" src="http://www.youtube.com/embed/IeMJIVeu4Tk" frameborder="0" allowfullscreen></iframe>
-        <?php } else { ?>
-            <h1>Приветульки, кулхацкер!</h1>
-            <p>
-                Ты попал на эту страницу раньше времени! Молодец! А теперь подумай, зачем?
-            </p>
+        <?php if ($this->can_edit) { ?>
+            <a href="<?php echo $this->url('pages/edit', array('name' => $this->item->name)); ?>">редактировать</a>
         <?php } ?>
+
+        <h1><?php echo $this->item->title; ?></h1>
+        
+        <?php echo $this->item->text; ?>
     </div><!-- #content-->
 </div><!-- #container-->
 
-<?php echo $this->sideRight(); ?>
+<?php //echo $this->sideRight(); ?>

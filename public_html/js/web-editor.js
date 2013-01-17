@@ -79,11 +79,11 @@ var WebEditor = {
         $('.textarea_select_editor').hide();
     },
     
-    ckEditorInit : function(selector) {
-        $(selector).ckeditor({
+    ckEditorInit : function(inputSelector, buttonSelector) {
+        $(inputSelector).ckeditor({
             filebrowserBrowseUrl : WebEditor.elfinderCkeditorUrl
         });
 
-        $('.textarea_select_editor').hide();
+        $(buttonSelector).hide();
     }
 };

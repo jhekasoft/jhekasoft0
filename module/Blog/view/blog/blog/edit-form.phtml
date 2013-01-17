@@ -1,0 +1,42 @@
+<div>
+    <?php
+    $form = $this->form;
+    $form->prepare();
+    ?>
+
+    <?php echo $this->form()->openTag($form); ?>
+    <?php echo $this->formHidden($form->get('id')); ?>
+    <div class="form_row">
+        <?php echo $this->formRow($form->get('name')); ?>
+    </div>
+    <div class="form_row">
+        <?php echo $this->formRow($form->get('datetime')); ?>
+    </div>
+    <div class="form_row">
+        <?php echo $this->formRow($form->get('title')); ?>
+    </div>
+    <div class="form_row">
+        <?php echo $this->formRow($form->get('cut_text')); ?>
+        <div class="textarea_select_editor textarea_select_editor_cut_text">
+            <a class="no_href" href="javascript:void(0);" onclick="WebEditor.ckEditorInit('#cut_text', '.textarea_select_editor_cut_text');">CKEditor</a>
+            <a class="no_href" href="javascript:void(0);" onclick="WebEditor.tinyMceInit('#cut_text', '.textarea_select_editor_cut_text');">TinyMCE</a>
+        </div>
+    </div>
+    <div class="form_row">
+        <?php echo $this->formRow($form->get('text')); ?>
+        <div class="textarea_select_editor textarea_select_editor_text">
+            <a class="no_href" href="javascript:void(0);" onclick="WebEditor.ckEditorInit('#text', '.textarea_select_editor_text');">CKEditor</a>
+            <a class="no_href" href="javascript:void(0);" onclick="WebEditor.tinyMceInit('#text', '.textarea_select_editor_text');">TinyMCE</a>
+        </div>
+    </div>
+    <div class="form_row">
+        <?php echo $this->formRow($form->get('meta_keywords')); ?>
+    </div>
+    <div class="form_row">
+        <?php echo $this->formRow($form->get('show_comments')); ?>
+    </div>
+    <div class="form_row">
+        <?php echo $this->formSubmit($form->get('submit')); ?>
+    </div>
+    <?php echo $this->form()->closeTag(); ?>
+</div>

@@ -111,17 +111,17 @@ return array(
                     ),
                 ),
             ),
-            'blog' => array(
-                'type'    => 'Literal',
-                'options' => array(
-                    'route'    => '/blog',
-                    'defaults' => array(
-                        'controller' => 'Pages\Controller\Pages',
-                        'action'     => 'show',
-                        'name' => 'blog'
-                    ),
-                ),
-            ),
+//            'blog' => array(
+//                'type'    => 'Literal',
+//                'options' => array(
+//                    'route'    => '/blog',
+//                    'defaults' => array(
+//                        'controller' => 'Pages\Controller\Pages',
+//                        'action'     => 'show',
+//                        'name' => 'blog'
+//                    ),
+//                ),
+//            ),
             'about' => array(
                 'type'    => 'Literal',
                 'options' => array(

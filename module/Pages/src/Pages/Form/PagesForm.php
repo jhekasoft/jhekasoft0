@@ -20,6 +20,7 @@ class PagesForm extends Form
         // Имя
         $name = new Element\Text('name');
         $name->setLabel('Имя');
+        $name->setAttribute('placeholder', 'test-name');
 	         
         // Заголовок
         $title = new Element\Text('title');

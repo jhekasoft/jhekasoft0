@@ -4,6 +4,7 @@ return array(
         'Application',
         'Software',
         'Pages',
+        'Blog',
         'Auth',
     ),
     'module_listener_options' => array(

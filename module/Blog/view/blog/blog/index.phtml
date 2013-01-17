@@ -1,0 +1,32 @@
+<?php
+$title = $this->translate('Blog');
+$this->headTitle($title);
+?>
+
+<div id="container">
+    <div id="content">
+        <h1><?php echo $this->escapeHtml($title); ?></h1>
+        
+        <?php if ($this->can_edit) { ?>
+            <div style="margin-bottom: 20px;">
+                <a href="<?php echo $this->url('blog/add'); ?>">Добавить</a>
+            </div>
+        <?php } ?>
+        
+        <div class="content_information">
+            Старые посты на <a href="http://jhekasoft.livejournal.com/">уютненькой жежешечке</a>.
+        </div>
+        
+        <div>
+            <?php if (count($this->paginator) > 0) { ?>
+                <?php echo $this->partialLoop('blog/blog/index-item.phtml', $this->paginator) ?>
+            <?php } else { ?>
+                <p>Извините, автор ещё не добавил записи.</p>
+            <?php } ?>
+        </div>
+        
+        <?php echo $this->paginationControl($this->paginator, 'Sliding', 'pagination-control.phtml', array('route' => 'blog/default')); ?>
+    </div><!-- #content-->
+</div><!-- #container-->
+
+<?php echo $this->sideRight(); ?>
