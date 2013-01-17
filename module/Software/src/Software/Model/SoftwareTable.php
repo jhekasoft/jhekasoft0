@@ -26,22 +26,22 @@ class SoftwareTable extends AbstractTableGateway
     public function fetchAll($options = array())
     {
         $where = array();
-        
+
         // Условие отображаемых строк
         // Варианты: yes, no, all. По умолчанию yes
         // Если all, то не добавляем условие
         $show = 'yes';
-        if(!empty($options['show'])) {
+        if (!empty($options['show'])) {
             $show = $options['show'];
         }
-        if($show != 'all') {
+        if ($show != 'all') {
             $where[] = "`show` = '{$show}'";
         }
-        
+
         // Тип приложения
         $type = 'all';
-        if(!empty($options['type'])) {
-            switch($options['type']) {
+        if (!empty($options['type'])) {
+            switch ($options['type']) {
                 case 'game':
                     $type = 'game';
                     break;
@@ -51,14 +51,14 @@ class SoftwareTable extends AbstractTableGateway
                     break;
             }
         }
-        if($type != 'all') {
+        if ($type != 'all') {
             $where[] = "`type` = '{$type}'";
         }
-        
+
         // Платформа
         $platform = 'all';
-        if(!empty($options['platform'])) {
-            switch($options['platform']) {
+        if (!empty($options['platform'])) {
+            switch ($options['platform']) {
                 case 'linux':
                     $platform = 'linux';
                     break;
@@ -74,14 +74,14 @@ class SoftwareTable extends AbstractTableGateway
                     break;
             }
         }
-        if($platform != 'all') {
+        if ($platform != 'all') {
             $where[] = "`platform_{$platform}` = '1'";
         }
-        
+
         // Автор
         $authorId = 'all';
-        if(!empty($options['author'])) {
-            switch($options['author']) {
+        if (!empty($options['author'])) {
+            switch ($options['author']) {
                 case 'sanekokokok':
                     $authorId = 2;
                     break;
@@ -94,42 +94,42 @@ class SoftwareTable extends AbstractTableGateway
                     break;
             }
         }
-        if($authorId != 'all') {
+        if ($authorId != 'all') {
             $where[] = "`author_id` = '{$authorId}'";
         }
-        
+
         $select = $this->getSql()->select();
         $select->where($where)->order('datetime DESC');
-        
+
         $resultSet = $this->selectWith($select);
         $resultSet->buffer();
         $resultSet->next();
-        
+
         return $resultSet;
     }
-    
+
     public function getPaginator($options = array())
     {
         $page = 1;
-        
-        if(!empty($options['page'])) {
+
+        if (!empty($options['page'])) {
             $page = (int) $options['page'];
         }
-        
+
         $iteratorAdapter = new Iterator($this->fetchAll($options));
         $paginator = new Paginator($iteratorAdapter);
-        
+
         $paginator->setCurrentPageNumber($page);
         $paginator->setItemCountPerPage(10);
-        
+
         return $paginator;
     }
 
     public function getItem($id, $options = array())
     {
         $fieldName = 'id';
-        
-        if(!empty($options['field'])) {
+
+        if (!empty($options['field'])) {
             $fieldName = $options['field'];
         }
 

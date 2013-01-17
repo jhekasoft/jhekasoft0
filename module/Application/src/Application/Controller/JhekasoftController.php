@@ -8,7 +8,7 @@ use Zend\Mvc\Controller\AbstractActionController;
 class JhekasoftController extends AbstractActionController
 {
     protected $authservice;
-    
+
     public function getAuthService()
     {
         if (!$this->authservice) {

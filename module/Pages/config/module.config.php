@@ -6,7 +6,7 @@ return array(
             'Pages\Controller\Pages' => 'Pages\Controller\PagesController',
         ),
     ),
-    
+
     'router' => array(
         'routes' => array(
             'pages' => array(
@@ -135,7 +135,7 @@ return array(
             ),
         ),
     ),
-    
+
     'view_manager' => array(
         'template_path_stack' => array(
             'pages' => __DIR__ . '/../view',

@@ -10,11 +10,11 @@ class FinalCountdownBlock extends AbstractHelper
     public function __invoke($endDatetime)
     {
         $view = $this->getView();
-        
+
         $finalCoundown = new FinalCountdown($endDatetime);
-        
+
         $view->leftTime = $finalCoundown->getLeftTime();
-        
+
         return $view->render('helper/final-countdown-block');
     }
 }

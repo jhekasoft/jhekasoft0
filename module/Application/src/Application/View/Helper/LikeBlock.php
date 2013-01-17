@@ -9,7 +9,7 @@ class LikeBlock extends AbstractHelper
     public function __invoke()
     {
         $view = $this->getView();
-        
+
         return $view->render('helper/like-block');
     }
 }

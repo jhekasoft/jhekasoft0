@@ -4,7 +4,6 @@ namespace Software;
 
 use Software\Model\SoftwareTable;
 
-
 class Module
 {
     public function getAutoloaderConfig()
@@ -25,7 +24,7 @@ class Module
     {
         return include __DIR__ . '/config/module.config.php';
     }
-    
+
     public function getServiceConfig()
     {
         return array(
@@ -33,6 +32,7 @@ class Module
                 'Software\Model\SoftwareTable' =>  function($sm) {
                     $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
                     $table     = new SoftwareTable($dbAdapter);
+
                     return $table;
                 },
             ),

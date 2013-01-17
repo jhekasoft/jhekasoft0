@@ -6,7 +6,7 @@ return array(
             'Blog\Controller\Blog' => 'Blog\Controller\BlogController',
         ),
     ),
-    
+
     'router' => array(
         'routes' => array(
             'blog' => array(
@@ -78,7 +78,7 @@ return array(
             ),
         ),
     ),
-    
+
     'view_manager' => array(
         'template_path_stack' => array(
             'blog' => __DIR__ . '/../view',

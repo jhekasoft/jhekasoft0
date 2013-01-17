@@ -18,32 +18,32 @@ class WebEditorController extends AbstractActionController
 
         return $this->authservice;
     }
-    
+
     public function __construct()
     {
         //parent::__construct();
     }
-    
+
     public function elfinderTinymceAction()
     {
         $this->layout('layout/clean');
-        
+
         if (!$this->getAuthService()->hasIdentity()) {
             throw new \Exception("Not found.");
         }
-        
+
         return new ViewModel(array(
         ));
     }
-    
+
     public function elfinderCkeditorAction()
     {
         $this->layout('layout/clean');
-        
+
         if (!$this->getAuthService()->hasIdentity()) {
             throw new \Exception("Not found.");
         }
-        
+
         return new ViewModel(array(
         ));
     }

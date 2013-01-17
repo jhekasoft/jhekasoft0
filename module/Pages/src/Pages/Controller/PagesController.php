@@ -11,22 +11,22 @@ use Pages\Form\PagesForm;
 class PagesController extends JhekasoftController
 {
     protected $itemTable;
-    
+
     public function indexAction()
     {
         if (!$this->getAuthService()->hasIdentity()) {
             throw new \Exception("Not found.");
         }
-        
+
         $page = $this->params()->fromRoute('page', 1);
         $parent = $this->params()->fromRoute('parent', null);
-        
+
         $paginator = $this->getTable()->getPaginator(array(
             'page' => $page,
             'parent' => $parent,
             //'show' => 'all',
         ));
-        
+
         return new ViewModel(array(
             'paginator' => $paginator,
         ));
@@ -39,7 +39,7 @@ class PagesController extends JhekasoftController
         $item = $this->getTable()->getItem($name, array(
             'field' => 'name',
         ));
-        
+
         if (!$item) {
             throw new \Exception("Could not find row $name");
         }
@@ -56,7 +56,7 @@ class PagesController extends JhekasoftController
         if (!$this->getAuthService()->hasIdentity()) {
             throw new \Exception("Not found.");
         }
-        
+
         $name = (string) $this->params()->fromRoute('name', null);
         if (!$name) {
             return $this->redirect()->toRoute('pages/add');
@@ -64,11 +64,11 @@ class PagesController extends JhekasoftController
         $item = $this->getTable()->getItem($name, array(
             'field' => 'name',
         ));
-        
+
         if (!$item) {
             throw new \Exception("Could not find row $name");
         }
-        
+
         $form  = new PagesForm();
         $form->bind($item);
 //        $form->get('submit')->setAttribute('value', 'Edit');
@@ -93,19 +93,19 @@ class PagesController extends JhekasoftController
             'form' => $form,
         );
     }
-    
+
     public function addAction()
     {
         if (!$this->getAuthService()->hasIdentity()) {
             throw new \Exception("Not found.");
         }
-        
+
         $form  = new PagesForm();
         //$form->bind($item);
         $form->get('submit')->setAttribute('value', 'Добавить');
 
         $item = new Pages();
-        
+
         $request = $this->getRequest();
         if ($request->isPost()) {
             $form->setInputFilter($item->getInputFilter());
@@ -126,13 +126,14 @@ class PagesController extends JhekasoftController
             'form' => $form,
         );
     }
-    
+
     public function getTable()
     {
         if (!$this->itemTable) {
             $sm = $this->getServiceLocator();
             $this->itemTable = $sm->get('Pages\Model\PagesTable');
         }
+
         return $this->itemTable;
     }
 }

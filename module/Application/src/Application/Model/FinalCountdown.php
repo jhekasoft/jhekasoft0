@@ -22,11 +22,11 @@ class FinalCountdown
     public function __construct($endDatetime)
     {
         $this->functions = new Functions();
-        
+
         $this->nowDatetime = new DateTime('now');
         $this->endDatetime = $endDatetime;
-        
-        if(strtotime($this->endDatetime->format('Y-m-d H:i:s')) > strtotime($this->nowDatetime->format('Y-m-d H:i:s'))) {
+
+        if (strtotime($this->endDatetime->format('Y-m-d H:i:s')) > strtotime($this->nowDatetime->format('Y-m-d H:i:s'))) {
             $diffTime = strtotime($this->endDatetime->format('Y-m-d H:i:s')) - strtotime($this->nowDatetime->format('Y-m-d H:i:s'));
 
             // Коэффициенты
@@ -43,16 +43,16 @@ class FinalCountdown
             // Отсчёт завершён
             $this->isEnd = true;
         }
-        
+
         // Склонения числительных
         $this->daysLabel = $this->functions->pluralWord($this->days, array('день', 'дня', 'дней'));
         $this->hoursLabel = $this->functions->pluralWord($this->hours, array('час', 'часа', 'часов'));
         $this->minutesLabel = $this->functions->pluralWord($this->minutes, array('минута', 'минуты', 'минут'));
         $this->secondsLabel = $this->functions->pluralWord($this->seconds, array('секунда', 'секунды', 'секунд'));
     }
-    
+
     public function getLeftTime()
-    {   
+    {
         return array(
             'days' => $this->days,
             'hours' => $this->hours,

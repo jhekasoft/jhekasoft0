@@ -22,7 +22,7 @@ class Pages implements InputFilterAwareInterface
     public $show_comments;
     public $meta_keywords;
     public $meta_description_default;
-    
+
     protected $inputFilter;
 
     public function exchangeArray($data)
@@ -40,16 +40,16 @@ class Pages implements InputFilterAwareInterface
         $this->show_share      = (isset($data['show_share'])) ? $data['show_share'] : null;
         $this->show_comments   = (isset($data['show_comments'])) ? $data['show_comments'] : null;
         $this->meta_keywords   = (isset($data['meta_keywords'])) ? $data['meta_keywords'] : null;
-        
+
         $meta_description = mb_substr(strip_tags($this->text), 0, 200, 'utf-8');
         $this->meta_description_default = str_replace(array("\n", "\r"), "", $meta_description) . '...';
     }
-    
+
     public function getArrayCopy()
     {
         return get_object_vars($this);
     }
-    
+
     public function setInputFilter(InputFilterInterface $inputFilter)
     {
         throw new \Exception("Not used");
@@ -68,7 +68,7 @@ class Pages implements InputFilterAwareInterface
                     array('name' => 'Int'),
                 ),
             )));
-            
+
             $inputFilter->add($factory->createInput(array(
                 'name'     => 'name',
                 'required' => true,
@@ -106,7 +106,7 @@ class Pages implements InputFilterAwareInterface
                     ),
                 ),
             )));
-            
+
             $inputFilter->add($factory->createInput(array(
                 'name'     => 'meta_keywords',
                 'required' => false,

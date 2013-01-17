@@ -6,7 +6,7 @@ return array(
             'Software\Controller\Software' => 'Software\Controller\SoftwareController',
         ),
     ),
-    
+
     'router' => array(
         'routes' => array(
             'software' => array(
@@ -60,7 +60,7 @@ return array(
             ),
         ),
     ),
-    
+
     'view_manager' => array(
         'template_path_stack' => array(
             'software' => __DIR__ . '/../view',

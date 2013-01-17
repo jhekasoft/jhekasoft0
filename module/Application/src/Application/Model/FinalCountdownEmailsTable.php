@@ -25,36 +25,36 @@ class FinalCountdownEmailsTable extends AbstractTableGateway
 //    public function fetchAll($options = array())
 //    {
 //        $where = array();
-//        
+//
 //        $resultSet = $this->select($where);
 //        $resultSet->buffer();
 //        $resultSet->next();
-//        
+//
 //        return $resultSet;
 //    }
-//    
+//
 //    public function getPaginator($options = array())
 //    {
 //        $page = 1;
-//        
-//        if(!empty($options['page'])) {
+//
+//        if (!empty($options['page'])) {
 //            $page = (int) $options['page'];
 //        }
-//        
+//
 //        $iteratorAdapter = new Iterator($this->fetchAll($options));
 //        $paginator = new Paginator($iteratorAdapter);
-//        
+//
 //        $paginator->setCurrentPageNumber($page);
 //        $paginator->setItemCountPerPage(1);
-//        
+//
 //        return $paginator;
 //    }
 //
 //    public function getItem($id, $options = array())
 //    {
 //        $fieldName = 'id';
-//        
-//        if(!empty($options['field'])) {
+//
+//        if (!empty($options['field'])) {
 //            $fieldName = $options['field'];
 //        }
 //

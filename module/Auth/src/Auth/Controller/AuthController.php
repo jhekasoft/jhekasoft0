@@ -36,7 +36,7 @@ class AuthController extends JhekasoftController
 
     public function loginAction()
     {
-        //if already login, redirect to success page 
+        //if already login, redirect to success page
         if ($this->getAuthService()->hasIdentity()) {
             return $this->redirect()->toRoute('auth/success');
         }
@@ -65,11 +65,11 @@ class AuthController extends JhekasoftController
                     if ($request->getPost('remember_me') == 1) {
                         $this->getSessionStorage()
                             ->setRememberMe(1);
-                        // set storage again 
+                        // set storage again
                         $this->getAuthService()->setStorage($this->getSessionStorage());
                     }
                     $this->getAuthService()->getStorage()->write($request->getPost('login'));
-                    
+
                     return $this->redirect()->toRoute('auth/success');
                 } else {
                     $form->get('password')->setMessages(array('Login or password incorrect'));
@@ -82,7 +82,7 @@ class AuthController extends JhekasoftController
             //'messages' => $this->flashmessenger()->getCurrentMessages()
         );
     }
-    
+
     public function successAction()
     {
         if (!$this->getServiceLocator()
@@ -99,6 +99,7 @@ class AuthController extends JhekasoftController
         $this->getAuthService()->clearIdentity();
 
         $this->flashmessenger()->addMessage("You've been logged out");
+
         return $this->redirect()->toRoute('auth/login');
     }
 

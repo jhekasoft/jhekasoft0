@@ -4,7 +4,7 @@ namespace Software\Form;
 
 use Zend\Form\Form;
 use Zend\Form\Element;
- 
+
 class FilterForm extends Form
 {
     public function __construct($name = null)
@@ -13,7 +13,7 @@ class FilterForm extends Form
 
         $this->setAttribute('method', 'post');
         $this->setAttribute('class', 'filter_form');
-	         
+
         // Тип
         $type = new Element\Select('filter_type');
         //$type->setLabel('Тип');
@@ -26,7 +26,7 @@ class FilterForm extends Form
             'class' => 'filter_form_element_select chzn-select-deselect',
             'data-placeholder' => 'Тип'
         ));
-        
+
         // Платформа
         $platform = new Element\Select('filter_platform');
         //$platform->setLabel('Платформа');
@@ -41,7 +41,7 @@ class FilterForm extends Form
             'class' => 'filter_form_element_select chzn-select-deselect',
             'data-placeholder' => 'Платформа'
         ));
-        
+
         // Автор
         $author = new Element\Select('filter_author');
         //$author->setLabel('Автор');
@@ -55,16 +55,16 @@ class FilterForm extends Form
             'class' => 'filter_form_element_select chzn-select-deselect',
             'data-placeholder' => 'Автор'
         ));
-        
+
         // Submit
         $submit = new Element\Submit('filter_submit');
         $submit->setValue('Фильтровать');
         $submit->setAttribute('class', 'filter_form_submit');
-        
+
         $this->add($type);
         $this->add($platform);
         $this->add($author);
         $this->add($submit);
     }
-    
+
 }

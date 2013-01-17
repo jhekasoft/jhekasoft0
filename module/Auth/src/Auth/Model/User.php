@@ -11,7 +11,7 @@ class User implements InputFilterAwareInterface
     public $login;
     public $password;
     public $remember_me;
-    
+
     protected $inputFilter;
 
     public function exchangeArray($data)
@@ -19,12 +19,12 @@ class User implements InputFilterAwareInterface
         $this->login    = (isset($data['login'])) ? $data['login'] : null;
         $this->password = (isset($data['password'])) ? $data['password'] : null;
     }
-    
+
     public function getArrayCopy()
     {
         return get_object_vars($this);
     }
-    
+
     public function setInputFilter(InputFilterInterface $inputFilter)
     {
         throw new \Exception("Not used");
@@ -35,7 +35,7 @@ class User implements InputFilterAwareInterface
         if (!$this->inputFilter) {
             $inputFilter = new InputFilter();
             $factory     = new InputFactory();
-            
+
             $inputFilter->add($factory->createInput(array(
                 'name'     => 'login',
                 'required' => true,

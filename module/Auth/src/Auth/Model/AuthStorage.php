@@ -12,10 +12,9 @@ class AuthStorage extends Storage\Session
              $this->session->getManager()->rememberMe($time);
          }
     }
-    
+
     public function forgetMe()
     {
         $this->session->getManager()->forgetMe();
-    } 
+    }
 }
-

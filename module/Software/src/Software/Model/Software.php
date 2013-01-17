@@ -20,7 +20,7 @@ class Software
     public $platformWww;
     public $meta_keywords;
     public $meta_description_default;
-    
+
     public $typeTitle;
     public $platformTitles = array();
     public $authorTitle;
@@ -43,12 +43,12 @@ class Software
         $this->platformWww     = (isset($data['platform_www'])) ? $data['platform_www'] : null;
         $this->platformWindows = (isset($data['platform_windows'])) ? $data['platform_windows'] : null;
         $this->meta_keywords    = (isset($data['meta_keywords'])) ? $data['meta_keywords'] : null;
-        
+
         $meta_description = mb_substr(strip_tags($this->text), 0, 200, 'utf-8');
         $this->meta_description_default = str_replace(array("\n", "\r"), "", $meta_description) . '...';
-        
+
         // Подпись типа приложения
-        switch($data['type']) {
+        switch ($data['type']) {
             case 'game':
                 $this->typeTitle = 'Игра';
                 break;
@@ -56,23 +56,23 @@ class Software
             default:
                 $this->typeTitle = 'Приложение';
         }
-        
+
         // Подписи платформ
-        if($data['platform_linux']) {
+        if ($data['platform_linux']) {
             $this->platformTitles['linux'] = 'Linux';
         }
-        if($data['platform_windows']) {
+        if ($data['platform_windows']) {
             $this->platformTitles['windows'] = 'Windows';
         }
-        if($data['platform_android']) {
+        if ($data['platform_android']) {
             $this->platformTitles['android'] = 'Android';
         }
-        if($data['platform_www']) {
+        if ($data['platform_www']) {
             $this->platformTitles['www'] = 'WWW';
         }
-        
+
         // Подпись автора
-        switch($data['author_id']) {
+        switch ($data['author_id']) {
             case 2:
                 $this->authorTitle = 'Александр Дадыка';
                 break;

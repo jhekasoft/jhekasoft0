@@ -3,7 +3,6 @@
 namespace Auth;
 
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
-use Zend\Authentication\Storage;
 use Zend\Authentication\AuthenticationService;
 use Zend\Authentication\Adapter\DbTable as DbTableAuthAdapter;
 use Auth\Model\UserTable;
