@@ -15,11 +15,11 @@ class BlogController extends JhekasoftController
     public function indexAction()
     {
         $page = $this->params()->fromRoute('page', 1);
-        $parent = $this->params()->fromRoute('parent', null);
+        //$parent = $this->params()->fromRoute('parent', null);
 
         $paginator = $this->getTable()->getPaginator(array(
             'page' => $page,
-            'parent' => $parent,
+            //'parent' => $parent,
             //'show' => 'all',
         ));
 

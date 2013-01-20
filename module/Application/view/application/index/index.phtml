@@ -11,6 +11,12 @@ $this->headMeta()->appendName('description', 'Личный сайт Jhekasoft. �
 
         <h1><?php echo $this->item->title; ?></h1>
         
+        <?php if (count($this->blogPaginator) > 0) { ?>
+            <div>
+                <?php echo $this->partialLoop('blog/blog/index-item.phtml', $this->blogPaginator) ?>
+            </div>
+        <?php } ?>
+        
         <?php echo $this->item->text; ?>
     </div><!-- #content-->
 </div><!-- #container-->

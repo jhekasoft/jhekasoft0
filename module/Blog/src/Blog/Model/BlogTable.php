@@ -65,16 +65,20 @@ class BlogTable extends AbstractTableGateway
     public function getPaginator($options = array())
     {
         $page = 1;
+        $countPerPage = 10;
 
         if (!empty($options['page'])) {
             $page = (int) $options['page'];
+        }
+        if (!empty($options['countPerPage'])) {
+            $countPerPage = (int) $options['countPerPage'];
         }
 
         $iteratorAdapter = new Iterator($this->fetchAll($options));
         $paginator = new Paginator($iteratorAdapter);
 
         $paginator->setCurrentPageNumber($page);
-        $paginator->setItemCountPerPage(10);
+        $paginator->setItemCountPerPage($countPerPage);
 
         return $paginator;
     }

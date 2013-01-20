@@ -21,14 +21,20 @@ class IndexController extends JhekasoftController
     public function indexAction()
     {
         $sm = $this->getServiceLocator();
+        
         $pagesTable = $sm->get('Pages\Model\PagesTable');
-
         $item = $pagesTable->getItem('index', array(
             'field' => 'name',
+        ));
+        
+        $blogTable = $sm->get('Blog\Model\BlogTable');
+        $blogPaginator = $blogTable->getPaginator(array(
+            'countPerPage' => 5,
         ));
 
         return new ViewModel(array(
             'item' => $item,
+            'blogPaginator' => $blogPaginator,
             'can_edit' => $this->getAuthService()->hasIdentity(),
         ));
     }

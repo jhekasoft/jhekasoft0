@@ -220,6 +220,10 @@ ul.nav_block_main_menu li a:hover {
     overflow: auto;
 }
 
+#container.container_full #content {
+    padding: 0 10px 0 10px;
+}
+
 #content ul {
     list-style: disc;
     list-style-position: inside;
