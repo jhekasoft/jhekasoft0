@@ -317,8 +317,15 @@ ul.nav_block_main_menu li a:hover {
     border-radius: 10px;
 }
 
-.blog_item_datetime_block {
-    margin-bottom: 40px;
+.blog_item {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.blog_item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
 }
 
 .blog_item_datetime {
@@ -373,6 +380,11 @@ ul.nav_block_main_menu li a:hover {
 
 .blog_item_datetime_show {
     color: #aaa;
+}
+
+.blog_block {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #CCCCCC;
 }
 
 input, textarea {

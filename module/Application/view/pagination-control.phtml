@@ -2,9 +2,9 @@
     <div class="pagination_control">
         <!-- Previous page link -->
         <?php if (isset($this->previous)) { ?>
-            <a href="<?php echo $this->url($this->route, array('page' => $this->previous), array(), true); ?>" class="paginator_arrow">&larr;</a>
+            <a href="<?php echo $this->url($this->route, array('page' => $this->previous), array(), true); ?>" class="paginator_arrow">&larr; <?php echo $this->translate('Back'); ?></a>
         <?php } else { ?>
-            <span class="paginator_arrow paginator_arrow_disabled">&larr;</span>
+            <span class="paginator_arrow paginator_arrow_disabled">&larr; <?php echo $this->translate('Back'); ?></span>
         <?php }; ?>
 
         <!-- Numbered page links -->
@@ -18,9 +18,9 @@
 
         <!-- Next page link -->
         <?php if (isset($this->next)) { ?>
-            <a href="<?php echo $this->url($this->route, array('page' => $this->next), array(), true); ?>" class="paginator_arrow">&rarr;</a>
+            <a href="<?php echo $this->url($this->route, array('page' => $this->next), array(), true); ?>" class="paginator_arrow"><?php echo $this->translate('Next'); ?> &rarr;</a>
         <?php } else { ?>
-            <span class="paginator_arrow paginator_arrow_disabled">&rarr;</span>
+            <span class="paginator_arrow paginator_arrow_disabled"><?php echo $this->translate('Next'); ?> &rarr;</span>
         <?php }; ?>
     </div>
 <?php }; ?>
