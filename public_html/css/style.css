@@ -206,31 +206,27 @@ ul.nav_block_main_menu li a:hover {
     height: 0;
 }
 #container {
-    width: 720px;
+    width: 100%;
     float: left;
     overflow: hidden;
     padding: 10px 0;
 }
-#container.container_full {
-    width: 100%;
+#container.content_column {
+    width: 720px;
 }
 #content {
-    padding: 0 0 0 10px;
+    padding: 0 10px 0 10px;
     min-height: 400px;
     overflow: auto;
 }
 
-#container.container_full #content {
-    padding: 0 10px 0 10px;
+#container.content_column #content {
+    padding: 0 0 0 10px;
 }
 
 #content ul {
     list-style: disc;
     list-style-position: inside;
-}
-
-#content.content_full {
-    padding: 0 10px 0 10px;
 }
 
 .like_block {

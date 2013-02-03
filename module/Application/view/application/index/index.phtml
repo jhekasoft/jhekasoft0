@@ -3,7 +3,7 @@ $this->headMeta()->appendName('description', 'Личный сайт Jhekasoft. �
                  ->appendName('keywords', $this->escapeHtml($this->item->meta_keywords));
 ?>
 
-<div id="container" class="container_full">
+<div id="container">
     <div id="content">
         <?php if ($this->can_edit) { ?>
             <a href="<?php echo $this->url('pages/edit', array('name' => $this->item->name)); ?>">редактировать</a>
