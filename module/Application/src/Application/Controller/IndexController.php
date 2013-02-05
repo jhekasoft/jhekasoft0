@@ -39,6 +39,35 @@ class IndexController extends JhekasoftController
         ));
     }
 
+    public function captchaAction()
+    {
+        // Originating request:
+        $captcha = new \Zend\Captcha\Image(array(
+            'captcha' => 'Image',
+            'font'    => $_SERVER['DOCUMENT_ROOT'] . '/fonts/DroidSans.ttf',
+            'imgDir'  => $_SERVER['DOCUMENT_ROOT'] . '/files/tmp/',
+            'imgurl'  => '/files/tmp',
+            'wordLen' => 4,
+            'timeout' => 3600,
+            'height' => 30,
+            'width' => 70,
+            'fontSize' => 14,
+            'dotNoiseLevel' => 2,
+            'lineNoiseLevel' => 2,
+            'expiration'=> 3600,
+            'bgColorRed'=> 200,
+            'bgColorGreen'=> 200,
+            'bgColorBlue'=> 200,
+            'textColorRed'=> 100,
+            'textColorGreen'=> 155,
+            'textColorBlue'=> 100,
+        ));
+        $id = $captcha->generate();
+        //this will output a Figlet string
+        echo '<img src="' . $captcha->getImgUrl() . $captcha->generate() . '.png' . '" alt="" >';
+        exit();
+    }
+    
 //    public function comingSoonAction()
 //    {
 //        $this->layout('layout/clean');
