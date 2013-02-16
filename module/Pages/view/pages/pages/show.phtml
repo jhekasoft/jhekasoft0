@@ -1,5 +1,5 @@
 <?php
-$title = $this->item->title . ' ' . $this->item->version;
+$title = $this->item->title;
 $this->headTitle($title);
 $this->headMeta()->appendName('description', $this->escapeHtml($this->item->meta_description_default))
                  ->appendName('keywords', $this->escapeHtml($this->item->meta_keywords));
