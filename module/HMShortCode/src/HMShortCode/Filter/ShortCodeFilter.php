@@ -18,13 +18,13 @@ class ShortCodeFilter extends AbstractFilter implements ServiceLocatorAwareInter
     public function filter($value)
     {
         $matches = NULL;
-		preg_match('/[{]{2}.+\[{0,1}.*\]{0,1}[}]{2}/',$value, $matches);
-		foreach($matches as $match)
-		{
+        preg_match('/[{]{2}.+\[{0,1}.*\]{0,1}[}]{2}/', $value, $matches);
+        foreach ($matches as $match) {
             $value = str_replace($match, $this->convertMatchToHelper($match), $value);
         }
 
         $filtered = $value;
+
         return $filtered;
     }
 
@@ -61,6 +61,7 @@ class ShortCodeFilter extends AbstractFilter implements ServiceLocatorAwareInter
         //echo $view->{$helper}($data);
         echo call_user_func_array(array($view, $helper), $parameters);
         $converted = ob_get_clean();
+
         return $converted;
     }
 
