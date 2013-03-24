@@ -1,0 +1,22 @@
+<?php
+return array(
+    'strokercache' => array(
+        'strategies' => array(
+            'enabled' => array(
+                'StrokerCache\Strategy\RouteName' => array(
+                    'routes' => array(
+                        'home',
+                    ),
+                ),
+                /*'StrokerCache\Strategy\ControllerName' => array(
+                    'controllers' => array(
+                    )
+                ),
+                'StrokerCache\Strategy\Url' => array(
+                    'regexpes' => array(
+                    )
+                )*/
+            ),
+        )
+    )
+);
