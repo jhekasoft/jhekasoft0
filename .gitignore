@@ -12,4 +12,5 @@ inf/db_bak/
 .settings
 composer.lock
 public_html/files
+.SyncIgnore
 

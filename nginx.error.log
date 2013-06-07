@@ -1597,3 +1597,53 @@ PHP message: PHP   9. Zend\View\View->renderChildren() /home/jheka/www/jhekasoft
 PHP message: PHP  10. Zend\View\View->render() /home/jheka/www/jhekasoft/vendor/zendframework/zendframework/library/Zend/View/View.php:229
 PHP message: PHP  11. Zend\View\Renderer\PhpRenderer->render() /home/jheka/www/jhekasoft/vendor/zendframework/zendframework/library/Zend/View/View.php:201
 PHP message: PHP  12. include() /home/jheka/www/jhekasoft/vendor/zendframework/zendframework/library/Zend/View/Renderer/PhpRenderer.php:465" while reading response header from u
+2013/06/08 00:06:21 [error] 2047#0: *111 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected '<<' (T_SL), expecting ')' in /home/jheka/www/jhekasoft/autoload_classmap.php on line 4
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/jheka/www/jhekasoft/public_html/index.php:0
+PHP message: PHP   2. require() /home/jheka/www/jhekasoft/public_html/index.php:14
+PHP message: PHP   3. Zend\Loader\AutoloaderFactory::factory() /home/jheka/www/jhekasoft/init_autoloader.php:48
+PHP message: PHP   4. Zend\Loader\ClassMapAutoloader->__construct() /home/jheka/www/jhekasoft/vendor/zendframework/zendframework/library/Zend/Loader/AutoloaderFactory.php:102
+PHP message: PHP   5. Zend\Loader\ClassMapAutoloader->setOptions() /home/jheka/www/jhekasoft/vendor/zendframework/zendframework/library/Zend/Loader/ClassMapAutoloader.php:46
+PHP message: PHP   6. Zend\Loader\ClassMapAutoloader->registerAutoloadMaps() /home/jheka/www/jhekasoft/vendor/zendframework/zendframework/library/Zend/Loader/ClassMapAutoloader.php:60
+PHP message: PHP   7. Zend\Loader\ClassMapAutoloader->registerAutoloadMap() /home/jheka/www/jhekasoft/vendor/zendframework/zendframework/library/Zend/Loader/ClassMapAutoloader.php:117
+PHP message: PHP   8. Zend\Loader\ClassMapAutoloader->loadMapFromFile() /home/jheka/www/jhekasoft/vendor/zendframework/zendframework/library/Zend/Loader/ClassMapAutoloader.php:81" while reading response header from upstream, client: 46.162.29.10, server: jhekasoft.net, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php-fpm/php-fpm.sock:", host: "jhekasoft.net", referrer: "http://jhekasoft.net/blog/edit/bilet33-o-raznom"
+2013/06/08 00:10:16 [error] 2047#0: *113 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected '<<' (T_SL), expecting ')' in /home/jheka/www/jhekasoft/autoload_classmap.php on line 4
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/jheka/www/jhekasoft/public_html/index.php:0
+PHP message: PHP   2. require() /home/jheka/www/jhekasoft/public_html/index.php:14
+PHP message: PHP   3. Zend\Loader\AutoloaderFactory::factory() /home/jheka/www/jhekasoft/init_autoloader.php:48
+PHP message: PHP   4. Zend\Loader\ClassMapAutoloader->__construct() /home/jheka/www/jhekasoft/vendor/zendframework/zendframework/library/Zend/Loader/AutoloaderFactory.php:102
+PHP message: PHP   5. Zend\Loader\ClassMapAutoloader->setOptions() /home/jheka/www/jhekasoft/vendor/zendframework/zendframework/library/Zend/Loader/ClassMapAutoloader.php:46
+PHP message: PHP   6. Zend\Loader\ClassMapAutoloader->registerAutoloadMaps() /home/jheka/www/jhekasoft/vendor/zendframework/zendframework/library/Zend/Loader/ClassMapAutoloader.php:60
+PHP message: PHP   7. Zend\Loader\ClassMapAutoloader->registerAutoloadMap() /home/jheka/www/jhekasoft/vendor/zendframework/zendframework/library/Zend/Loader/ClassMapAutoloader.php:117
+PHP message: PHP   8. Zend\Loader\ClassMapAutoloader->loadMapFromFile() /home/jheka/www/jhekasoft/vendor/zendframework/zendframework/library/Zend/Loader/ClassMapAutoloader.php:81" while reading response header from upstream, client: 213.180.206.205, server: jhekasoft.net, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php-fpm/php-fpm.sock:", host: "jhekasoft.net"
+2013/06/08 00:11:19 [error] 2047#0: *115 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected '<<' (T_SL), expecting ')' in /home/jheka/www/jhekasoft/autoload_classmap.php on line 4
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/jheka/www/jhekasoft/public_html/index.php:0
+PHP message: PHP   2. require() /home/jheka/www/jhekasoft/public_html/index.php:14
+PHP message: PHP   3. Zend\Loader\AutoloaderFactory::factory() /home/jheka/www/jhekasoft/init_autoloader.php:48
+PHP message: PHP   4. Zend\Loader\ClassMapAutoloader->__construct() /home/jheka/www/jhekasoft/vendor/zendframework/zendframework/library/Zend/Loader/AutoloaderFactory.php:102
+PHP message: PHP   5. Zend\Loader\ClassMapAutoloader->setOptions() /home/jheka/www/jhekasoft/vendor/zendframework/zendframework/library/Zend/Loader/ClassMapAutoloader.php:46
+PHP message: PHP   6. Zend\Loader\ClassMapAutoloader->registerAutoloadMaps() /home/jheka/www/jhekasoft/vendor/zendframework/zendframework/library/Zend/Loader/ClassMapAutoloader.php:60
+PHP message: PHP   7. Zend\Loader\ClassMapAutoloader->registerAutoloadMap() /home/jheka/www/jhekasoft/vendor/zendframework/zendframework/library/Zend/Loader/ClassMapAutoloader.php:117
+PHP message: PHP   8. Zend\Loader\ClassMapAutoloader->loadMapFromFile() /home/jheka/www/jhekasoft/vendor/zendframework/zendframework/library/Zend/Loader/ClassMapAutoloader.php:81" while reading response header from upstream, client: 46.162.29.10, server: jhekasoft.net, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php-fpm/php-fpm.sock:", host: "jhekasoft.net", referrer: "http://jhekasoft.net/software/show/lotto"
+2013/06/08 00:12:16 [error] 2047#0: *117 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected '<<' (T_SL), expecting ')' in /home/jheka/www/jhekasoft/autoload_classmap.php on line 4
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/jheka/www/jhekasoft/public_html/index.php:0
+PHP message: PHP   2. require() /home/jheka/www/jhekasoft/public_html/index.php:14
+PHP message: PHP   3. Zend\Loader\AutoloaderFactory::factory() /home/jheka/www/jhekasoft/init_autoloader.php:48
+PHP message: PHP   4. Zend\Loader\ClassMapAutoloader->__construct() /home/jheka/www/jhekasoft/vendor/zendframework/zendframework/library/Zend/Loader/AutoloaderFactory.php:102
+PHP message: PHP   5. Zend\Loader\ClassMapAutoloader->setOptions() /home/jheka/www/jhekasoft/vendor/zendframework/zendframework/library/Zend/Loader/ClassMapAutoloader.php:46
+PHP message: PHP   6. Zend\Loader\ClassMapAutoloader->registerAutoloadMaps() /home/jheka/www/jhekasoft/vendor/zendframework/zendframework/library/Zend/Loader/ClassMapAutoloader.php:60
+PHP message: PHP   7. Zend\Loader\ClassMapAutoloader->registerAutoloadMap() /home/jheka/www/jhekasoft/vendor/zendframework/zendframework/library/Zend/Loader/ClassMapAutoloader.php:117
+PHP message: PHP   8. Zend\Loader\ClassMapAutoloader->loadMapFromFile() /home/jheka/www/jhekasoft/vendor/zendframework/zendframework/library/Zend/Loader/ClassMapAutoloader.php:81" while reading response header from upstream, client: 213.180.206.205, server: jhekasoft.net, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php-fpm/php-fpm.sock:", host: "jhekasoft.net"
+2013/06/08 00:20:33 [error] 2047#0: *119 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected '<<' (T_SL), expecting ')' in /home/jheka/www/jhekasoft/autoload_classmap.php on line 4
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /home/jheka/www/jhekasoft/public_html/index.php:0
+PHP message: PHP   2. require() /home/jheka/www/jhekasoft/public_html/index.php:14
+PHP message: PHP   3. Zend\Loader\AutoloaderFactory::factory() /home/jheka/www/jhekasoft/init_autoloader.php:48
+PHP message: PHP   4. Zend\Loader\ClassMapAutoloader->__construct() /home/jheka/www/jhekasoft/vendor/zendframework/zendframework/library/Zend/Loader/AutoloaderFactory.php:102
+PHP message: PHP   5. Zend\Loader\ClassMapAutoloader->setOptions() /home/jheka/www/jhekasoft/vendor/zendframework/zendframework/library/Zend/Loader/ClassMapAutoloader.php:46
+PHP message: PHP   6. Zend\Loader\ClassMapAutoloader->registerAutoloadMaps() /home/jheka/www/jhekasoft/vendor/zendframework/zendframework/library/Zend/Loader/ClassMapAutoloader.php:60
+PHP message: PHP   7. Zend\Loader\ClassMapAutoloader->registerAutoloadMap() /home/jheka/www/jhekasoft/vendor/zendframework/zendframework/library/Zend/Loader/ClassMapAutoloader.php:117
+PHP message: PHP   8. Zend\Loader\ClassMapAutoloader->loadMapFromFile() /home/jheka/www/jhekasoft/vendor/zendframework/zendframework/library/Zend/Loader/ClassMapAutoloader.php:81" while reading response header from upstream, client: 46.162.29.10, server: jhekasoft.net, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php-fpm/php-fpm.sock:", host: "jhekasoft.net", referrer: "http://jhekasoft.net/auth"

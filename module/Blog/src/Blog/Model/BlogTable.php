@@ -110,6 +110,7 @@ class BlogTable extends AbstractTableGateway
             'text'  => $item->text,
             'meta_keywords'  => $item->meta_keywords,
             'show_comments'  => $item->show_comments,
+            'image' => $item->image,
         );
 
         if (!empty($item->show)) {

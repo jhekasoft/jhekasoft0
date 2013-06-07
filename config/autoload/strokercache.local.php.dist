@@ -1,0 +1,32 @@
+<?php
+return array(
+    'strokercache' => array(
+        'storage_adapter' => array(
+            'name' => 'Zend\Cache\Storage\Adapter\Filesystem',
+            'options' => array(
+                'cache_dir' => 'data/cache',
+            ),
+        ),
+        'strategies' => array(
+            'enabled' => array(
+                'StrokerCache\Strategy\RouteName' => array(
+                    'routes' => array(
+                        'home',
+                        'software',
+                        'software/filter',
+                        'bilet33'
+                    ),
+                ),
+                /*'StrokerCache\Strategy\ControllerName' => array(
+                    'controllers' => array(
+                        'Software\Controller\Software',
+                    )
+                ),
+                'StrokerCache\Strategy\Url' => array(
+                    'regexpes' => array(
+                    )
+                )*/
+            ),
+        )
+    )
+);
