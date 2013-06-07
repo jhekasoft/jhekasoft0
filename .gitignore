@@ -11,3 +11,5 @@ inf/db_bak/
 .project
 .settings
 composer.lock
+public_html/files
+

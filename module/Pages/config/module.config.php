@@ -111,6 +111,17 @@ return array(
                     ),
                 ),
             ),
+            'bilet33' => array(
+                'type'    => 'Literal',
+                'options' => array(
+                    'route'    => '/bilet33',
+                    'defaults' => array(
+                        'controller' => 'Pages\Controller\Pages',
+                        'action'     => 'show',
+                        'name' => 'bilet33'
+                    ),
+                ),
+            ),
 //            'blog' => array(
 //                'type'    => 'Literal',
 //                'options' => array(

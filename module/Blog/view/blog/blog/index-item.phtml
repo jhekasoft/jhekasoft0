@@ -12,7 +12,6 @@
         <span class="blog_item_datetime" ><?php echo $datetime->format('d.m.Y, H:i'); ?></span>
         <div class="blog_item_text">
             <?php echo $this->cut_text; ?>
-            <div class="clr"></div>
             <a class="blog_item_show_link" href="<?php echo $this->url('blog/show', array('name' => $this->name)); ?>">Читать далее &rarr;</a>
         </div>
     </div>
