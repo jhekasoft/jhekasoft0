@@ -3,6 +3,9 @@ nbproject/private/
 .~lock.*
 access_log
 error_log
+nginx.error.log
+nginx.access.log
+nginx.access.log.!sync
 inf/jhekasoft.sql
 inf/db_bak/
 .buildpath
@@ -13,4 +16,6 @@ inf/db_bak/
 composer.lock
 public_html/files
 .SyncIgnore
+.SyncID
+.SyncTrash/
 
