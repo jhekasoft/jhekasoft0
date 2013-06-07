@@ -14,6 +14,7 @@ return array(
                         'home',
                         'software',
                         'software/filter',
+                        'bilet33'
                     ),
                 ),
                 /*'StrokerCache\Strategy\ControllerName' => array(

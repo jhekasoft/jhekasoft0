@@ -49,6 +49,10 @@ class BlogForm extends Form
             'rows' => '20',
         ));
 
+        // Изображение
+        $image = new Element\Text('image');
+        $image->setLabel('Изображение');
+
         // Meta keywords
         $meta_keywords = new Element\Text('meta_keywords');
         $meta_keywords->setLabel('Ключевые слова');
@@ -69,6 +73,7 @@ class BlogForm extends Form
         $this->add($title);
         $this->add($cut_text);
         $this->add($text);
+        $this->add($image);
         $this->add($meta_keywords);
         $this->add($show_comments);
         $this->add($submit);

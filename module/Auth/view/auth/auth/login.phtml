@@ -8,11 +8,19 @@ $form->prepare();
 
 ?>
 
+<?php if(0) { ?><script><?php } ?>
+<?php $this->headScript()->captureStart() ?>
+$(document).ready(function() {
+    $('input[name="login"]').focus();
+});
+<?php $this->headScript()->captureEnd() ?>
+<?php if(0) { ?></script><?php } ?>
+
 <div id="container">
     <div id="content">
         <div>
             <?php echo $this->form()->openTag($form); ?>
-            
+
             <div class="form_row">
                 <?php echo $this->formRow($form->get('login')); ?>
             </div>
@@ -25,7 +33,7 @@ $form->prepare();
             <div class="form_row">
                 <?php echo $this->formSubmit($form->get('submit')); ?>
             </div>
-            
+
             <?php echo $this->form()->closeTag(); ?>
         </div>
 

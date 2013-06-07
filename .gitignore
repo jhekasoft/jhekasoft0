@@ -11,3 +11,4 @@ inf/db_bak/
 .project
 .settings
 composer.lock
+.SyncIgnore
