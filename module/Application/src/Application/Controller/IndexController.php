@@ -21,12 +21,12 @@ class IndexController extends JhekasoftController
     public function indexAction()
     {
         $sm = $this->getServiceLocator();
-        
+
         $pagesTable = $sm->get('Pages\Model\PagesTable');
         $item = $pagesTable->getItem('index', array(
             'field' => 'name',
         ));
-        
+
         $blogTable = $sm->get('Blog\Model\BlogTable');
         $blogPaginator = $blogTable->getPaginator(array(
             'countPerPage' => 5,
@@ -68,7 +68,7 @@ class IndexController extends JhekasoftController
         echo '<img src="' . $captcha->getImgUrl() . $captcha->generate() . '.png' . '" alt="" >';
         exit();
     }
-    
+
 //    public function comingSoonAction()
 //    {
 //        $this->layout('layout/clean');

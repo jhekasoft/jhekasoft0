@@ -6,17 +6,19 @@ $this->headMeta()->appendName('description', 'Личный сайт Jhekasoft. �
 <div id="container">
     <div id="content">
         <?php if ($this->can_edit) { ?>
-            <a href="<?php echo $this->url('pages/edit', array('name' => $this->item->name)); ?>">редактировать</a>
+            <a href="<?php echo $this->url('pages/edit', array('name' => $this->item->name)); ?>"><?php echo $this->translate('редактировать'); ?></a>
         <?php } ?>
 
         <h1><?php echo $this->item->title; ?></h1>
-        
+
         <?php if (count($this->blogPaginator) > 0) { ?>
             <div class="blog_block">
                 <?php echo $this->partialLoop('blog/blog/index-item.phtml', $this->blogPaginator) ?>
             </div>
+            <a class="blog_item_show_link" href="<?php echo $this->url('blog'); ?>"><?php echo $this->translate('Ещё новости'); ?></a>
+            <div class="clear"></div>
         <?php } ?>
-        
+
         <?php echo $this->item->text; ?>
     </div><!-- #content-->
 </div><!-- #container-->
