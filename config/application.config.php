@@ -5,6 +5,7 @@ return array(
         'Software',
         'Pages',
         'Blog',
+        'Sound',
         'Auth',
         'HMShortCode',
         'StrokerCache'

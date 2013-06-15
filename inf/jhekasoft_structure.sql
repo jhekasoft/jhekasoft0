@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.5
+-- version 4.0.2
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Янв 04 2013 г., 01:20
--- Версия сервера: 5.5.29-log
--- Версия PHP: 5.4.10
+-- Время создания: Июн 16 2013 г., 01:46
+-- Версия сервера: 5.5.31-MariaDB-log
+-- Версия PHP: 5.4.15
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- База данных: `jhekasoft`
 --
+CREATE DATABASE IF NOT EXISTS `jhekasoft` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `jhekasoft`;
 
 -- --------------------------------------------------------
 
@@ -42,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `jh_blog` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`),
   KEY `name` (`name`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 -- --------------------------------------------------------
 
@@ -84,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `jh_page` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`),
   KEY `name` (`name`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
 
 -- --------------------------------------------------------
 
@@ -117,6 +119,25 @@ CREATE TABLE IF NOT EXISTS `jh_software` (
   UNIQUE KEY `id` (`id`),
   KEY `name` (`name`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `jh_sound`
+--
+
+CREATE TABLE IF NOT EXISTS `jh_sound` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `datetime` datetime NOT NULL,
+  `author` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `lyrics` text NOT NULL,
+  `file` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`),
+  KEY `name` (`name`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 

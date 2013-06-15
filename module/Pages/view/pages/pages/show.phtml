@@ -1,8 +1,8 @@
 <?php
 $title = $this->item->title;
 $this->headTitle($title);
-$this->headMeta()->appendName('description', $this->escapeHtml($this->item->meta_description_default))
-                 ->appendName('keywords', $this->escapeHtml($this->item->meta_keywords));
+$this->headMeta()->appendName('description', $this->item->meta_description_default)
+                 ->appendName('keywords', $this->item->meta_keywords);
 ?>
 
 <div id="container">

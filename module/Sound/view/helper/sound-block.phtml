@@ -1,0 +1,20 @@
+<?php if(0) { ?><script><?php } ?>
+<?php $this->headScript()->captureStart() ?>
+$(document).ready(function() {
+    $('.content_information_additional_<?php echo $this->item->name; ?>').hide();
+});
+<?php $this->headScript()->captureEnd() ?>
+<?php if(0) { ?></script><?php } ?>
+
+<div class="content_information">
+<div><?php echo $this->item->author; ?> — <?php echo $this->item->title; ?> | <a href="javascript:void(0);" onclick="$('.content_information_additional_<?php echo $this->item->name; ?>').slideToggle();" class="no_href">текст</a></div>
+            <audio controls>
+              <source src="/files/audio/<?php echo $this->item->file; ?>.mp3">
+              <source src="/files/audio/<?php echo $this->item->file; ?>.ogg">
+              Тут должна была быть песенка(<a href="/files/audio/<?php echo $this->item->file; ?>.mp3">mp3</a> |
+              <a href="/files/audio/<?php echo $this->item->file; ?>.ogg">ogg</a>). Но ваш браузер не смог её воспроизвести :(
+            </audio>
+<div class="content_information_additional content_information_additional_<?php echo $this->item->name; ?>">
+<?php echo $this->item->lyrics; ?>
+</div>
+</div>

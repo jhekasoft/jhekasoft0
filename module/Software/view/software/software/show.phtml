@@ -1,8 +1,8 @@
 <?php
 $title = $item->title . ' ' . $item->version;
 $this->headTitle($title . ' - ' . $this->translate('Software'));
-$this->headMeta()->appendName('description', $this->escapeHtml($item->meta_description_default))
-                 ->appendName('keywords', $this->escapeHtml($item->meta_keywords));
+$this->headMeta()->appendName('description', $item->meta_description_default)
+                 ->appendName('keywords', $item->meta_keywords);
 ?>
 
 <div id="container">
@@ -15,17 +15,17 @@ $this->headMeta()->appendName('description', $this->escapeHtml($item->meta_descr
         <div>
             <?php echo $item->text; ?>
         </div>
-        
+
         <?php if (!empty($item->file)) { ?>
             <div>
                 <a class="download_link" href="<?php echo $this->basePath(); ?>/files/software/files/<?php echo $item->file; ?>">Скачать</a>
             </div>
         <?php } ?>
-        
+
         <div class="clr"></div>
 
         <?php echo $this->shareBlock(); ?>
-        
+
         <div style="margin-top: 40px;">
             <?php echo $this->commentsBlock(); ?>
         </div>
