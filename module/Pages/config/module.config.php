@@ -122,6 +122,17 @@ return array(
                     ),
                 ),
             ),
+            'bilet33-o-raznom' => array(
+                'type'    => 'Literal',
+                'options' => array(
+                    'route'    => '/bilet33-o-raznom',
+                    'defaults' => array(
+                        'controller' => 'Pages\Controller\Pages',
+                        'action'     => 'show',
+                        'name' => 'bilet33-o-raznom'
+                    ),
+                ),
+            ),
 //            'blog' => array(
 //                'type'    => 'Literal',
 //                'options' => array(
