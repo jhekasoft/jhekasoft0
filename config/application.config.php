@@ -7,7 +7,7 @@ return array(
         'Blog',
         'Sound',
         'Auth',
-        'HMShortCode',
+        'HtmlShortcode',
         'StrokerCache'
     ),
     'module_listener_options' => array(

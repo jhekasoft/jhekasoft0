@@ -8,7 +8,7 @@ use Zend\InputFilter\InputFilterAwareInterface;
 use Zend\InputFilter\InputFilterInterface;
 use Zend\ServiceManager\ServiceLocatorAwareInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
-use HMShortCode\Filter\ShortCodeFilter;
+use HtmlShortcode\Filter\ShortcodeFilter;
 
 class Pages implements InputFilterAwareInterface, ServiceLocatorAwareInterface
 {
@@ -46,9 +46,9 @@ class Pages implements InputFilterAwareInterface, ServiceLocatorAwareInterface
         $this->meta_keywords   = (isset($data['meta_keywords'])) ? $data['meta_keywords'] : null;
 
         // ShortCode filter
-        $shortCodeFilter = new ShortCodeFilter();
-        $shortCodeFilter->setServiceLocator($this->getServiceLocator());
-        $this->filtered_text = $shortCodeFilter->filter($this->text);
+        $shortcodeFilter = new ShortcodeFilter();
+        $shortcodeFilter->setServiceLocator($this->getServiceLocator());
+        $this->filtered_text = $shortcodeFilter->filter($this->text);
 
         $meta_description = mb_substr(strip_tags($this->filtered_text), 0, 200, 'utf-8');
         $this->meta_description_default = str_replace(array("\n", "\r"), "", $meta_description) . '...';
