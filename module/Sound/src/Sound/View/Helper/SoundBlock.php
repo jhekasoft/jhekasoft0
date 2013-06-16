@@ -16,7 +16,7 @@ class SoundBlock extends AbstractHelper implements ServiceLocatorAwareInterface
             'field' => 'name',
         ));
 
-        $view->item = $item;
+        $view->sound = $item;
 
         if (isset($options['size']) && 'small' == $options['size']) {
             return $view->render('helper/sound-block-small');
