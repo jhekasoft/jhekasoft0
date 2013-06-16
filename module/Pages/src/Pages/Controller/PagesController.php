@@ -104,7 +104,7 @@ class PagesController extends JhekasoftController
         //$form->bind($item);
         $form->get('submit')->setAttribute('value', 'Добавить');
 
-        $item = new Pages();
+        $item = $this->getServiceLocator()->get('Pages\Model\Pages');
 
         $request = $this->getRequest();
         if ($request->isPost()) {

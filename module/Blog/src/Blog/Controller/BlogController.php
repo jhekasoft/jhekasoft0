@@ -101,7 +101,7 @@ class BlogController extends JhekasoftController
         //$form->bind($item);
         $form->get('submit')->setAttribute('value', 'Добавить');
 
-        $item = new Blog();
+        $item = $this->getServiceLocator()->get('Blog\Model\Blog');
 
         $request = $this->getRequest();
         if ($request->isPost()) {
