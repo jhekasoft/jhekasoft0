@@ -8,7 +8,7 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 
 class SoundBlock extends AbstractHelper implements ServiceLocatorAwareInterface
 {
-    public function __invoke($name)
+    public function __invoke($name, array $options = array())
     {
         $view = $this->getView();
 
@@ -18,6 +18,9 @@ class SoundBlock extends AbstractHelper implements ServiceLocatorAwareInterface
 
         $view->item = $item;
 
+        if (isset($options['size']) && 'small' == $options['size']) {
+            return $view->render('helper/sound-block-small');
+        }
         return $view->render('helper/sound-block');
     }
 

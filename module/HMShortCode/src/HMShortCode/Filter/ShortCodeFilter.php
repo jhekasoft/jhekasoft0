@@ -18,8 +18,8 @@ class ShortCodeFilter extends AbstractFilter implements ServiceLocatorAwareInter
     public function filter($value)
     {
         $matches = NULL;
-        preg_match('/[{]{2}.+\[{0,1}.*\]{0,1}[}]{2}/', $value, $matches);
-        foreach ($matches as $match) {
+        preg_match_all('/[{]{2}.+\[{0,1}.*\]{0,1}[}]{2}/', $value, $matches);
+        foreach ($matches[0] as $match) {
             $value = str_replace($match, $this->convertMatchToHelper($match), $value);
         }
 

@@ -1,0 +1,7 @@
+<div><?php echo $this->item->author; ?> — <?php echo $this->item->title; ?></div>
+<audio controls>
+    <source src="/files/audio/<?php echo $this->item->file; ?>.mp3">
+    <source src="/files/audio/<?php echo $this->item->file; ?>.ogg">
+    Тут должна была быть песенка(<a href="/files/audio/<?php echo $this->item->file; ?>.mp3">mp3</a> |
+    <a href="/files/audio/<?php echo $this->item->file; ?>.ogg">ogg</a>). Но ваш браузер не смог её воспроизвести :(
+</audio>
