@@ -103,7 +103,7 @@ class SoftwareTable extends AbstractTableGateway
 
         $resultSet = $this->selectWith($select);
         $resultSet->buffer();
-        $resultSet->next();
+        $resultSet->current();
 
         return $resultSet;
     }

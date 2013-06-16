@@ -24,7 +24,7 @@ class PagesTable extends AbstractTableGateway
             $this->serviceManager->get('Pages\Model\Pages')
         );
         //$this->resultSetPrototype->setArrayObjectPrototype(new Pages());
-        
+
         $this->initialize();
     }
 
@@ -60,7 +60,7 @@ class PagesTable extends AbstractTableGateway
 
         $resultSet = $this->select($where);
         $resultSet->buffer();
-        $resultSet->next();
+        $resultSet->current();
 
         return $resultSet;
     }

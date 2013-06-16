@@ -28,7 +28,7 @@ class FinalCountdownEmailsTable extends AbstractTableGateway
 //
 //        $resultSet = $this->select($where);
 //        $resultSet->buffer();
-//        $resultSet->next();
+//        $resultSet->current();
 //
 //        return $resultSet;
 //    }
