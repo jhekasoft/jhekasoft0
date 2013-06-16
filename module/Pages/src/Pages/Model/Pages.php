@@ -6,8 +6,11 @@ use Zend\InputFilter\Factory as InputFactory;
 use Zend\InputFilter\InputFilter;
 use Zend\InputFilter\InputFilterAwareInterface;
 use Zend\InputFilter\InputFilterInterface;
+use Zend\ServiceManager\ServiceLocatorAwareInterface;
+use Zend\ServiceManager\ServiceLocatorInterface;
+use HMShortCode\Filter\ShortCodeFilter;
 
-class Pages implements InputFilterAwareInterface
+class Pages implements InputFilterAwareInterface, ServiceLocatorAwareInterface
 {
     public $id;
     public $name;
@@ -16,6 +19,7 @@ class Pages implements InputFilterAwareInterface
     public $title;
     public $author;
     public $text;
+    public $filtered_text;
     public $image;
     public $show;
     public $show_share;
@@ -29,7 +33,7 @@ class Pages implements InputFilterAwareInterface
     {
         $this->id              = (isset($data['id'])) ? $data['id'] : null;
         $this->name            = (isset($data['name'])) ? $data['name'] : null;
-        $this->par_id           = (isset($data['par_id'])) ? $data['par_id'] : null;
+        $this->par_id          = (isset($data['par_id'])) ? $data['par_id'] : null;
         $this->title           = (isset($data['title'])) ? $data['title'] : null;
         $this->datetime        = (isset($data['datetime'])) ? $data['datetime'] : null;
         $this->author          = (isset($data['author'])) ? $data['author'] : null;
@@ -41,7 +45,12 @@ class Pages implements InputFilterAwareInterface
         $this->show_comments   = (isset($data['show_comments'])) ? $data['show_comments'] : null;
         $this->meta_keywords   = (isset($data['meta_keywords'])) ? $data['meta_keywords'] : null;
 
-        $meta_description = mb_substr(strip_tags($this->text), 0, 200, 'utf-8');
+        // ShortCode filter
+        $shortCodeFilter = new ShortCodeFilter();
+        $shortCodeFilter->setServiceLocator($this->getServiceLocator());
+        $this->filtered_text = $shortCodeFilter->filter($this->text);
+
+        $meta_description = mb_substr(strip_tags($this->filtered_text), 0, 200, 'utf-8');
         $this->meta_description_default = str_replace(array("\n", "\r"), "", $meta_description) . '...';
     }
 
@@ -130,5 +139,26 @@ class Pages implements InputFilterAwareInterface
         }
 
         return $this->inputFilter;
+    }
+
+    /**
+     * Set the service locator.
+     *
+     * @param ServiceLocatorInterface $serviceLocator
+     * @return CustomHelper
+     */
+    public function setServiceLocator(ServiceLocatorInterface $serviceLocator)
+    {
+        $this->serviceLocator = $serviceLocator;
+        return $this;
+    }
+    /**
+     * Get the service locator.
+     *
+     * @return \Zend\ServiceManager\ServiceLocatorInterface
+     */
+    public function getServiceLocator()
+    {
+        return $this->serviceLocator;
     }
 }

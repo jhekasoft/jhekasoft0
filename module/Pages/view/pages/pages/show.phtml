@@ -14,7 +14,7 @@ $this->headMeta()->appendName('description', $this->item->meta_description_defau
         <h1><?php echo $this->escapeHtml($title); ?></h1>
 
         <div>
-            <?php echo $this->item->text; ?>
+            <?php echo $this->item->filtered_text; ?>
         </div>
 
         <?php if ('yes' == $this->item->show_share) { ?>

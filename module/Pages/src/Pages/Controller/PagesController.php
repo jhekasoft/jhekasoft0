@@ -7,7 +7,7 @@ use Application\Controller\JhekasoftController;
 use Zend\View\Model\ViewModel;
 use Pages\Model\Pages;
 use Pages\Form\PagesForm;
-use HMShortCode\Filter\ShortCodeFilter;
+//use HMShortCode\Filter\ShortCodeFilter;
 
 class PagesController extends JhekasoftController
 {
@@ -45,10 +45,10 @@ class PagesController extends JhekasoftController
             throw new \Exception("Could not find row $name");
         }
 
-        $shortCodeFilter = new ShortCodeFilter();
-        $shortCodeFilter->setServiceLocator($this->getServiceLocator());
-
-        $item->text = $shortCodeFilter->filter($item->text);
+//        $shortCodeFilter = new ShortCodeFilter();
+//        $shortCodeFilter->setServiceLocator($this->getServiceLocator());
+//
+//        $item->text = $shortCodeFilter->filter($item->text);
 
         return array(
             'id' => $item->id,

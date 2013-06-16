@@ -31,9 +31,12 @@ class Module
             'factories' => array(
                 'Blog\Model\BlogTable' =>  function($sm) {
                     $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
-                    $table     = new BlogTable($dbAdapter);
+                    $table     = new BlogTable($dbAdapter, $sm);
 
                     return $table;
+                },
+                'Blog\Model\Blog' => function($sm) {
+                    return new Model\Blog();
                 },
             ),
         );

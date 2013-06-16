@@ -7,17 +7,22 @@ use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\TableGateway\AbstractTableGateway;
 use Zend\Paginator\Adapter\Iterator;
 use Zend\Paginator\Paginator;
+use Zend\ServiceManager\ServiceManager;
 
 class BlogTable extends AbstractTableGateway
 {
     protected $table ='jh_blog';
+    protected $serviceManager;
 
-    public function __construct(Adapter $adapter)
+    public function __construct(Adapter $adapter, ServiceManager $serviceManager)
     {
         $this->adapter = $adapter;
-
+        $this->serviceManager = $serviceManager;
         $this->resultSetPrototype = new ResultSet();
-        $this->resultSetPrototype->setArrayObjectPrototype(new Blog());
+        $this->resultSetPrototype->setArrayObjectPrototype(
+            $this->serviceManager->get('Blog\Model\Blog')
+        );
+        //$this->resultSetPrototype->setArrayObjectPrototype(new Blog());
 
         $this->initialize();
     }

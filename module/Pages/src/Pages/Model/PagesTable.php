@@ -7,18 +7,24 @@ use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\TableGateway\AbstractTableGateway;
 use Zend\Paginator\Adapter\Iterator;
 use Zend\Paginator\Paginator;
+use Zend\ServiceManager\ServiceManager;
 
 class PagesTable extends AbstractTableGateway
 {
-    protected $table ='jh_page';
 
-    public function __construct(Adapter $adapter)
+    protected $table = 'jh_page';
+    protected $serviceManager;
+
+    public function __construct(Adapter $adapter, ServiceManager $serviceManager)
     {
         $this->adapter = $adapter;
-
+        $this->serviceManager = $serviceManager;
         $this->resultSetPrototype = new ResultSet();
-        $this->resultSetPrototype->setArrayObjectPrototype(new Pages());
-
+        $this->resultSetPrototype->setArrayObjectPrototype(
+            $this->serviceManager->get('Pages\Model\Pages')
+        );
+        //$this->resultSetPrototype->setArrayObjectPrototype(new Pages());
+        
         $this->initialize();
     }
 
@@ -97,12 +103,12 @@ class PagesTable extends AbstractTableGateway
     {
         $data = array(
             'name' => $item->name,
-            'datetime'  => $item->datetime,
-            'title'  => $item->title,
-            'text'  => $item->text,
-            'meta_keywords'  => $item->meta_keywords,
-            'show_share'  => $item->show_share,
-            'show_comments'  => $item->show_comments,
+            'datetime' => $item->datetime,
+            'title' => $item->title,
+            'text' => $item->text,
+            'meta_keywords' => $item->meta_keywords,
+            'show_share' => $item->show_share,
+            'show_comments' => $item->show_comments,
         );
 
         if (!empty($item->show)) {
@@ -115,9 +121,8 @@ class PagesTable extends AbstractTableGateway
             $this->insert($data);
         } elseif ($this->getItem($id)) {
             $this->update(
-                $data,
-                array(
-                    'id' => $id,
+                $data, array(
+                'id' => $id,
                 )
             );
         } else {

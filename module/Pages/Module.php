@@ -6,6 +6,7 @@ use Pages\Model\PagesTable;
 
 class Module
 {
+
     public function getAutoloaderConfig()
     {
         return array(
@@ -29,11 +30,13 @@ class Module
     {
         return array(
             'factories' => array(
-                'Pages\Model\PagesTable' =>  function($sm) {
+                'Pages\Model\PagesTable' => function($sm) {
                     $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
-                    $table     = new PagesTable($dbAdapter);
-
+                    $table = new PagesTable($dbAdapter, $sm);
                     return $table;
+                },
+                'Pages\Model\Pages' => function($sm) {
+                    return new Model\Pages();
                 },
             ),
         );
