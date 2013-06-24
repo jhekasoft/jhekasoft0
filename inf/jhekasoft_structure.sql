@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.2
+-- version 4.0.4
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Июн 16 2013 г., 01:46
+-- Время создания: Июн 24 2013 г., 04:07
 -- Версия сервера: 5.5.31-MariaDB-log
--- Версия PHP: 5.4.15
+-- Версия PHP: 5.4.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -86,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `jh_page` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`),
   KEY `name` (`name`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 -- --------------------------------------------------------
 
@@ -134,10 +134,11 @@ CREATE TABLE IF NOT EXISTS `jh_sound` (
   `title` varchar(255) NOT NULL,
   `lyrics` text NOT NULL,
   `file` varchar(255) NOT NULL,
+  `file2` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`),
   KEY `name` (`name`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 -- --------------------------------------------------------
 

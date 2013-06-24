@@ -16,6 +16,7 @@ class Sound implements InputFilterAwareInterface
     public $title;
     public $lyrics;
     public $file;
+    public $file2;
 
     protected $inputFilter;
 
@@ -28,6 +29,7 @@ class Sound implements InputFilterAwareInterface
         $this->title           = (isset($data['title'])) ? $data['title'] : null;
         $this->lyrics          = (isset($data['lyrics'])) ? $data['lyrics'] : null;
         $this->file            = (isset($data['file'])) ? $data['file'] : null;
+        $this->file2           = (isset($data['file2'])) ? $data['file2'] : null;
     }
 
     public function getArrayCopy()

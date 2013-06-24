@@ -1,0 +1,27 @@
+<?php $this->headScript()->appendFile($this->basePath() . '/js/tiny_mce/jquery.tinymce.js') ?>
+<?php $this->headScript()->appendFile($this->basePath() . '/js/ckeditor/ckeditor.js') ?>
+<?php $this->headScript()->appendFile($this->basePath() . '/js/ckeditor/adapters/jquery.js') ?>
+<?php $this->headScript()->appendFile($this->basePath() . '/js/web-editor.js') ?>
+
+<?php if(0) { ?><script><?php } ?>
+<?php $this->headScript()->captureStart() ?>
+WebEditor.tinymceUrl = '<?php echo $this->basePath() . '/js/tiny_mce/tiny_mce.js' ?>';
+WebEditor.elfinderTinymceUrl = '<?php echo $this->url('application/default', array('controller' => 'web-editor', 'action' => 'elfinder-tinymce')) ?>';
+WebEditor.elfinderCkeditorUrl = '<?php echo $this->url('application/default', array('controller' => 'web-editor', 'action' => 'elfinder-ckeditor')) ?>';
+<?php $this->headScript()->captureEnd() ?>
+<?php if(0) { ?></script><?php } ?>
+
+<?php
+$title = 'Новый звуковой файл';
+$this->headTitle($title . ' - ' . $this->translate('Sound'));
+?>
+
+<div id="container">
+    <div id="content">
+        <h1><?php echo $this->escapeHtml($title); ?></h1>
+
+        <?php echo $this->render('sound/sound/edit-form.phtml') ?>
+    </div><!-- #content-->
+</div><!-- #container-->
+
+<?php //echo $this->sideRight(); ?>

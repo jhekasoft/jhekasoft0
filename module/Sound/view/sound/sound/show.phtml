@@ -1,0 +1,23 @@
+<?php
+$title = $this->item->title;
+$this->headTitle($title);
+$this->headMeta()->appendName('description', $this->item->meta_description_default)
+                 ->appendName('keywords', $this->item->meta_keywords);
+?>
+
+<div id="container">
+    <div id="content">
+        <?php if ($this->can_edit) { ?>
+            <a href="<?php echo $this->url('sound'); ?>">&larr; список</a><br>
+            <a href="<?php echo $this->url('sound/edit', array('name' => $this->item->name)); ?>">редактировать</a>
+        <?php } ?>
+
+        <h1><?php echo $this->escapeHtml($title); ?></h1>
+
+        <div>
+            <?php echo $this->soundBlock($this->item->name); ?>
+        </div>
+    </div><!-- #content-->
+</div><!-- #container-->
+
+<?php //echo $this->sideRight(); ?>

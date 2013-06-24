@@ -35,6 +35,9 @@ class Module
 
                     return $table;
                 },
+                'Sound\Model\Sound' => function($sm) {
+                    return new Model\Sound();
+                },
             ),
         );
     }

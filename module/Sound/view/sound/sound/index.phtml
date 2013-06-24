@@ -1,0 +1,26 @@
+<?php
+$title = $this->translate('Sound');
+$this->headTitle($title);
+?>
+
+<div id="container">
+    <div id="content">
+        <h1><?php echo $this->escapeHtml($title); ?></h1>
+
+        <div style="margin-bottom: 40px;">
+            <a href="<?php echo $this->url('sound/add'); ?>">Добавить</a>
+        </div>
+
+        <div>
+            <?php if (count($this->paginator) > 0) { ?>
+                <?php echo $this->partialLoop('sound/sound/index-item.phtml', $this->paginator) ?>
+            <?php } else { ?>
+                <p>Извините, автор ещё не добавил звуковые файлы.</p>
+            <?php } ?>
+        </div>
+
+        <?php echo $this->paginationControl($this->paginator, 'Sliding', 'pagination-control.phtml', array('route' => 'sound/default')); ?>
+    </div><!-- #content-->
+</div><!-- #container-->
+
+<?php //echo $this->sideRight(); ?>

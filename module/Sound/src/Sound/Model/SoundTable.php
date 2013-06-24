@@ -83,6 +83,7 @@ class SoundTable extends AbstractTableGateway
             'title'  => $item->title,
             'lyrics'  => $item->lyrics,
             'file' => $item->file,
+            'file2' => $item->file2,
         );
 
         $id = (int) $item->id;
