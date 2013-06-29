@@ -36,23 +36,6 @@
                 no_results_text: "Нет результатов для",
                 allow_single_deselect: true
             });
-
-            // Для прокрутки вверх
-            $('.goto_top_block').hide();
-            $(window).scroll(function () {
-                if ($(this).scrollTop() > 100) {
-                    $('.goto_top_block').fadeIn();
-
-                    var gotoBlockDistance = $(document).height() - ($(this).scrollTop() + $(window).height());
-                    if(gotoBlockDistance <= 70) {
-                        $('.goto_top_block').css('bottom', 70 - gotoBlockDistance);
-                    } else {
-                        $('.goto_top_block').css('bottom', 10);
-                    }
-                } else {
-                    $('.goto_top_block').fadeOut();
-                }
-            });
         });
     </script>
 
@@ -138,6 +121,7 @@
 
         <section id="middle">
             <?php echo $this->content; ?>
+            <?php echo $this->gotoTop(); ?>
         </section><!-- #middle-->
 
         <footer id="footer">

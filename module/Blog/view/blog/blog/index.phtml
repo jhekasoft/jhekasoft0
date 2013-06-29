@@ -9,13 +9,13 @@ $this->headMeta()->appendName('description', 'Блог jhekasoft (Евгений
 <div id="container">
     <div id="content">
         <h1><?php echo $this->escapeHtml($title); ?></h1>
-        
+
         <?php if ($this->can_edit) { ?>
             <div style="margin-bottom: 20px;">
                 <a href="<?php echo $this->url('blog/add'); ?>">Добавить</a>
             </div>
         <?php } ?>
-        
+
         <div>
             <?php if (count($this->paginator) > 0) { ?>
                 <?php echo $this->partialLoop('blog/blog/index-item.phtml', $this->paginator) ?>
@@ -23,7 +23,7 @@ $this->headMeta()->appendName('description', 'Блог jhekasoft (Евгений
                 <p>Извините, автор ещё не добавил записи.</p>
             <?php } ?>
         </div>
-        
+
         <?php echo $this->paginationControl($this->paginator, 'Sliding', 'pagination-control.phtml', array('route' => 'blog/default')); ?>
     </div><!-- #content-->
 </div><!-- #container-->

@@ -278,7 +278,7 @@ ul.nav_block_main_menu li a:hover {
     background: -o-linear-gradient(top,  #ededed 0%,#f7f7f7 35%,#ffffff 100%); /* Opera 11.10+ */
     background: -ms-linear-gradient(top,  #ededed 0%,#f7f7f7 35%,#ffffff 100%); /* IE10+ */
     background: linear-gradient(to bottom,  #ededed 0%,#f7f7f7 35%,#ffffff 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */    
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 }
 
 .pagination_control a.paginator_page:focus,
@@ -335,9 +335,7 @@ ul.nav_block_main_menu li a:hover {
 
 .blog_item_show_link {
     float: right;
-    padding: 4px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 4px 10px;
     color: #000;
     text-decoration: none;
     border: 1px solid #ccc;
@@ -360,7 +358,7 @@ ul.nav_block_main_menu li a:hover {
     background: -o-linear-gradient(top,  #ededed 0%,#f7f7f7 35%,#ffffff 100%); /* Opera 11.10+ */
     background: -ms-linear-gradient(top,  #ededed 0%,#f7f7f7 35%,#ffffff 100%); /* IE10+ */
     background: linear-gradient(to bottom,  #ededed 0%,#f7f7f7 35%,#ffffff 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */    
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 }
 
 .blog_item_show_link:focus {
@@ -497,7 +495,7 @@ table.middle_align_table tr td img {
 }
 
 .filter_form {
-    
+
 }
 
 .filter_form_element_item {
@@ -515,7 +513,7 @@ table.middle_align_table tr td img {
 /*.filter_form input.filter_form_submit[type=submit] {
     border: 1px solid #74A574;
     background-color: #94D094;
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#AAEDAA', endColorstr='#84BA84', GradientType=0 );  
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#AAEDAA', endColorstr='#84BA84', GradientType=0 );
     background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(20%, #AAEDAA), color-stop(90%, #84BA84));
     background-image: -webkit-linear-gradient(top, #AAEDAA 20%, #84BA84 90%);
     background-image: -moz-linear-gradient(top, #AAEDAA 20%, #84BA84 90%);
@@ -525,7 +523,7 @@ table.middle_align_table tr td img {
 
 .filter_form input.filter_form_submit[type=submit]:hover {
     background-color: #84BA84;
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#84BA84', endColorstr='#AAEDAA', GradientType=0 );  
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#84BA84', endColorstr='#AAEDAA', GradientType=0 );
     background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(20%, #84BA84), color-stop(90%, #AAEDAA));
     background-image: -webkit-linear-gradient(top, #84BA84 20%, #AAEDAA 90%);
     background-image: -moz-linear-gradient(top, #84BA84 20%, #AAEDAA 90%);
@@ -543,12 +541,19 @@ a.filter_form_cancel_link {
 /* Goto top */
 .goto_top_block {
     display: block;
-    width: 230px;
     cursor: pointer;
     position: fixed;
     bottom: 10px;
-/*    bottom: 70px;*/
     text-align: right;
+    right: 10px;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #fff;
+}
+
+.goto_top_block:hover {
+    border-color: #427F42;
 }
 
 .goto_top_block a {

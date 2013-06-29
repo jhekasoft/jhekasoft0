@@ -110,6 +110,7 @@ return array(
             'like_block' => 'Application\View\Helper\LikeBlock',
             'share_block' => 'Application\View\Helper\ShareBlock',
             'comments_block' => 'Application\View\Helper\CommentsBlock',
+            'goto_top' => 'Application\View\Helper\GotoTop',
         )
     ),
 );

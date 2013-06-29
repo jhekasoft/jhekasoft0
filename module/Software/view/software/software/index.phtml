@@ -9,14 +9,14 @@ $this->headMeta()->appendName('description', 'В этом разделе пре�
 <div id="container" class="content_column">
     <div id="content">
         <h1><?php echo $this->escapeHtml($title); ?></h1>
-        
+
         <div class="content_information">
             В этом разделе представлены только мои приложения и приложения
             друзей. Это не файловая помойка. К некоторым предоставляется
             ссылка на исходный код. В будущем планируется размещать здесь
             только <a href="http://ru.wikipedia.org/wiki/%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%BD%D0%BE%D0%B5_%D0%BE%D0%B1%D0%B5%D1%81%D0%BF%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5">open-source</a> приложения.
         </div>
-        
+
         <div>
             <?php if (count($this->paginator) > 0) { ?>
                 <?php echo $this->partialLoop('software/software/index-item.phtml', $this->paginator) ?>
@@ -24,7 +24,7 @@ $this->headMeta()->appendName('description', 'В этом разделе пре�
                 <p>Извините, автор ещё не написал таких программ.</p>
             <?php } ?>
         </div>
-        
+
         <?php echo $this->paginationControl($this->paginator, 'Sliding', 'pagination-control.phtml', array('route' => 'software/default')); ?>
     </div><!-- #content-->
 </div><!-- #container-->

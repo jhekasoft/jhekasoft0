@@ -1,0 +1,34 @@
+<?php if (0) { ?><script><?php } ?>
+<?php $this->inlineScript()->captureStart() ?>
+$(document).ready(function() {
+    $('.goto_top_block').hide();
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            $('.goto_top_block').fadeIn();
+
+            var minGotoBlockDistance = 18;
+            var gotoBlockDistance = $(document).height() - ($(this).scrollTop() + $(window).height());
+            var bottomShift = 10;
+            var rightShift = 20;
+            if(gotoBlockDistance <= minGotoBlockDistance) {
+                bottomShift = minGotoBlockDistance - gotoBlockDistance;
+                rightShift = 10;
+            }
+
+            $('.goto_top_block').css('bottom', bottomShift);
+            $('.goto_top_block').css('right', $(document).width() - $('#wrapper').offset().left - $('#wrapper').width() + rightShift);
+        } else {
+            $('.goto_top_block').fadeOut();
+        }
+    });
+});
+<?php $this->inlineScript()->captureEnd() ?>
+<?php if (0) { ?></script><?php } ?>
+
+<div class="goto_top_block" onclick="Functions.goToTop();" title="Home">
+    <div class="goto_top_link_container">
+        <a class="goto_top_imglink" href="#body_top" onclick="return false;">
+            <span class="goto_top_img">&nbsp;</span></a>
+        <br>
+    </div>
+</div>
