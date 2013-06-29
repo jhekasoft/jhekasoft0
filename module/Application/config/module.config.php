@@ -62,9 +62,39 @@ return array(
             ),
         ),
     ),
+    'navigation' => array(
+        'default' => array(
+            array(
+                'label' => 'Software',
+                'route' => 'software',
+            ),
+            array(
+                'label' => 'Games',
+                'route' => 'software/default',
+                'params' => array('type' => 'game'),
+            ),
+            array(
+                'label' => 'Sound',
+                'route' => 'bilet33',
+            ),
+            array(
+                'label' => 'Video',
+                'route' => 'video',
+            ),
+            array(
+                'label' => 'Blog',
+                'route' => 'blog',
+            ),
+            array(
+                'label' => 'About',
+                'route' => 'about',
+            ),
+        ),
+    ),
     'service_manager' => array(
         'factories' => array(
             'translator' => 'Zend\I18n\Translator\TranslatorServiceFactory',
+            'navigation' => 'Zend\Navigation\Service\DefaultNavigationFactory',
         ),
     ),
     'translator' => array(

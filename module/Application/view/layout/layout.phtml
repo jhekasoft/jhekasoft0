@@ -12,7 +12,7 @@
     <!-- Styles -->
     <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/x-icon', 'href' => $this->basePath() . '/images/favicon.ico'))
                     ->prependStylesheet($this->basePath() . '/js/chosen/chosen.css')
-                    ->prependStylesheet($this->basePath() . '/css/style.css?v=2') ?>
+                    ->prependStylesheet($this->basePath() . '/css/style.css?v=3') ?>
 
     <!-- Scripts -->
     <?php echo $this->headScript()->prependFile($this->basePath() . '/js/functions.js?v=1')
@@ -91,29 +91,8 @@
                     <div class="nav_block_logo">
                         <a href="<?php echo $this->url('home'); ?>" class="nav_block_logo_link">Jhekasoft</a>
                     </div>
-                    <ul class="nav_block_main_menu">
-                        <li>
-                            <a href="<?php echo $this->url('software/default'); ?>"><?php echo $this->translate('Software'); ?></a>
-                        </li>
-                        <li>
-                            <a href="<?php echo $this->url('software/default', array('type' => 'game')); ?>"><?php echo $this->translate('Games'); ?></a>
-                        </li>
-                        <li>
-                            <a href="<?php echo $this->url('video'); ?>"><?php echo $this->translate('Video'); ?></a>
-                        </li>
-                        <li>
-                            <a href="<?php echo $this->url('bilet33'); ?>"><?php echo $this->translate('Sound'); ?></a>
-                        </li>
-                        <li>
-                            <a href="<?php echo $this->url('blog'); ?>"><?php echo $this->translate('Blog'); ?></a>
-                        </li>
-                        <li>
-                            <a href="<?php echo $this->url('about'); ?>"><?php echo $this->translate('About'); ?></a>
-                        </li>
-                        <li class="nav_block_main_menu_end">
-                            <span>&nbsp;</span>
-                        </li>
-                    </ul>
+                    <?php echo $this->navigation('navigation')->menu()->setPartial('application/partials/main-menu'); ?>
+                    <?php //echo $this->navigation('navigation')->menu()->setUlClass('nav_block_main_menu'); ?>
                 </nav>
                 <div class="clr"></div>
             </div>

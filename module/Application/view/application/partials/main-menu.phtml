@@ -1,0 +1,17 @@
+<ul class="nav_block_main_menu">
+    <?php foreach ($this->container as $page) { ?>
+        <?php
+            // render li tag and page
+            $liClasses = array();
+            // Is page active?
+            if ($page->isActive()) {
+                $liClasses[] = 'active';
+            }
+            $liClass = empty($liClasses) ? '' : ' class="' . implode(' ', $liClasses) . '"';
+        ?>
+        <li<?php echo $liClass; ?>><?php echo $this->navigation()->menu()->htmlify($page); ?></li><?php echo PHP_EOL; ?>
+    <?php } ?>
+    <li class="nav_block_main_menu_end">
+        <span>&nbsp;</span>
+    </li>
+</ul>

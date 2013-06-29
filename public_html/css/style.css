@@ -165,6 +165,12 @@ ul.nav_block_main_menu li.nav_block_main_menu_end span {
 /*    text-decoration: none;*/
 }
 
+ul.nav_block_main_menu li.active a {
+    -webkit-box-shadow: inset 0px 0px 8px 1px rgba(220, 220, 220, 1);
+    box-shadow: inset 0px 0px 8px 1px rgba(220, 220, 220, 1);
+/*    text-decoration: none;*/
+}
+
 ul.nav_block_main_menu li.nav_block_main_menu_end span {
     padding-left: 0;
     padding-right: 0;
