@@ -12,10 +12,10 @@
     <!-- Styles -->
     <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/x-icon', 'href' => $this->basePath() . '/images/favicon.ico'))
                     ->prependStylesheet($this->basePath() . '/js/chosen/chosen.css')
-                    ->prependStylesheet($this->basePath() . '/css/style.css') ?>
+                    ->prependStylesheet($this->basePath() . '/css/style.css?v=2') ?>
 
     <!-- Scripts -->
-    <?php echo $this->headScript()->prependFile($this->basePath() . '/js/functions.js')
+    <?php echo $this->headScript()->prependFile($this->basePath() . '/js/functions.js?v=1')
                                   ->prependFile($this->basePath() . '/js/chosen/chosen.jquery.min.js')
                                   ->prependFile('//html5shiv.googlecode.com/svn/trunk/html5.js', 'text/javascript', array('conditional' => 'IE',))
                                   ->prependFile('//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js') ?>
