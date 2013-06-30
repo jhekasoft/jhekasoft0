@@ -8,6 +8,10 @@
  */
 
 return array(
+    'settings' => array(
+        'sitename' => 'Jhekasoft',
+        'email' => 'jheka@mail.ru',
+    ),
     'router' => array(
         'routes' => array(
             'coming-soon' => array(
@@ -57,6 +61,17 @@ return array(
                             'defaults' => array(
                             ),
                         ),
+                    ),
+                ),
+            ),
+            // Base RSS feed is blog RSS feed
+            'rss' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route'    => '/rss',
+                    'defaults' => array(
+                        'controller' => 'Blog\Controller\Blog',
+                        'action'     => 'rss',
                     ),
                 ),
             ),

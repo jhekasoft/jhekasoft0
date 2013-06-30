@@ -5,11 +5,14 @@ namespace Blog\Controller;
 //use Zend\Mvc\Controller\AbstractActionController;
 use Application\Controller\JhekasoftController;
 use Zend\View\Model\ViewModel;
-use Blog\Model\Blog;
+use Zend\Feed\Writer\Feed;
+use Zend\View\Model\FeedModel;
+//use Blog\Model\Blog;
 use Blog\Form\BlogForm;
 
 class BlogController extends JhekasoftController
 {
+
     protected $itemTable;
 
     public function indexAction()
@@ -48,6 +51,52 @@ class BlogController extends JhekasoftController
         );
     }
 
+    public function rssAction()
+    {
+        $renderer = $this->getServiceLocator()->get('Zend\View\Renderer\RendererInterface');
+        $url = $this->plugin('url');
+        $config = $this->getServiceLocator()->get('Config');
+
+        $feed = new Feed;
+        $feed->setTitle($config['settings']['sitename']);
+        $feed->setDescription('Блог jhekasoft.net');
+        $feed->setLink($url->fromRoute('home', array(), array('force_canonical' => true)));
+        $feed->setFeedLink($url->fromRoute(null, array(), array('force_canonical' => true)), 'rss');
+        $feed->addAuthor(array(
+            'name'  => $config['settings']['sitename'],
+            'email' => $config['settings']['email'],
+            'uri'   => $url->fromRoute('home', array(), array('force_canonical' => true)),
+        ));
+        $feed->setDateModified(time());
+
+        $items = $this->getTable()->fetchAll(array('limit' => 100));
+
+        if (count($items) > 0) {
+            foreach ($items as $item) {
+                $datetime = new \DateTime($item->datetime);
+                $content = $item->filtered_cut_text;
+                if (!empty($item->image)) {
+                    $content = '<img src="' . $renderer->basePath() . '/files/blog/images/p_' . $item->image . '" alt=""><br />' . $content;
+                }
+
+                $entry = $feed->createEntry();
+                $entry->setTitle($item->title);
+                $entry->setLink($url->fromRoute('blog/show', array('name' => $item->name), array('force_canonical' => true)));
+                $entry->setDateModified($datetime->getTimestamp());
+                $entry->setDateCreated($datetime->getTimestamp());
+                //$entry->setDescription($item->title);
+                $entry->setContent($content);
+                $feed->addEntry($entry);
+            }
+        }
+
+        //$out = $feed->export('rss');
+        $feedmodel = new FeedModel();
+        $feedmodel->setFeed($feed);
+
+        return $feedmodel;
+    }
+
     public function editAction()
     {
         if (!$this->getAuthService()->hasIdentity()) {
@@ -66,7 +115,7 @@ class BlogController extends JhekasoftController
             throw new \Exception("Could not find row $name");
         }
 
-        $form  = new BlogForm();
+        $form = new BlogForm();
         $form->bind($item);
 //        $form->get('submit')->setAttribute('value', 'Edit');
 
@@ -97,7 +146,7 @@ class BlogController extends JhekasoftController
             throw new \Exception("Not found.");
         }
 
-        $form  = new BlogForm();
+        $form = new BlogForm();
         //$form->bind($item);
         $form->get('submit')->setAttribute('value', 'Добавить');
 
@@ -138,4 +187,5 @@ class BlogController extends JhekasoftController
 
         return $this->itemTable;
     }
+
 }

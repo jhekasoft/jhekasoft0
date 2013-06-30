@@ -615,3 +615,8 @@ a.filter_form_cancel_link {
     background: linear-gradient(to bottom,  #feffff 0%,#f7f7f7 35%,#ededed 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
 }
+
+.footer_block_icon {
+    vertical-align: middle;
+    height: 16px;
+}

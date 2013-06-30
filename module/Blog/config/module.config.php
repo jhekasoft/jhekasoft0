@@ -44,6 +44,15 @@ return array(
                             ),
                         ),
                     ),
+                    'rss' => array(
+                        'type'    => 'literal',
+                        'options' => array(
+                            'route'    => '/rss',
+                            'defaults' => array(
+                                'action'  => 'rss',
+                            ),
+                        ),
+                    ),
                     'edit' => array(
                         'type'    => 'segment',
                         'options' => array(
@@ -65,15 +74,6 @@ return array(
                             ),
                         ),
                     ),
-//                    'filter' => array(
-//                        'type'    => 'Literal',
-//                        'options' => array(
-//                            'route'    => '/filter',
-//                            'defaults' => array(
-//                                'action'   => 'filter',
-//                            ),
-//                        ),
-//                    ),
                 ),
             ),
         ),
@@ -82,6 +82,9 @@ return array(
     'view_manager' => array(
         'template_path_stack' => array(
             'blog' => __DIR__ . '/../view',
+        ),
+        'strategies' => array(
+            'ViewFeedStrategy',
         ),
     ),
 );

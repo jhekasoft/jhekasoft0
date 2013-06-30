@@ -60,6 +60,10 @@ class BlogTable extends AbstractTableGateway
         $select = $this->getSql()->select();
         $select->where($where)->order('datetime DESC');
 
+        if (!empty($options['limit'])) {
+            $select->limit($options['limit']);
+        }
+
         $resultSet = $this->selectWith($select);
         $resultSet->buffer();
         $resultSet->current();
