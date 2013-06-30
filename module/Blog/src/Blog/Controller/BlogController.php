@@ -78,7 +78,7 @@ class BlogController extends JhekasoftController
                 if (!empty($item->image)) {
                     $content = '<img src="' . $renderer->basePath() . '/files/blog/images/p_' . $item->image . '" alt=""><br />' . $content;
                 }
-                $content .= '<br /><a class="blog_item_show_link" href="' . $url->fromRoute('blog/show', array('name' => $this->name), array('force_canonical' => true)) . '">Читать далее &rarr;</a>';
+                $content .= '<br /><a class="blog_item_show_link" href="' . $url->fromRoute('blog/show', array('name' => $item->name), array('force_canonical' => true)) . '">Читать далее &rarr;</a>';
 
                 $entry = $feed->createEntry();
                 $entry->setTitle($item->title);
