@@ -16,10 +16,10 @@
     </div>
 
     <audio controls>
-        <source src="/files/audio/<?php echo $this->sound->file; ?>">
-        <source src="/files/audio/<?php echo $this->sound->file2; ?>">
-        Тут должна была быть песенка(<a href="/files/audio/<?php echo $this->sound->file; ?>">mp3</a> |
-        <a href="/files/audio/<?php echo $this->sound->file2; ?>">ogg</a>). Но ваш браузер не смог её воспроизвести :(
+        <source src="<?php echo $this->serverUrl() . $this->basePath('files/audio/' . $this->sound->file); ?>">
+        <source src="<?php echo $this->serverUrl() . $this->basePath('files/audio/' . $this->sound->file2); ?>">
+        <a href="<?php echo $this->serverUrl() . $this->basePath('files/audio/' . $this->sound->file); ?>">mp3</a> |
+        <a href="<?php echo $this->serverUrl() . $this->basePath('files/audio/' . $this->sound->file2); ?>">ogg</a>
     </audio>
 
     <?php if (!empty($this->sound->lyrics)) { ?>
