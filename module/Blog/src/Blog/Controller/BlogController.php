@@ -54,18 +54,18 @@ class BlogController extends JhekasoftController
     public function rssAction()
     {
         $renderer = $this->getServiceLocator()->get('Zend\View\Renderer\RendererInterface');
-        $url = $this->plugin('url');
+        $urlPlugin = $this->plugin('url');
         $config = $this->getServiceLocator()->get('Config');
 
         $feed = new Feed;
         $feed->setTitle($config['settings']['sitename']);
         $feed->setDescription('Блог jhekasoft.net');
-        $feed->setLink($url->fromRoute('home', array(), array('force_canonical' => true)));
-        $feed->setFeedLink($url->fromRoute(null, array(), array('force_canonical' => true)), 'rss');
+        $feed->setLink($urlPlugin->fromRoute('home', array(), array('force_canonical' => true)));
+        $feed->setFeedLink($urlPlugin->fromRoute(null, array(), array('force_canonical' => true)), 'rss');
         $feed->addAuthor(array(
             'name'  => $config['settings']['sitename'],
             'email' => $config['settings']['email'],
-            'uri'   => $url->fromRoute('home', array(), array('force_canonical' => true)),
+            'uri'   => $urlPlugin->fromRoute('home', array(), array('force_canonical' => true)),
         ));
         $feed->setDateModified(time());
 
@@ -74,15 +74,16 @@ class BlogController extends JhekasoftController
         if (count($items) > 0) {
             foreach ($items as $item) {
                 $datetime = new \DateTime($item->datetime);
+                $url = $urlPlugin->fromRoute('blog/show', array('name' => $item->name), array('force_canonical' => true));
                 $content = $item->filtered_cut_text;
                 if (!empty($item->image)) {
                     $content = '<img src="' . $renderer->basePath() . '/files/blog/images/p_' . $item->image . '" alt=""><br />' . $content;
                 }
-                $content .= '<br /><a class="blog_item_show_link" href="' . $url->fromRoute('blog/show', array('name' => $item->name), array('force_canonical' => true)) . '">Читать далее &rarr;</a>';
+                $content .= '<br /><a class="blog_item_show_link" href="' . $url . '">Читать далее &rarr;</a>';
 
                 $entry = $feed->createEntry();
                 $entry->setTitle($item->title);
-                $entry->setLink($url->fromRoute('blog/show', array('name' => $item->name), array('force_canonical' => true)));
+                $entry->setLink($url);
                 $entry->setDateModified($datetime->getTimestamp());
                 $entry->setDateCreated($datetime->getTimestamp());
                 //$entry->setDescription($item->title);
