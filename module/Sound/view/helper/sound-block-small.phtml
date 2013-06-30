@@ -1,7 +1,7 @@
 <div><?php echo $this->sound->author; ?> — <?php echo $this->sound->title; ?></div>
 <audio controls>
-    <source src="<?php echo $this->serverUrl() . $this->serverUrl() . $this->basePath('files/audio/' . $this->sound->file); ?>">
-    <source src="<?php echo $this->serverUrl() . $this->serverUrl() . $this->basePath('files/audio/' . $this->sound->file2); ?>">
-    <a href="<?php echo $this->basePath('files/audio/' . $this->sound->file); ?>">mp3</a> |
-    <a href="<?php echo $this->basePath('files/audio/' . $this->sound->file2); ?>">ogg</a>
+    <source src="<?php echo $this->serverUrl() . $this->basePath('files/audio/' . $this->sound->file); ?>">
+    <source src="<?php echo $this->serverUrl() . $this->basePath('files/audio/' . $this->sound->file2); ?>">
+    <a href="<?php echo $this->serverUrl() . $this->basePath('files/audio/' . $this->sound->file); ?>">mp3</a> |
+    <a href="<?php echo $this->serverUrl() . $this->basePath('files/audio/' . $this->sound->file2); ?>">ogg</a>
 </audio>
