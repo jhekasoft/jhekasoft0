@@ -74,7 +74,7 @@ class BlogTable extends AbstractTableGateway
     public function getPaginator($options = array())
     {
         $page = 1;
-        $countPerPage = 8;
+        $countPerPage = 10;
 
         if (!empty($options['page'])) {
             $page = (int) $options['page'];

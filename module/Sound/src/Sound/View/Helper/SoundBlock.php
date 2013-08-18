@@ -8,6 +8,8 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 
 class SoundBlock extends AbstractHelper implements ServiceLocatorAwareInterface
 {
+    protected $itemTable;
+
     public function __invoke($name, array $options = array())
     {
         $view = $this->getView();
