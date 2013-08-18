@@ -48,10 +48,16 @@ a {
     color: #427F42;
     outline: none;
     text-decoration: underline;
+    -webkit-transition: color 0.5s ease;
+    -moz-transition: color 0.5s ease;
+    -ms-transition: color 0.5s ease;
+    -o-transition: color 0.5s ease;
+    transition: color 0.5s ease;
 }
 a:hover,
 a:focus {
-    text-decoration: none;
+    color: #72AF72;
+/*    text-decoration: none;*/
 }
 a.no_href {
     text-decoration: none;
@@ -166,6 +172,7 @@ ul.nav_block_main_menu li.nav_block_main_menu_end span {
 }
 
 ul.nav_block_main_menu li a {
+    text-decoration: none;
     background-repeat: repeat-x;
     background-color: #dddddd;
     background-image: -moz-linear-gradient(top, #feffff 0%, #dddddd 100%); /* FF3.6+ */
@@ -184,6 +191,7 @@ ul.nav_block_main_menu li a {
 
 ul.nav_block_main_menu li a:hover {
     background-position: 0 -15px;
+    color: #000;
 }
 
 ul.nav_block_main_menu li.active a {
@@ -378,6 +386,7 @@ ul.nav_block_main_menu li.nav_block_main_menu_end span {
 
 .blog_item_show_link:hover {
     background-position: 0 -10px;
+    color: #000;
 }
 
 .blog_item_show_link:focus {
@@ -385,6 +394,7 @@ ul.nav_block_main_menu li.nav_block_main_menu_end span {
     -webkit-box-shadow: 0 0 3px #ffffff inset, 0 1px 1px rgba(0,0,0,0.1);
     -moz-box-shadow   : 0 0 3px #ffffff inset, 0 1px 1px rgba(0,0,0,0.1);
     box-shadow        : 0 0 3px #ffffff inset, 0 1px 1px rgba(0,0,0,0.1);
+    color: #000;
 }
 
 .blog_item_datetime_show_block {
