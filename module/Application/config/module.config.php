@@ -156,6 +156,7 @@ return array(
             'share_block' => 'Application\View\Helper\ShareBlock',
             'comments_block' => 'Application\View\Helper\CommentsBlock',
             'goto_top' => 'Application\View\Helper\GotoTop',
+			'walk_header' => 'Application\View\Helper\WalkHeader',
         )
     ),
 );
