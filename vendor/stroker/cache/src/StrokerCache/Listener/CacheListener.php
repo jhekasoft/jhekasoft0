@@ -8,12 +8,12 @@
 namespace StrokerCache\Listener;
 
 use StrokerCache\Service\CacheService;
+use Zend\EventManager\AbstractListenerAggregate;
 use Zend\EventManager\EventManagerInterface;
-use Zend\EventManager\ListenerAggregateInterface;
 use Zend\Http\PhpEnvironment\Request as HttpRequest;
 use Zend\Mvc\MvcEvent;
 
-class CacheListener implements ListenerAggregateInterface
+class CacheListener extends AbstractListenerAggregate
 {
     /**
      * @var array
@@ -50,18 +50,6 @@ class CacheListener implements ListenerAggregateInterface
     }
 
     /**
-     * {@inheritDoc}
-     */
-    public function detach(EventManagerInterface $events)
-    {
-        foreach ($this->listeners as $index => $listener) {
-            if ($events->detach($listener)) {
-                unset($this->listeners[$index]);
-            }
-        }
-    }
-
-    /**
      * Load the page contents from the cache and set the response.
      *
      * @param  MvcEvent $e
@@ -78,8 +66,7 @@ class CacheListener implements ListenerAggregateInterface
         if ($data !== null) {
             $this->loadedFromCache = true;
 
-            $response = $e->getResponse();
-            $response->setContent($data);
+            $response = unserialize($data);
 
             return $response;
         }
