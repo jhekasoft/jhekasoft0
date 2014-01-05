@@ -1,11 +1,17 @@
 <ul class="nav_block_main_menu">
+    <?php $pageCount = count($this->container); ?>
+    <?php $i = 0; ?>
     <?php foreach ($this->container as $page) { ?>
         <?php
+            $i++;
             // render li tag and page
             $liClasses = array();
             // Is page active?
             if ($page->isActive()) {
                 $liClasses[] = 'active';
+            }
+            if ($i == $pageCount) {
+                $liClasses[] = 'last';
             }
             $liClass = empty($liClasses) ? '' : ' class="' . implode(' ', $liClasses) . '"';
         ?>

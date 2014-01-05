@@ -7,11 +7,11 @@
 
     <?php echo $this->headMeta(); ?>
 
-    <?php //echo $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0') ?>
+    <?php echo $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0') ?>
 
     <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/x-icon', 'href' => $this->basePath() . '/images/favicon.ico'))
                     ->prependStylesheet($this->basePath() . '/js/chosen/chosen.css')
-                    ->prependStylesheet($this->basePath() . '/css/style.css?v=4')
+                    ->prependStylesheet($this->basePath() . '/css/style.css?v=6')
                     ->appendAlternate($this->url('rss', array(), array('force_canonical' => true)), 'application/rss+xml', 'Jhekasoft'); ?>
 
     <?php echo $this->headScript()->prependFile($this->basePath() . '/js/functions.js?v=1')
@@ -90,6 +90,16 @@
                     <div class="nav_block_logo">
                         <a href="<?php echo $this->url('home'); ?>" class="nav_block_logo_link">Jhekasoft</a>
                     </div>
+                    <div class="nav_block_menu_button">
+                        <a href="javascript: void(0);" onclick="$('.nav_block_main_menu').slideToggle();">
+                            <div class="nav_block_menu_button_block">
+                                <div class="nav_block_menu_button_block_line"></div>
+                                <div class="nav_block_menu_button_block_line"></div>
+                                <div class="nav_block_menu_button_block_line"></div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="nav_block_menu_button_clr clr"></div>
                     <?php echo $this->navigation('navigation')->menu()->setPartial('application/partials/main-menu'); ?>
                     <?php //echo $this->navigation('navigation')->menu()->setUlClass('nav_block_main_menu'); ?>
                 </nav>

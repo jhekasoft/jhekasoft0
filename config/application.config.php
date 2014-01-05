@@ -8,7 +8,7 @@ return array(
         'Sound',
         'Auth',
         'HtmlShortcode',
-        'StrokerCache'
+        //'StrokerCache'
     ),
     'module_listener_options' => array(
         'config_glob_paths'    => array(

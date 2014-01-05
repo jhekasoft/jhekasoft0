@@ -77,7 +77,7 @@ input {
     vertical-align: middle;
 }
 #wrapper {
-    width: 1000px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 #wrapper.wrapper_adaptive {
@@ -208,6 +208,53 @@ ul.nav_block_main_menu li.nav_block_main_menu_end span {
 .nav_block_logo {
     display: block;
     float: left;
+}
+
+.nav_block_menu_button {
+    float: right; display: none;
+}
+
+.nav_block_menu_button a {
+    display: block;
+    height: 36px;
+    padding: 6px 10px;
+}
+
+.nav_block_menu_button_clr {
+    display: none;
+}
+
+.nav_block_menu_button_block,
+.nav_block_menu_button_block_line {
+    -webkit-transition: 0.5s ease;
+    -moz-transition: 0.5s ease;
+    -ms-transition: 0.5s ease;
+    -o-transition: 0.5s ease;
+    transition: 0.5s ease;
+}
+
+.nav_block_menu_button_block {
+    width: 24px;
+    height: 20px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 7px 6px;
+}
+
+.nav_block_menu_button_block:hover {
+    border-color: #427F42;
+}
+
+.nav_block_menu_button_block_line {
+    height: 3px;
+    margin-bottom: 6px;
+    border-radius: 3px;
+    background: #ccc;
+}
+
+.nav_block_menu_button_block:hover .nav_block_menu_button_block_line {
+    background: #427F42;
 }
 
 

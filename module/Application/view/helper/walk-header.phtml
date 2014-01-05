@@ -1,6 +1,6 @@
 <?php if (0) { ?><script><?php } ?>
 <?php $this->inlineScript()->captureStart() ?>
-if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
+if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) && $(window).width() >= 1000) {
 	$(document).ready(function() {
 		$('#header').css('width', 1000);
 		$('#header').css('background-color', '#fff');
@@ -11,5 +11,24 @@ if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
 		$('#middle').css('padding-top', 60);
 	});
 }
+
+<?php // Adaptive menu ?>
+$(document).ready(function() {
+    if ($(window).width() < 1000) {
+        $('ul.nav_block_main_menu').hide();
+        $('ul.nav_block_main_menu li').css('float', 'none');
+        $('.nav_block_main_menu_end').hide();
+        $('.nav_block_menu_button').show();
+        $('.nav_block_menu_button_clr').show();
+
+        $('.nav_block_main_menu li.last').css('border-bottom-left-radius', 10);
+        $('.nav_block_main_menu li.last').css('border-bottom-right-radius', 10);
+        $('.nav_block_main_menu li.last a').css('border-bottom-left-radius', 10);
+        $('.nav_block_main_menu li.last a').css('border-bottom-right-radius', 10);
+
+        <?php // Removes fixed block width ?>
+        $('#container').removeClass('content_column');
+    }
+});
 <?php $this->inlineScript()->captureEnd() ?>
 <?php if (0) { ?></script><?php } ?>
